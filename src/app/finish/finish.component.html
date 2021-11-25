@@ -1,0 +1,28 @@
+<div class="welcome-page" id="reg">
+  <section class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="bigtext">
+          THANK YOU
+          <br>
+          FOR PLAYING
+        </div>
+      </div>
+    </div>
+    <div class="img-wrapper m0 z-i5">
+      <div class="container-fluid">
+        <div class="share">
+          <img src="../../assets/img/header-image.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 textalignment ">
+        <button type="submit" class="primarybtn btn1" [disabled]="buttonDisabled" (click)="finish()">
+          <img src="../../assets/img/loadingWheel.gif" alt="" [ngClass]="loadingStyle">
+          FINISH
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

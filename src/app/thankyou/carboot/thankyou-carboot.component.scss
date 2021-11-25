@@ -1,0 +1,264 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import '../../../variable.scss';
+
+.thankyou-carboot-page {
+  .thankyou-carboot-container {
+    margin-top: 2vh;
+
+    //   min-height: 92vh;
+    .thankyou-container {
+      display: none;
+      text-align: center;
+      width: 553px;
+      height: 804px;
+      margin: 0 auto;
+      padding: 2em;
+      letter-spacing: -0.4%;
+      background-color: $brand-color-1;
+      color: $brand-color;
+      position: relative;
+      border:1px solid #979797;
+
+      .thankyou-head {
+        height: auto;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 50px;
+        line-height: 50px;
+        font-family: $brand-font-family-1;
+
+        img {
+          width: 60%;
+          margin:0 auto 1vh;
+        }
+      }
+
+      hr {
+        border-top: 2px dotted #000000;
+        margin: 1rem auto;
+        width: 90%;
+        text-align: center;
+      }
+
+      .thankyou-text {
+        // width:75%;
+        margin: 1rem auto;
+        line-height: 61px;
+        font-size: 58px;
+      }
+
+      .thankyou-text-1 {
+        margin: 0.5em auto;
+        line-height: 45px;
+        font-size: 36px;
+      }
+
+      a {
+        color: #ffffff;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .perspective {
+      width: 100%;
+      height: 850px;
+      margin: 0px auto;
+      perspective: 450;
+      -webkit-perspective: 450;
+      border-radius: 3px;
+      box-sizing: border-box;
+      position: relative;
+
+
+      img {
+        display: block;
+        margin: auto;
+        width: 100%;
+      }
+    }
+
+    @keyframes opac {
+      0%{
+        opacity: 1;
+      }
+      // 80%{
+      //   opacity: 0;
+      // }
+      100%{
+        opacity: 0;
+      }
+    }
+    @-webkit-keyframes opac {
+      0%{
+        opacity: 1;
+      }
+      // 80%{
+      //   opacity: 0;
+      // }
+      100%{
+        opacity: 0;
+      }
+    }
+    .thumb {
+      left: 13%;
+      position: absolute;
+      box-sizing: border-box;
+      border-radius: 3px;
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, .0) inset;
+      // transition: 1s transform linear;
+      transform-origin: left;
+      cursor: pointer;
+      // background: url('../../../assets/img/carbootpart.png') no-repeat;
+      background: url('../../../assets/img/carboot/InitialScreen.png') no-repeat;
+      background-size: cover;
+      width: 672px;
+      height: 815px;
+      z-index: 1;
+      -webkit-transition:opac 1s ease-out;
+      transition:opac 1s ease-out;
+    }
+    .thumbOpening {
+      background: url('../../../assets/img/carboot/CarBootAnimationnew2.gif') no-repeat;
+      background-size: cover;
+      background-position: center center;
+      width: 672px;
+      height:815px;
+      -webkit-transition:opac 1s ease-out;
+      transition:opac 1s ease-out;
+      // animation:1.5s linear;
+    }
+    .thumbOpened {
+      background: url('../../../assets/img/carboot/FinalScreen.png') no-repeat;
+      background-size: cover;
+      width: 672px;
+      height: 815px;
+      -webkit-transition:opac 1s ease-out;
+      transition:opac 1s ease-out;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  // .thankyou-carboot-page {
+  //   .thankyou-carboot-container {
+  //     .thankyou-container {
+  //       padding: 1em;
+  //     }
+  //   }
+  // }
+}
+
+@media only screen and (max-width: 992px) {
+  // .thankyou-carboot-page {
+  //   .thankyou-carboot-container {
+  //     .thankyou-container {
+  //       padding: 1em;
+
+  //       .thankyou-head {
+  //         margin: 10px auto;
+  //       }
+
+  //       .thankyou-text {
+  //         width: 75%;
+  //         margin: 1em auto;
+  //         line-height: 34px;
+  //         font-size: 1.2em;
+  //       }
+
+  //       .thankyou-text-1 {
+  //         margin: 1em;
+  //         line-height: 1.5em;
+  //         font-size: 1.2em;
+  //       }
+  //     }
+  //   }
+  // }
+
+}
+
+/* tablet and phone*/
+@media only screen and (max-width: 767px) {
+  // .thankyou-carboot-page {
+  //   .thankyou-carboot-container {
+  //     .thankyou-container {
+  //       .thankyou-head {
+  //         margin: 10px auto;
+  //         font-size: 37px;
+  //         line-height: 43px;
+  //       }
+
+  //       hr {
+  //         margin: 1em auto;
+  //       }
+
+  //       .thankyou-text {
+  //         width: 75%;
+  //         margin: 0.5em auto;
+  //         line-height: 34px;
+  //         font-size: 1.2em;
+  //       }
+
+  //       .thankyou-text-1 {
+  //         margin: 1em 1em 0.4em 1em;
+  //         line-height: 25px;
+  //         font-size: 1.2em;
+  //       }
+  //     }
+
+  //     .perspective {
+  //       width: 450px;
+  //     }
+  //   }
+
+  // }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px) {
+  // .thankyou-carboot-page {
+  //   .thankyou-carboot-container {
+  //     .thankyou-container {
+  //       padding: 1.8em 1em;
+  //       width: 100%;
+  //       height: 100%;
+
+  //       .thankyou-head {
+  //         width: 100%;
+  //         height: auto;
+  //         min-height: 50px;
+  //         text-align: center;
+  //         margin: 0 auto;
+  //       }
+
+  //       hr {
+  //         margin: 0.2em auto;
+  //       }
+
+  //       .thankyou-text {
+  //         width: 90%;
+  //         margin: 0.5em auto;
+  //         font-size: 14px;
+  //         line-height: 21px;
+  //       }
+
+  //       .thankyou-text-1 {
+  //         margin: 1em auto;
+  //         line-height: 23px;
+  //         font-size: 1.2em;
+  //       }
+  //     }
+
+  //     .perspective {
+  //       width: 301px;
+  //     }
+
+  //   }
+  // }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {}

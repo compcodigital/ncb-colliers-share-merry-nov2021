@@ -1,0 +1,271 @@
+//variables
+@import "../../../variable.scss";
+
+.winner-post-page {
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
+  .boxlid {
+    height: 100%;
+  }
+
+  .bottom-height {
+    height: 150px;
+  }
+
+  .z-i0 {
+    z-index: 0 !important;
+  }
+
+  .z-1 {
+    z-index: -1 !important;
+  }
+
+  .tap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+  }
+
+  #slide {
+    z-index: 10;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    transition: 3s ease-in;
+  }
+
+  .letter {
+    width: 100%;
+    margin: 1vh auto;
+    position: relative;
+
+    #paper {
+      perspective: 950px;
+      perspective-origin: 50%;
+      width: 50%;
+      margin: 160px auto 20px;
+      padding: 0 0 10px;
+      background: #ffffff;
+      text-align: center;
+      border: 7px solid $brand-color-5;
+      max-width: 700px;
+
+      .winner-head {
+        width: 90%;
+        margin: 5px auto;
+        font-family: $brand-font-family-7;
+        font-size: 25px;
+        line-height: 28px;
+        color: $brand-color;
+
+        img {
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          padding: 30px 10px 10px;
+        }
+      }
+
+      .winner-text {
+        color: $brand-color-1;
+        font-size: 18px;
+        line-height: 22px;
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  .paperslideout {
+    display: block;
+    animation: fly-in 2s ease-in;
+  }
+
+  @keyframes fly-in {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @-webkit-keyframes fly-in {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+
+  .main-box {
+    width: 100%;
+  }
+
+  .box {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 100%;
+
+    .box-cover {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 92vh;
+      margin: auto;
+      // max-height: 100vh;
+      // width: auto;
+      // max-height: 87vh;
+      // height: 100%;
+    }
+  }
+
+  .boxIndex {
+    z-index: 3 !important;
+  }
+
+  .divider-bottom-space {
+    height: 0px;
+  }
+}
+
+/*==========  Non-Mobile (Desktop) First Method  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .winner-post-page {
+    .letter {
+      #paper {
+        margin: 110px auto 20px;
+      }
+    }
+  }
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .winner-post-page {
+    .letter {
+      #paper {
+        width: 80%;
+        margin: 33vh auto 20px;
+
+        .winner-head {
+          font-size: 20px;
+          line-height: 24px;
+        }
+
+        .winner-text {
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        .primarybtn.btn1 {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .winner-post-page {
+
+    .letter {
+      #paper {
+        margin: 33vh auto;
+        width: 80%;
+
+        .winner-head {
+          font-size: 1.2em;
+          line-height: 1.1em;
+
+        }
+
+        .primarybtn.btn1 {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px) {
+  .winner-post-page {
+
+    .bottom-height {
+      height: 110px;
+    }
+
+    .letter {
+      #paper {
+        width: 90%;
+        margin: 110px auto 20px;
+
+
+        .winner-head {
+          font-size: 1em;
+        }
+
+        .winner-text {
+          font-size: 0.8em;
+          line-height: 16px;
+        }
+
+        .primarybtn.btn1 {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .winner-post-page {
+    .letter {
+      #paper {
+        .winner-text {
+          font-size: 0.9em;
+          line-height: 18px;
+          padding: 1%;
+        }
+      }
+    }
+  }
+}
+
+/* Landscape */
+@media only screen and (max-device-width: 767px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .winner-post-page {
+    .letter {
+      #paper {
+        .winner-text {
+          font-size: 0.9em;
+          line-height: 16px;
+          padding: 1%;
+        }
+      }
+    }
+  }
+}

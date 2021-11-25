@@ -1,0 +1,295 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import '../../../variable.scss';
+.winner-page{
+  min-height:600px;
+  height:75vh;
+  .winner-container {
+    text-align: center;
+    // width: 790px;
+    // height: 675px;
+    width: 893px;//805px;
+    height: 505px;//705px;
+    margin: 0.5em auto 1em;
+    letter-spacing: -0.4%;
+    position: relative;
+    .winner-badge{
+      img{
+        width: 100%;
+        float: left;
+        // margin: -87px;
+      }
+    }
+    // .flexit {
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   align-self: center;
+    //   // .flexcol{
+    //   //   flex:1;
+    //   // }
+    // }
+    .winner-bg {
+      width: 888px;//790px;
+      height: 500px;//670px;
+      margin: 0.5em auto 0.5em;
+      background:$brand-color-2;//brand-color-2;
+      // padding: 2em; // 1em 6em 3em
+      // background: url("../../../assets/img/winnerbg.png") no-repeat;
+      // background-position: left top;
+      // background-repeat: no-repeat;
+      // background-attachment: fixed;
+      // background-size: 100%;
+      // border-radius: 110px;
+      background: $brand-color-2;
+    }
+    .load-style {
+      display: none;
+      height: 100%;
+    }
+    .winner-ctn {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: $brand-color-3;
+    }
+    .after-loading {
+      display: none;
+    }
+    // .load-style {
+    //   display: none;
+    //   height: 100%;
+    // }
+    // .thankyou-ctn {
+    //   width: 100%;
+    //   height: 100%;
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: center;
+    //   justify-content: center;
+    //   background: $brand-color-3;
+    // }
+    // .after-loading {
+    //   display: none;
+    // }
+    hr{
+      margin:1vh auto;
+    }
+    .canvas {
+      position: absolute;
+      top: 0;
+      left:0;
+      z-index: 10;
+      // border:5px solid $brand-color-6;
+    }
+
+    .winner-head {
+      // height:220px;
+      // text-align: left;
+      // color:$brand-color;
+      // margin: 2vh auto 10px;
+      // font-size: 50px;
+      // line-height: 50px;
+      // display: flex;
+      // justify-content: left;
+      // align-items: center;
+      // align-self: center;
+      height: auto;
+      text-align: center;
+      color:$brand-color;
+      margin: 2vh auto 10px;
+      font-size: 50px;
+      line-height: 50px;
+      cursor: none;
+
+      img{
+        // width:65%;
+        // // margin:8vh 0;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // align-self: center;
+        width:50%;
+        margin:0 $marginscreenalignment;
+        justify-content: center;
+        vertical-align: middle;
+        @media only screen and (max-width: 767px) {
+          width:70%;
+        }
+      }
+    }
+
+    .winner-text {
+      width:90%;
+      margin: 1vh auto 1vh;
+      line-height: 32px;
+      font-size: 28px;
+      color: $brand-color;
+    }
+
+    .winner-text-1 {
+      width:90%;
+      margin: 1vh auto 1vh;
+      line-height: 24px;
+      font-size: 18px;
+      color: $brand-color;
+    }
+    .winner-text-2 {
+      width:90%;
+      // margin: 5vh auto 5vh;
+      line-height: 24px;
+      font-size: 21px;
+      color: $brand-color;
+    }
+
+    a {
+      color: #ffffff;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+
+  @media only screen and (max-width: 1200px) {
+    .winner-page {
+      // height:675px;
+      .winner-container {
+        width: 500px;
+        height: 580px;
+        // height:560px;
+        // .winner-badge{
+        //   img{
+        //     width: 20%;
+        //     float: left;
+        //     // margin: -40px;
+        //   }
+        // }
+        .winner-bg {
+          // padding: 0.5em;
+          // border-radius: 65px;
+          width: 495px;
+          height: 575px;
+          // height:705px;
+        }
+        hr {
+          border-top: 5px solid red;//#636466;
+          margin: 1vh auto;
+          width: 5vw;
+          text-align: center;
+        }
+        .winner-head {
+          // height:80px; //150px;
+          img{
+            width: 40%;
+            margin: 20px auto;
+          }
+        }
+        .winner-text {
+          margin: 1vh auto;
+          line-height: 32px;
+          font-size: 28px;
+        }
+
+        .winner-text-1 {
+          margin: 1vh auto;
+          line-height: 25px;
+          font-size: 21px;
+        }
+        .winner-text-2 {
+          width:90%;
+          margin: 1vh auto;
+          line-height: 24px;
+          font-size: 21px;
+          color: $brand-color;
+        }
+
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+
+  }
+
+  /* tablet and phone*/
+  @media only screen and (max-width: 767px) {
+    .winner-page {
+      height:83vh;
+      min-height:460px;
+      .winner-container {
+        // margin: 4em auto 1em;
+        // padding: 1em 0.5em;
+        width: 300px;
+        height: 435px;
+        // margin: 0.5em auto 0.5em;
+        // .winner-badge{
+        //   img{
+        //     width: 20%;
+        //     float: left;
+        //     // margin: -20px;
+        //   }
+        // }
+        #js-container{
+          position: relative;
+        }
+        // border: 3px solid red;
+
+        .winner-bg {
+          // border-radius: 30px;
+          // padding: 0.5em;
+          width: 295px;
+          height: 430px;
+        }
+        .winner-head {
+          height: 51px; //71px;
+          // min-height: 50px;
+          text-align: center;
+          margin: 20px auto;
+          font-size: 25px;
+          line-height: 25px;
+          img{
+            width: 70%;
+          }
+        }
+        .h82 {
+          height: 40px;
+          margin-bottom: 5px;
+        }
+        .winner-text {
+          width: 100%;
+          margin: 1vh auto;
+          line-height: 21px;
+          font-size: 18px;
+          // font-weight: 700;
+        }
+
+        .winner-text-1 {
+          margin: 1vh auto;
+          line-height: 18px;
+          font-size: 14px;
+        }
+        .winner-text-2 {
+          margin: 1vh auto;
+          line-height: 19px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px) {
+  .winner-page {
+    height:68vh; //73vh
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {}

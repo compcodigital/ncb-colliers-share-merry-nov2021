@@ -1,0 +1,152 @@
+<!-- <div class="content-ribbon" *ngIf="!this.campaignCenterService.footerSecondary">
+  <div class="ribbon">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          Entry open to E-News Members. Sign up on entry.
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<section class="footer" *ngIf="this.campaignCenterService.showFooter">
+  <div class="row text-center p-5">
+    <div class="col-12">
+      <!-- Entries close 11:59pm Friday 24th December.
+      <a (click)="openModal(terms)" class="footer-tnc-link"
+        >*Terms & Conditions</a
+      >
+      apply. -->
+      <img src="./assets/img/logo-karingal.png" class="img-fluid footer-logo" />
+    </div>
+  </div>
+  <!-- *ngIf="this.campaignCenterService.showFooter" *ngIf="!this.campaignCenterService.footerSecondary" class="footer {{ this.campaignCenterService.footerSecondary ? 'secondary': '' }}" -->
+  <!-- <section class="footer" [style.position]="this.campaignCenterService.footerSecondary ? 'absolute': ''">
+    [style.position]="this.campaignCenterService.footerSecondary ? 'relative': ''" -->
+  <!-- {{ footerThird ? 'relative': '' }} -->
+
+  <!-- <img src="./assets/img/footer.png" alt="footer"> -->
+
+  <!-- <div class="container-fluid"> -->
+  <!-- <div class="row flexit"> -->
+  <!-- <div class="col-6 "> -->
+  <!-- *ngIf="!this.campaignCenterService.footerSecondary" -->
+  <!-- <div class="footer-logo float-left">
+          <a href="" target="_blank">
+            <img src="./assets/img/fb.png" class="logo" alt="">
+          </a>
+        </div> -->
+  <!-- <div class="footer-link">
+          *<a (click)="openModal(template)" class="footer-tnc-link">Terms and Conditions</a> apply.
+        </div> -->
+  <!-- </div> -->
+
+  <!-- <div class="col-12">
+          <img src="./assets/img/footer.png" alt="logo">
+      </div> -->
+
+  <!-- <div class="col-3"> -->
+  <!-- <div class="footer-logo float-left">
+          <a href="" target="_blank">
+            <img src="./assets/img/logo2.png" class="logo2" alt="logo">
+          </a>
+        </div> -->
+  <!-- <div class="footer-link">
+          *<a (click)="openModal(template)" class="footer-tnc-link">Terms and Conditions</a> apply.
+        </div> -->
+  <!-- </div>
+      <div class="col-5"> -->
+  <!-- <div class="footer-link float-left">
+          *<a (click)="openModal(template)" class="footer-tnc-link">Terms and Conditions</a> apply. Authorised under NSW
+          Permit No. TP00005.
+        </div> -->
+  <!-- </div>
+      <div class="col-3"> -->
+  <!-- <div class="footer-logo float-right">
+          <a href="" target="_blank">
+            <img src="./assets/img/logo.png" alt="logo">
+          </a>
+        </div> -->
+  <!-- <div class="footer-link">
+          *<a (click)="openModal(template)" class="footer-tnc-link">Terms and Conditions</a> apply.
+        </div> -->
+  <!-- </div> -->
+
+  <!-- </div> -->
+  <!-- </div> -->
+</section>
+<!-- <section class="footer" *ngIf="this.campaignCenterService.footerSecondary">
+  <div class="container-fluid">
+    <div class="row flexit">
+      <div class="col-3">
+        <div class="footer-logo">
+          <a href="" target="_blank">
+            <img src="../../assets/img/logo.png" alt="logo">
+          </a>
+        </div>
+      </div>
+      <div class="col-6 flexcol">
+        <div class="footer-link">
+          *<a (click)="openModal(template)" class="footer-tnc-link">Terms and Conditions</a> apply. Authorised under NSW
+          LTPS/19/35790.
+        </div>
+      </div>
+      <div class="col-3">
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<ng-template #template>
+  <div class="modal-header tc">
+    <div class="row w-100">
+      <!-- <div class="col-6 float-right">
+            <img src="../../assets/img/logo.png" class="modal-logo" alt="">
+          </div> -->
+      <div class="col-12 text-center modal-adj-head">
+        <h1>
+          {{ title }}
+          <br />
+          Terms & Conditions
+        </h1>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body tc">
+    <app-terms></app-terms>
+  </div>
+</ng-template>
+
+<ng-template #terms>
+  <div class="modal-header tc">
+    <div class="row">
+      <div class="col-12 text-center modal-adj-head">
+        <div class="mt-3 mt-md-4">
+          <strong
+            >TERMS AND CONDITIONS FOR “24 DAYS OF MERRY MOMENTS” PROMOTION
+          </strong>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body tc">
+    <app-terms></app-terms>
+  </div>
+</ng-template>

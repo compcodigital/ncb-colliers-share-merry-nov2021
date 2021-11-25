@@ -1,0 +1,17 @@
+@import "../../variable.scss";
+
+.terms-page {
+  font-size: 1rem;
+  @include responsive(phone) {
+    font-size: 0.8rem;
+  }
+}
+table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+// table tbody {
+//   display: table;
+//   width: 100%;
+// }

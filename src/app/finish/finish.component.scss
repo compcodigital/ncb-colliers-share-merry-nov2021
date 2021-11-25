@@ -1,0 +1,38 @@
+//variables
+@import '../../variable.scss';
+
+.share {
+  img {
+    width: 100%;
+    display: block;
+    margin: 0 $marginscreenalignment 1vh; //screen center
+    z-index: 1;
+
+    @media (max-width: 1200px) {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+  }
+}
+
+.bigtext {
+  width: 80%;
+  font-family: $brand-font-family-5;
+  color: $brand-color-3;
+  font-size: 55px;
+  line-height: 65px;
+  margin: 2vh $marginscreenalignment 1vh;
+  text-align: $textalignment;
+
+  img {
+    width: 100%;
+  }
+  @media screen and (max-width:576px) {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}

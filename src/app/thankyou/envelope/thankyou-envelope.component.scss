@@ -1,0 +1,170 @@
+//variables
+@import "../../../variable.scss";
+
+.thankyou-envelope-page {
+  color: $brand-color;
+  .envelope {
+    width: calc(748px + 0px);
+    height: calc(674px + 0px);
+    background-image: url("../../../assets/img/envelope/house-2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    perspective: 900px;
+    perspective-origin: 50%;
+    position: relative;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    margin: 40px auto;
+    @include responsive(phone) {
+      width: 100%;
+      // width: calc(748px - 60px);
+      // height: calc(674px - 60px);
+    }
+  }
+  .jamet {
+    width: calc(53px + 0px);
+    height: calc(674px + 0px);
+    background-image: url("../../../assets/img/envelope/house-1-tmp.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .flip-book {
+    height: 100%;
+    width: 100%;
+    @include responsive(desktop) {
+      // border-style: dashed;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
+      // border: 1px dotted #ffffff;
+    }
+    @include responsive(tablet) {
+      // border-style: dashed;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
+    }
+    @include responsive(phone) {
+      // border-style: dashed;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
+    }
+  }
+
+  #flip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 2px;
+    right: 1px;
+    transition: transform 0.8s;
+    transform: rotateX(0) translateZ(7px);
+    transform-origin: 50% 0;
+    // width: 100%;
+    z-index: 10;
+    display: block;
+
+    .closeit {
+      // background: url('') no-repeat;
+      //no-repeat
+      height: 100%;
+      // min-width: 100vw;
+      width: 100%;
+      z-index: 10;
+      position: relative;
+    }
+
+    .env_middle img {
+      width: 32%;
+      margin: 10px auto;
+      position: absolute;
+      top: 18%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // font-size:18px;
+      // color: #FFD700;
+      z-index: 11;
+    }
+  }
+
+  #paper {
+    position: absolute;
+    top: 0vh;
+    bottom: 0vh;
+    width: 100%;
+    height: 100%;
+    padding: 20px 90px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include responsive(phone) {
+      padding: 20px 46px;
+    }
+    .thankyou-head {
+      font-size: 2.2rem;
+      line-height: 2.6rem;
+      font-family: $brand-font-family-7;
+      @include responsive(phone) {
+        font-size: 1.9rem;
+        line-height: 2.4rem;
+      }
+    }
+    .thankyou-title {
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+      @include responsive(phone) {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+      }
+    }
+    .thankyou-title-2 {
+      font-size: 1.1rem;
+      line-height: 1.7rem;
+      font-family: $brand-font-family;
+      @include responsive(phone) {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+      }
+    }
+    .thankyou-text-2 {
+      font-size: 1.3rem;
+      line-height: 1.9rem;
+      @include responsive(phone) {
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+      }
+    }
+    .thankyou-text-3 {
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+      @include responsive(phone) {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+      }
+    }
+    .thankyou-text-4 {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      @include responsive(phone) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+    }
+    .thankyou-text-5 {
+      font-size: .9rem;
+      line-height: 1.2rem;
+      @include responsive(phone) {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+      }
+    }
+  }
+}

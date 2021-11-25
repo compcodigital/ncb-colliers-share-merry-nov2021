@@ -1,0 +1,45 @@
+@media
+only screen and (max-width: 767px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr { border: 1px solid #ccc; }
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 20px;
+    margin-left: 110px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+  th{
+      display: none;
+  }
+  td:before {
+    position: absolute;
+    top: 12px;
+    left: 6px;
+    width: 100px;
+    padding-right: 40px;
+    // white-space: nowrap;
+    margin-left: -110px;
+  }
+  .privacy-policy{
+    td:nth-of-type(1):before { content: "Security safeguard"; }
+  td:nth-of-type(2):before { content: "Details"; }
+  }
+  .privacy-policy1{
+    td:nth-of-type(1):before { content: "Person"; }
+    td:nth-of-type(2):before { content: "Types of information"; }
+    td:nth-of-type(3):before { content: "Identified purposes"; }
+    td:nth-of-type(4):before { content: "Method of collection";}
+}
+  
+}

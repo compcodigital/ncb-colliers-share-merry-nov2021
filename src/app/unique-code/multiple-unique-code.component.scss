@@ -1,0 +1,519 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import "../../variable.scss";
+.multiple-unique-code-page {
+  margin: 10vh;
+  @include responsive(phone) {
+    margin: 0;
+    margin-top: 5vh;
+  }
+
+  .enter-code-confirmation-container {
+    background-color: $brand-color-2;
+    padding: 20px;
+    margin: 0px auto 20px;
+    .code-confirmation-container {
+      border: 3px solid black;
+      padding: 20px;
+      .enter-code-text {
+        font-size: 40px;
+        line-height: 40px;
+      }
+      .unique-box-img {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .enter-code-container {
+    margin: 0.3em auto;
+    padding: 5px;
+    text-align: left;
+    width: 75%;
+    // color:black;
+    .enter-code-text {
+      font-family: $brand-font-family;
+      // color:$brand-color;
+      margin: 1em $marginscreenalignment 0.5em;
+      line-height: 32px;
+      // font-weight: bold;
+      font-size: 1.5em;
+      text-align: $textalignment;
+    }
+    .enter-the-digit {
+      width: 620px;
+      height: 153px;
+      font-size: 27px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: condensed;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: $textalignment;
+      color: #ffffff;
+    }
+    .error-text {
+      color: red;
+    }
+    .code-container-img {
+      background-attachment: fixed;
+      background-position: left top;
+      display: block;
+      //   background: url('../../assets/img/uniquecode-desktop.jpg') no-repeat;
+    }
+    .enter-code-img {
+      display: none;
+      // background-color: #ffffff;
+      img {
+        display: none;
+        //   padding: 20px;
+      }
+    }
+    .unique-box {
+      font-family: $brand-font-family-1;
+      // background-color: black;
+      color: #ffffff;
+      .unique-text {
+        padding: 10px;
+        text-align: center;
+      }
+      // .code-pad {
+      //   // padding: 2px;
+      //   border:2px solid black;
+      // }
+      .code-pad-item {
+        // padding: 0px 2px 0px 2px;
+        // margin-right: 1%;
+        // margin-bottom: 5px;
+        width: 100%;
+        input {
+          width: 100%;
+          font-size: 10vw;
+          color: $brand-color;
+          text-transform: uppercase;
+          text-align: center;
+          // background-color: $brand-color;
+          // border:1px solid #fff;
+          background: url("../../assets/img/carboot/carPlate.png") no-repeat;
+          background-size: contain;
+          background-position: center;
+          border: 0;
+          padding: 50px;
+          margin-bottom: 10px;
+          @media (min-width: 1500px) {
+            font-size: 150px;
+          }
+        }
+        input:-internal-autofill-selected {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+  .spent-form-container {
+    // width: 80%;
+    // color: $brand-color;
+    // margin: 0.3em auto 0.3em;
+    margin: 0.3em auto 1vh;
+    max-width: 700px;
+    min-height: 59vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+    // label {
+    //   font-weight: 500;
+    //   text-align: left;
+    // }
+
+    .control-label {
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.6rem;
+      padding: 10px 0 5px;
+      color: $brand-color-1;
+      @include responsive(phone) {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+      }
+    }
+    .plus {
+      font-family: $brand-font-family-1;
+      // color: $brand-color-4;
+      font-size: 35px;
+      line-height: 40px;
+      // font-weight: 600;
+      margin: 1vh $marginscreenalignment;
+
+      img {
+        width: 60%;
+        margin: 2vh auto 2vh;
+        @media (max-width: 576px) {
+          width: 90%;
+        }
+      }
+    }
+    .title {
+      margin: 2vh auto 2vh;
+      line-height: 2.9em;
+      font-size: 1.5em;
+      font-family: $brand-font-family-7;
+      @media (max-width: 576px) {
+        font-size: 1.5em;
+      }
+    }
+    .subtitle {
+      margin: 0 auto 2vh;
+      font-size: 1.2rem;
+      line-height: 1.5em;
+      @media (max-width: 576px) {
+        font-size: 1.1rem;
+      }
+    }
+    .subtitle1 {
+      margin: 0 auto 2vh;
+      font-size: 1.1em;
+      line-height: 1.1em;
+      // color: $brand-color-4;
+      @media (max-width: 576px) {
+        font-size: 16px;
+      }
+    }
+    .form-control {
+      // border: 2px solid #fff;
+      height: 43px;
+      color: #000000;
+      margin-bottom: 2%;
+      font-size: 1rem;
+      border: 0px;
+      @include responsive(phone) {
+        font-size: 0.9rem;
+      }
+    }
+
+    .filter-wrapper {
+      min-height: 100%;
+      flex-flow: column wrap;
+      position: relative;
+    }
+    .keyword-wrapper {
+      width: 100%;
+      position: relative;
+    }
+    .filter-select {
+      width: 100%;
+      list-style: none;
+      font-size: 1.1em;
+      // border: 1px solid #ccc;
+      // border-top: none;
+      background-color: #f9f9f9;
+      // min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      color: rgb(105, 105, 105);
+      /*so things don't jump around*/
+      position: absolute;
+      // left: 25%;
+      /*Since we know the wrapper will always be 100% height, we can use half of 100% + half the height of the input*/
+      top: calc(50% + 10px);
+      /*for a better calculation use JS.  I'm calculating half of the body height - half the height of the input - li padding*/
+      max-height: 100px; //calc(75% - 15px);
+      overflow-y: auto;
+      background: #fff;
+      padding-left: 0px;
+      z-index: 5;
+      // display: none;
+      button {
+        background-color: #f9f9f9;
+      }
+    }
+    .filter-select-list {
+      cursor: pointer;
+      padding: 0px 10px;
+    }
+    .tags {
+      font-size: 1rem;
+      // font-style: italic;
+      color: #000000;
+      background-color: #ffffff;
+      margin-right: 10px;
+      position: relative;
+      // top: -10px;
+      border: 0;
+      display: block;
+      width: 100%;
+      text-align: left;
+      @include responsive(phone) {
+        font-size: 0.9rem;
+      }
+    }
+    .form-horizontal {
+      width: 100%;
+    }
+    .retailer-item {
+      position: relative;
+      .retailer-item-label {
+        padding: 30px;
+        width: 100%;
+        display: none;
+        font-size: 1rem;
+        border: 1px solid $brand-color-1;
+        @include responsive(phone) {
+          font-size: 0.9rem;
+        }
+        .row {
+          align-items: center;
+        }
+      }
+      .retailer-item-date {
+        padding: 10px 30px;
+        display: block;
+      }
+      .retailer-item-input {
+        padding: 30px;
+        display: block;
+        border: 1px solid $brand-color-1;
+      }
+      .btn-remove-retailer {
+        background: $brand-color-4;
+        border-radius: 52px;
+        border: none;
+        font-size: 12px;
+        float: right;
+        color: $brand-color-1;
+        padding: 6px 10px;
+        width: 100%;
+        // &:hover {
+        //   background:$brand-color-6;
+        //   color: #ffffff;
+        // }
+      }
+    }
+
+    .enter-step1 {
+      display: block;
+    }
+    // .enter-step2 {
+    //   // display: none;
+    // }
+  }
+}
+.modal-body-large-text {
+  font-size: 26px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.19;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: #000000;
+  height: 300px;
+}
+
+// .oops {
+//   color:$brand-color;
+//   font-size: 57px;
+//   font-weight: bold;
+//   font-style: normal;
+//   font-stretch: condensed;
+//   line-height: normal;
+//   letter-spacing: normal;
+//   // text-align: center;
+//   // color: #f8971d;
+// }
+// .modal-content {
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   pointer-events: auto;
+//   background-color: #fff;
+//   background-clip: padding-box;
+//   border: 1px solid rgba(0,0,0,.2);
+//   border-radius: .3rem;
+//   outline: 0;
+//   margin-top: 30vh;
+// }
+// .stores-pop-up {
+//   margin-top: 50%;
+//   @media only screen and (max-width: 767px)  {
+//     margin-top:30vh;
+//   }
+// }
+.modal-participating {
+  padding: 0px 80px;
+
+  @include responsive(phone) {
+    column-count: 1;
+    padding: 0px 20px;
+  }
+
+  &.modal-header {
+    font-size: 1em;
+    margin-top: 30px;
+  }
+
+  &.modal-body {
+    font-size: 0.8em;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+.Looks-like-this-code .text-style-1 {
+  line-height: 1.15;
+}
+
+/* tablet and phone*/
+
+@media only screen and (max-width: 767px) {
+  .multiple-unique-code-page {
+    .enter-code-confirmation-container {
+      background-color: $brand-color-2;
+      padding: 20px;
+      margin: 0px auto 20px;
+      .code-confirmation-container {
+        border: 3px solid black;
+        padding: 20px;
+        .enter-code-text {
+          font-size: 25px;
+          line-height: 30px;
+        }
+      }
+    }
+
+    .enter-code-container {
+      margin: 0.2em auto;
+      padding: 0.2em;
+      text-align: center;
+      width: 75%;
+      .enter-code-text {
+        margin: 0.25em 0;
+        line-height: 32px;
+        font-size: 1em;
+      }
+      .code-container-img {
+        display: none;
+      }
+      .enter-code-img {
+        background-color: #ffffff;
+        display: block;
+        img {
+          display: block;
+          padding: 20px;
+        }
+      }
+      .enter-the-digit {
+        width: 260px;
+        height: 153px;
+        font-size: 20px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: condensed;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+      }
+      .unique-box {
+        // background-color: black;
+        color: #ffffff;
+        .unique-text {
+          padding: 10px;
+        }
+        // .code-pad {
+        //   // padding: 2px;
+        //   border:2px solid black;
+        // }
+        .code-pad-item {
+          // padding: 0px 2px 0px 2px;
+          // margin-right: 1%;
+          // margin-bottom: 5px;
+          width: 100%;
+          input {
+            width: 100%;
+            font-size: 10vw;
+            color: $brand-color;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
+
+.input-calendar {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  input {
+    margin: 0;
+  }
+  label {
+    width: 51px;
+    margin: 0;
+    margin-left: 10px;
+    margin-bottom: 2%;
+    img {
+      cursor: pointer;
+    }
+  }
+}
+.input-calendar-mobile {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  input {
+    margin: 0;
+  }
+  label {
+    top: 0px;
+    right: 0;
+    width: 53px;
+    height: 44px;
+    position: absolute;
+    pointer-events: none;
+    background: $brand-color;
+    padding: 0 0 0 10px;
+    img {
+      cursor: pointer;
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 576px) {
+  .multiple-unique-code-page {
+    .enter-code-container {
+      width: 95%;
+      .enter-code-text {
+        font-size: 1em;
+        line-height: 22px;
+        margin-bottom: 20px;
+      }
+    }
+    .spent-form-container {
+      .retailer-item {
+        .retailer-item-label {
+          padding: 20px;
+        }
+        .retailer-item-input {
+          padding: 20px;
+        }
+        .btn-remove-retailer {
+          padding: 3px 6px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+}

@@ -1,0 +1,181 @@
+<div class="winner-page">
+  <div class="coin-anim">
+    <div class="coin2" style="left:10%;">
+      <img class="move-down-slow" src="../../../assets/img/coins/coinsmall.gif" alt="">
+    </div>
+    <div class="coin1" style="left:20%;">
+      <img class="move-down-mid" src="../../../assets/img/coins/CoinB_small.gif" alt="">
+    </div>
+    <div class="coin2" style="left:30%;">
+      <img class="move-down-slow1" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+    </div>
+    <div class="coin2" style="left:40%;">
+      <img class="move-down-slow2" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+    </div>
+    <div class="coin3 float-right" style="left:65%;">
+      <img class="move-down" src="../../../assets/img/coins/CoinC_small.gif" alt="">
+    </div>
+    <div class="coin2" style="left:90%;">
+      <img class="move-down-slow3" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+    </div>
+  </div>
+  <div class="cloud-anim">
+    <div class="cloud1 desktop" data-type="cloudtype7" style="top: 4%;" data-speed="1"></div>
+    <div class="cloud desktop" data-type="cloudtype2" style="top: 35%;" data-speed="2"></div>
+    <div class="cloud desktop" data-type="cloudtype1" style="top: 45%;" data-speed="3"></div>
+    <div class="cloud desktop" data-type="cloudtype3" style="top: 55%;" data-speed="4"></div>
+    <div class="cloud2 desktop" data-type="cloudtype5" style="top: 11%;" data-speed="5"></div>
+    <!-- <div class="cloud2 desktop" data-type="cloudtype4" style="top: 9%;" data-speed="6"></div> -->
+    <div class="cloud1 desktop" data-type="cloudtype6" style="top: 25%;" data-speed="7"></div>
+    <div class="cloud3 desktop" data-type="cloudtype8" style="top: 70%;" data-speed="8"></div>
+  </div>
+  <section class="container ">
+    <!-- <div class="divider-top-space"></div> -->
+    <div class="winner-container">
+      <div id="js-container">
+        <img #img src="{{src}}" (load)="afterLoading()" style='display: none;' />
+        <canvas #canvas_box class="canvas" id="js-canvas" width="1212" height="750">
+        </canvas>
+        <div [ngClass]="loadStyle" class="winner-bg z-i5" #wincon>
+          <div class="row">
+            <div class="col-12">
+              <div class="winner-head">
+                <img src="../../assets/img/winner.png" alt="you're a winner" class="img-responsive">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="winner-text">
+                Congratulations, you have won a {{prizeInfoName}}.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="winner-text-1">
+                Plus, you have been entered into the major draw <br>
+                for a chance to win $10,000!
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="winner-text-1">
+                Check your email for prize redemption details. <br>
+                Don’t worry, we’ll also be in touch within the next 48 hours in case you miss it.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <div class="secondarybtn btn1" (click)="anotherCode()">
+                ENTER ANOTHER CODE
+              </div>
+            </div>
+          </div>
+          <div class="row h82">
+            <div class="col-12 text-center" [ngClass]="displayStyle">
+              <div class="primarybtn btn " (click)="onDone()">
+                DONE
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="h82"></div>
+    <div class="h82"></div>
+    <div class="divider-bottom-space"></div> -->
+  </section>
+  <!-- <div class="ribbon">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <strong>Entries close 5pm, Sunday 16 September 2018.</strong>
+              </div>
+            </div>
+          </div>
+        </div> -->
+  <ng-template #participat>
+    <div class="modal-header modal-participating">
+      <div class="row">
+        <div class="col-12">
+          <img src="../../assets/img/logo.png" class="modal-logo" alt="">
+        </div>
+        <div class="col-12 mb10"></div>
+        <div class="col-12">
+          Participating Centres
+        </div>
+      </div>
+      <button type="button" class="close float-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body tc modal-participating">
+      <div class="row">
+        <div class="col-12">Entries available at participating stores within any of the following participating
+          centres.</div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-6">
+          <strong>New South Wales</strong>
+          <div>
+            Armidale Central <br>
+            Lake Haven Centre <br>
+            Lennox Village <br>
+            Nepean Village <br>
+            Riverside Plaza <br>
+          </div>
+          <br>
+          <strong>Queensland</strong>
+          <div>
+            Buranda Village <br>
+            Gympie Central <br>
+            Milton Village <br>
+            Mount Pleasant Centre <br>
+            Runaway Bay Centre <br>
+            Taigum Square <br>
+            Whitsunday Plaza <br>
+          </div>
+          <br>
+          <strong>South Australia</strong>
+          <div>
+            Castle Plaza <br>
+            Kurralta Central <br>
+          </div>
+        </div>
+        <div class="col-6">
+          <strong>Tasmania</strong>
+          <div>
+            Northgate <br>
+          </div>
+          <br>
+          <strong>Victoria</strong>
+          <div>
+            Altona Gate<br>
+            Broadmeadows Central <br>
+            Corio Central <br>
+            Mildura Central <br>
+            Mornington Central <br>
+            Oakleigh Central <br>
+            Roxburgh Village <br>
+            Sunshine Marketplace <br>
+          </div>
+          <br>
+          <strong>Western Australia</strong>
+          <div>
+            Dianella Plaza <br>
+            Halls Head Central <br>
+            Karratha City <br>
+            Livingston Marketplace <br>
+            Maddington Central <br>
+            Victoria Park Central <br>
+            Warwick Grove <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,738 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import "../../variable.scss";
+.bottomlogo {
+  img {
+    width: 100px;
+  }
+}
+.register-page {
+  margin: 0;
+  // background: url('../../assets/img/background.jpg');
+
+  .divider-top-space {
+    height: 10px;
+  }
+
+  .divider-bottom-space {
+    height: 30px;
+  }
+
+  .register-container {
+    margin: 0.3em auto 1vh;
+    // padding: 2em 2em 0; //
+    max-width: 550px;
+    // min-height: 76vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: $textalignment;
+
+    // color: $brand-color;
+    // background-color: #ffffff;
+    select {
+      border-radius: 0px;
+    }
+
+    .control-label {
+      text-align: left;
+      font-size: 22px;
+      line-height: 27px;
+      padding: 10px 0 5px;
+      color: $brand-color-1;
+    }
+
+    .form-control {
+      // border: 1px solid $form-border;
+      border-radius: 8px;
+    }
+
+    .detail {
+      // font-family: $brand-font-family-1;
+      color: #ffffff;
+      font-size: 2em;
+      line-height: 37px;
+      margin: 0.2em 0 0.2em;
+      padding: 0 0.25em;
+    }
+
+    .plus {
+      font-family: $brand-font-family-7;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      @include responsive(phone) {
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+      }
+    }
+
+    .plus1 {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      @include responsive(phone) {
+        font-size: 1.0rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    input[type="checkbox"] > .register-label-checkbox:before {
+      display: inline-block;
+    }
+
+    .register-label-checkbox {
+      display: block;
+      padding-left: 1.8em;
+      text-indent: -0.7em;
+      margin-top: -23px;
+    }
+
+    .filter-wrapper {
+      min-height: 100%;
+      flex-flow: column wrap;
+      position: relative;
+    }
+
+    .keyword-wrapper {
+      width: 100%;
+      position: relative;
+    }
+
+    #keyword:focus {
+      .filter-select {
+        // border: 1px solid #ccc;
+        // border-top: none;
+        display: block;
+      }
+    }
+
+    :not(#keyword:focus) {
+      .filter-select {
+        // border: 1px solid #ccc;
+        // border-top: none;
+        display: none;
+      }
+    }
+
+    .filter-select {
+      width: 100%;
+      list-style: none;
+      font-size: 1.1em;
+      // border: 1px solid #ccc;
+      // border-top: none;
+      background-color: #f9f9f9;
+      // min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      color: rgb(105, 105, 105);
+      /*so things don't jump around*/
+      position: absolute;
+      // left: 25%;
+      /*Since we know the wrapper will always be 100% height, we can use half of 100% + half the height of the input*/
+      top: calc(50% + 10px);
+      /*for a better calculation use JS.  I'm calculating half of the body height - half the height of the input - li padding*/
+      max-height: 100px; //calc(75% - 15px);
+      overflow-y: auto;
+      background: #fff;
+      padding-left: 0px;
+      z-index: 5;
+      display: none;
+    }
+
+    .filter-select-list {
+      cursor: pointer;
+      padding: 0px 10px;
+    }
+
+    .tags {
+      font-size: 0.9rem;
+      // font-style: italic;
+      color: #c6c6c6;
+      margin-right: 10px;
+      position: relative;
+      // top: -10px;
+    }
+
+    .register-form-container {
+      form {
+        width: 100%;
+
+        label {
+          font-weight: 500; // font-family: 'Montserrat', sans-serif;
+          font-size: 18px;
+          line-height: 21px;
+          margin-left: 2px;
+        }
+
+        .form-control {
+          //background-color: transparent;
+          // border: 3px solid $form-border;
+          height: 43px; //color: #fff;
+          color: #000;
+          margin-bottom: 2%;
+          font-size: 1em; //font-weight: 700;
+          border: 0px;
+          // border: 2px solid $brand-color-5;
+        }
+
+        // .login-container .form-control {
+        //   border-color: #47b648;
+        // }
+        // select {
+        //   //-webkit-appearance: none;
+        //   //border-top-left-radius: 0px !important;
+        //   //border-top-right-radius: 0px !important;
+        //   //border-bottom-left-radius: 0px !important;
+        //   //border-bottom-right-radius: 0px !important;
+        //   //-webkit-border-radius: 0px !important;
+        //   //border-radius: 0px;
+        //   //color: #fff;
+        // }
+        .date {
+          input {
+            border-right: 0;
+          }
+
+          > span {
+            border: 1px solid #333;
+            border-left: 0;
+            border-top-right-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+          }
+        }
+
+        .checkbox {
+          margin: 10px 0;
+
+          label {
+            font-size: 21px;
+            line-height: 24px;
+          }
+        }
+
+        input[type="checkbox"] {
+          /* Double-sized Checkboxes */
+          // -ms-transform: scale(2); /* IE */
+          // -moz-transform: scale(2); /* FF */
+          // -webkit-transform: scale(2); /* Safari and Chrome */
+          // -o-transform: scale(2); /* Opera */
+          margin: 4px 0 0; // margin-left: 7px !important;
+        }
+
+        .input-group-addon button {
+          -webkit-appearance: none;
+          outline: none;
+          border: 0;
+          background: transparent;
+        }
+
+        .input-group-addon button:hover {
+          color: inherit !important;
+        }
+
+        .set-password {
+          margin: 10px 0;
+        }
+      }
+
+      input.form-control.ng-valid.ng-not-empty.ng-dirty.ng-valid-parse.ng-touched,
+      input.form-control:focus {
+        //background: #74bad1;
+        background: #f1b4c2;
+      }
+
+      input.form-control:focus {
+        //background: #74bad1;
+        background: #fff;
+      }
+
+      input.form-control {
+        caret-color: auto;
+      }
+
+      /************checkbox ***********/
+
+      .TCcheckbox {
+        font-size: 1rem;
+        font-family: $brand-font-family;
+        // height: 80px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 2vh auto 2vh; //2vh auto 5vh
+        flex-direction: column;
+
+        // margin:15px auto 15px;
+        // @media only screen and (max-width: 1200px) {
+        //   margin:15px auto 55px;
+        // }
+        // @media only screen and (max-width: 767px) {
+        //   height: 180px;
+        // }
+
+        // @media only screen and (max-width: 576px) {
+        //   margin:15px auto 75px;
+        // }
+      }
+
+      .TCcheckbox.sub {
+        font-family: $brand-font-family;
+        // height: 80px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 2px auto;
+
+        // margin:10px auto 15px;
+        @media only screen and (max-width: 767px) {
+          // height: 110px;
+        }
+      }
+    }
+
+    .confirm-container {
+      border: 4px solid $brand-color-1;
+      background-color: transparent; //$brand-color-3; ////
+      // color: $brand-color-3;
+      padding: 10px 0 10px 30px;
+      max-width: 100%;
+      margin: 10px $marginscreenalignment;
+      font-size: 1rem;
+      line-height: 1em;
+      @include responsive(phone) {
+
+      }
+      // text-align: center;
+      .content {
+        margin: 0;
+
+        .title,
+        .value {
+          display: inline-block;
+        }
+
+        .title {
+          width: 180px;
+          // font-family: $brand-font-family-1;
+          // font-size: 0.7em;
+          text-transform: uppercase;
+          padding: 5px;
+        }
+      }
+    }
+
+    .confirm-buttons {
+      text-align: center;
+    }
+  }
+
+  input::-webkit-contacts-auto-fill-button,
+  input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+  }
+}
+
+/*rounded check box*/
+.customcheck {
+  position: relative;
+  width: 100%;
+  display: inline-flex;
+  .check-input {
+    width: 40px;
+  }
+  .check-text {
+    width: calc(100% - 40px);
+  }
+  span {
+    // margin-left: 19px;
+    // margin-right: 25px;
+  }
+
+  label {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+
+    &:after {
+      border: 2px solid #000000;
+      border-top: none;
+      border-right: none;
+      content: "";
+      height: 6px;
+      left: 6px;
+      opacity: 0;
+      position: absolute;
+      top: 7px;
+      transform: rotate(-45deg);
+      width: 12px;
+    }
+  }
+
+  input[type="checkbox"] {
+    visibility: hidden;
+
+    &:checked + label {
+      // background-color: $brand-color-3;
+      border-color: $brand-color;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.radio-inline {
+  margin-right: 10px;
+
+  .option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    transition: all 0.15s ease-out 0s;
+    background-color: #fff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2em 0.5em 0;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+
+    &:hover {
+      background: #9faab7;
+    }
+
+    &:checked {
+      background: $brand-color-1;
+
+      &::before {
+        // height: 20px;
+        // width: 20px;
+        // font-size: 12px;
+        // line-height: 21px;
+        // position: absolute;
+        // content: '✔';
+        // display: inline-block;
+        // text-align: center;
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        height: 8px;
+        width: 8px;
+        content: "";
+        background: #fff;
+        border-radius: 50%;
+      }
+
+      &::after {
+        background: $brand-color-1;
+        content: "";
+        display: block;
+        position: relative;
+        z-index: 100;
+      }
+    }
+  }
+}
+
+.option-input.radio {
+  border-radius: 50%;
+
+  &::after {
+    border-radius: 50%;
+  }
+}
+
+.smallbox label {
+  height: 20px;
+  width: 20px;
+}
+
+.smallbox label:after {
+  left: 3px;
+  top: 5px;
+}
+
+.round label {
+  border-radius: 50%;
+}
+
+.roundcorner label {
+  border-radius: 25%;
+}
+
+// - Media Queries Start - //
+/*==========  Non-Mobile (Desktop) First Method  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .register-page {
+    .divider-top-space {
+      height: 10px;
+    }
+
+    .divider-bottom-space {
+      height: 30px;
+    }
+
+    .register-container {
+      // width: 60%;
+
+      .register-form-container {
+        form .form-control {
+          margin-bottom: 1%;
+        }
+      }
+    }
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .register-page {
+    .register-container {
+      // width: 60%;
+
+    
+      .detail {
+        font-size: 2em;
+        line-height: 33px;
+        // margin: 0.5em 0 0.1em;
+      }
+
+      .ends {
+        font-size: 1em;
+        line-height: 16px;
+        // margin: 0.1em 0;
+      }
+
+      .register-form-container {
+        form .form-control {
+          margin-bottom: 1%;
+        }
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 767px) {
+  .register-page {
+    // overflow: scroll;
+    // height:100%;
+    .divider-top-space {
+      height: 10px;
+    }
+
+    .divider-bottom-space {
+      height: 50px;
+    }
+
+    .register-container {
+      // width: 60%;
+      // margin: 0 auto;
+
+      // padding: 1em;
+      // overflow-y: scroll;
+      .detail {
+        font-size: 1.5em;
+        line-height: 27px;
+        // margin: 0.3em 0;
+      }
+
+      // .plus {
+      //   font-size: 1.2em;
+      //   line-height: 20px;
+      //   // margin: 0.3em 0;
+      // }
+
+      .ends {
+        font-size: 1em;
+        line-height: 20px;
+        // margin: 0.3em 0;
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px) {
+  .register-page {
+    .divider-top-space {
+      height: 10px;
+    }
+
+    .divider-bottom-space {
+      height: 50px;
+    }
+
+    .register-container {
+      margin: 0 auto 1rem;
+      padding: 0.1em;
+      width: 100%;
+      letter-spacing: -0.5px;
+
+      .detail {
+        font-size: 1.3em;
+        line-height: 30px;
+        // margin: 0.3em 0;
+      }
+
+
+      .ends {
+        font-size: 0.9em;
+        line-height: 20px;
+        // margin: 0.3em 0;
+      }
+
+      .mandatory {
+        font-size: 14px;
+        line-height: 17px;
+        margin: 2px auto;
+      }
+
+      .register-form-container {
+        form {
+          //color: #333;
+          label {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+          }
+
+          .form-control {
+            //background-color: transparent;
+            border: 2px solid #fff; //border-radius: 0;
+            height: 47px; //color: #fff;
+            color: #000;
+            // margin-bottom: 4%;
+            font-size: 14px; //font-weight: 700;
+          }
+
+          .login-container .form-control {
+            border-color: #47b648;
+          }
+
+          // select {
+          //   //-webkit-appearance: none;
+          //   //border-top-left-radius: 0px !important;
+          //   //border-top-right-radius: 0px !important;
+          //   //border-bottom-left-radius: 0px !important;
+          //   //border-bottom-right-radius: 0px !important;
+          //   //-webkit-border-radius: 0px !important;
+          //   //border-radius: 0px;
+          //   //color: #fff;
+          // }
+          .date {
+            input {
+              border-right: 0;
+            }
+
+            > span {
+              border: 1px solid #333;
+              border-left: 0;
+              border-top-right-radius: 0px !important;
+              border-bottom-right-radius: 0px !important;
+            }
+          }
+
+          .checkbox {
+            margin: 10px 0;
+
+            label {
+              font-size: 1.3em;
+            }
+          }
+
+          input[type="checkbox"] {
+            /* Double-sized Checkboxes */
+            // -ms-transform: scale(2); /* IE */
+            // -moz-transform: scale(2); /* FF */
+            // -webkit-transform: scale(2); /* Safari and Chrome */
+            // -o-transform: scale(2); /* Opera */
+            margin: 4px 0 0; // margin-left: 7px !important;
+          }
+
+          .input-group-addon button {
+            -webkit-appearance: none;
+            outline: none;
+            border: 0;
+            background: transparent;
+          }
+
+          .input-group-addon button:hover {
+            color: inherit !important;
+          }
+
+          .set-password {
+            margin: 10px 0;
+          }
+        }
+
+        input.form-control.ng-valid.ng-not-empty.ng-dirty.ng-valid-parse.ng-touched,
+        input.form-control:focus {
+          //background: #74bad1;
+          background: #f1b4c2;
+        }
+
+        input.form-control:focus {
+          //background: #74bad1;
+          background: #fff;
+        }
+
+        input.form-control {
+          caret-color: auto;
+        }
+      }
+
+      .confirm-container {
+        padding: 10px;
+        width: 90%;
+        font-size: 16px;
+        line-height: 19px;
+
+        .content {
+          margin: 8px 0;
+
+          .title {
+            width: 120px;
+            padding: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+}
+
+// @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+//   .register-page{
+//     height: 100vw!important;
+//     width: 100vh!important;
+//     overflow-x: hidden;
+//   }
+// }

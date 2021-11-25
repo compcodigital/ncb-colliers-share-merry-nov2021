@@ -1,0 +1,58 @@
+<div class="centrepage">
+  <div class="row text-center">
+    <div class="col-12 text-center">
+      <img src="../../assets/img/header1.png" alt="" class="top-logo" /><br />
+      <img src="../../assets/img/header21.png" alt="" class="top-logo2" />
+    </div>
+  </div>
+
+  <section class="container centrepage-content">
+    <div class="row">
+      <div class="col-12 text-center">
+        <label class="control-label register-label my-3">
+          Select your centre
+        </label>
+        <div>
+          <div
+            ngbDropdown
+            class="select-states"
+            *ngFor="let company of this.companies; let i = index"
+            [attr.data-index]="i"
+          >
+            <button
+              ngbDropdownToggle
+              class="btn btn-outline-primary select-states-item"
+            >
+              <div class="centrename">
+                {{ company.state }}
+                <!-- {{ this.centreName ? this.centreName : company.state }} -->
+              </div>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="" class="select-centers">
+              <div
+                ngbDropdownItem
+                class="select-centers-item"
+                (click)="selectCentre(centre.url, centre.name)"
+                *ngFor="let centre of company.centres"
+              >
+                {{ centre.name }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row my-4">
+      <div class="col-12 text-center">
+        <button type="submit" class="primarybtn btn1" (click)="nextCentre()"> -->
+    <!-- <img
+              src="../../assets/img/loadingWheel.gif"
+              alt=""
+              [ngClass]="loadingStyle"
+            /> -->
+    <!-- NEXT
+        </button>
+      </div>
+    </div> -->
+  </section>
+</div>

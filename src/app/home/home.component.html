@@ -1,0 +1,249 @@
+<div class="home-page">
+  <div class="row">
+    <div class="col-12">
+      <div class="spend-mob d-block d-md-none text-center mb-5">
+        <img
+          src="../../assets/img/spend-win-mob-v2.png"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+      <div class="summer-web d-none d-md-block text-center">
+        <img
+          src="../../assets/img/24days-summer-web-v2.png"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+      <div class="summer-mob d-block d-md-none text-center">
+        <img
+          src="../../assets/img/24days-summer-mob.png"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="home-bg mt-4">
+    <section class="container">
+      <div class="home-container">
+        <form
+          class="form-horizontal"
+          [formGroup]="emailForm"
+          (ngSubmit)="onSubmit(emailForm.value.email)"
+          autocomplete="{{ acc }}"
+        >
+          <div class="row" *ngIf="errorMsg.message">
+            <div class="col-12 error-text">
+              {{ errorMsg.message }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="email">
+                <div [ngClass]="emailStyle">
+                  <!-- <label class="control-label">*Email Address:</label> -->
+                  <div class="row mt-2 mb-3">
+                    <div class="col-12">
+                      <div class="desc">
+                        Enter your email address here to get started
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control"
+                    formControlName="email"
+                    placeholder=""
+                    autocomplete="{{ acc }}"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12">
+              <button
+                type="submit"
+                class="primarybtn btn1"
+                [disabled]="buttonDisabled"
+              >
+                <img
+                  src="../../assets/img/loadingWheel.gif"
+                  alt=""
+                  [ngClass]="loadingStyle"
+                />
+                <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
+                NEXT
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <div class="minimun">
+              A minimum spend of $20 is required for entry. Please retain
+              receipts as proof of purchase. Entries close 11:59pm Friday 24th
+              December 2021. *<a
+                (click)="openModal(terms)"
+                class="footer-tnc-link"
+                >Terms & Conditions</a
+              >
+              apply.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<ng-template #templateAlreadyEntered>
+  <div class="modal-header">
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body modal-alert">
+    <div class="oops">
+      One entry per day. It looks like you have already entered today.
+    </div>
+    <div class="mt-4">
+      <small>Please enter again tomorrow.</small>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #serverErrorCode>
+  <div class="modal-header">
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+      [disabled]="submitted"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body modal-alert">
+    <div class="oops">Oops...</div>
+    <div class="mt-4">
+      <small>We seem to be having an issue. Please try again later.</small>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #terms>
+  <div class="modal-header tc">
+    <div class="row">
+      <div class="col-12 text-center modal-adj-head">
+        <div class="mt-3 mt-md-4">
+          <strong>TERMS AND CONDITIONS </strong>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body tc">
+    <app-terms></app-terms>
+  </div>
+</ng-template>
+
+<ng-template #participat>
+  <div class="modal-header modal-participating">
+    <div class="row">
+      <div class="col-12">
+        <img src="../../assets/img/logo.png" class="modal-logo" alt="" />
+      </div>
+      <div class="col-12 mb10"></div>
+      <div class="col-12">Participating Centres</div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body tc modal-participating">
+    <div class="row">
+      <div class="col-12">
+        Entries available at participating stores within any of the following
+        participating centres.
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-6">
+        <strong>New South Wales</strong>
+        <div>
+          Armidale Central <br />
+          Lake Haven Centre <br />
+          Lennox Village <br />
+          Nepean Village <br />
+          Riverside Plaza <br />
+        </div>
+        <br />
+        <strong>Queensland</strong>
+        <div>
+          Buranda Village <br />
+          Gympie Central <br />
+          Milton Village <br />
+          Mount Pleasant Centre <br />
+          Runaway Bay Centre <br />
+          Taigum Square <br />
+          Whitsunday Plaza <br />
+        </div>
+        <br />
+        <strong>South Australia</strong>
+        <div>
+          Castle Plaza <br />
+          Kurralta Central <br />
+        </div>
+      </div>
+      <div class="col-6">
+        <strong>Tasmania</strong>
+        <div>Northgate <br /></div>
+        <br />
+        <strong>Victoria</strong>
+        <div>
+          Altona Gate<br />
+          Broadmeadows Central <br />
+          Corio Central <br />
+          Mildura Central <br />
+          Mornington Central <br />
+          Oakleigh Central <br />
+          Roxburgh Village <br />
+          Sunshine Marketplace <br />
+        </div>
+        <br />
+        <strong>Western Australia</strong>
+        <div>
+          Dianella Plaza <br />
+          Halls Head Central <br />
+          Karratha City <br />
+          Livingston Marketplace <br />
+          Maddington Central <br />
+          Victoria Park Central <br />
+          Warwick Grove <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

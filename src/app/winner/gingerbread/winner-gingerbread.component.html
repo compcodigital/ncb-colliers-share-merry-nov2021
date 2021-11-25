@@ -1,0 +1,67 @@
+<div class="winner-page">
+  <!--  -->
+  <section class="container">
+    <!-- <div class="divider-top-space"></div> -->
+    <div class="gingerbread m-0">
+      <img src="../../../assets/img/gingerbread/gingerbreadhouse2.png" alt="gingerbreadhouse" (load)="tapVisible()">
+    </div>
+    <div class="" [ngClass]="slidingStyle">
+      <div class="winner-container">
+        <!-- <div class="row">
+          <div class="col-12">
+            <img src="../../../assets/img/gingerbread/congratulations.png" alt="">
+          </div>
+        </div> -->
+        <div class="winner-board">
+          <div class="row">
+            <div class="col-12">
+              <div class="winner-head">
+                Congratulations!
+              </div>
+            </div>
+          </div>
+          <!-- <hr> -->
+          <div class="row">
+            <div class="col-12">
+              <div class="winner-text">
+                You have won a {{prizeInfoName}}.
+                <!-- Les Nereides Gift Card $250.00 -->
+                <!-- Congratulations, you have won a  -->
+              </div>
+            </div>
+          </div>
+          <!-- <hr> -->
+          <div class="row">
+            <div class="col-12">
+              <div class="winner-text-1">
+                Please collect your Gift Card from <br> the Concierge Desk on Ground Floor <br>between 9:30am-6pm.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider-bottom-space"></div>
+    <div class="finish" [ngClass]="finishStyle">
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="primarybtn btn" (click)="onDone()">
+            FINISH
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tap" [ngClass]="tapStyle">
+      <div class="row ">
+        <div class="col-12 text-center">
+          <div class="primarybtn btn2" (click)="board()">
+            TAP HERE TO REVEAL <br> IF YOU ARE A WINNER
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="gingerbreadman" [ngClass]="manSlideStyle">
+    <img src="../../../assets/img/gingerbread/gingerbreadman2.png" alt="">
+  </div>
+</div>

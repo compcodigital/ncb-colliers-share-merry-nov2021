@@ -1,0 +1,748 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import "../../variable.scss";
+// $sucess-color: #000000;
+
+.home-page {
+  // background: url('../../assets/img/homebg.jpg');
+  // background-position: center top;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background: linear-gradient(to top, rgba(30, 87, 153, 0) 0%, rgba(41, 137, 216, 0) 61%, rgba(254, 215, 184, 1) 21%, rgba(254, 215, 184, 1) 100%);
+  .summer-web {
+  }
+  .summer-mob {
+  }
+  .divider-top-space {
+    height: 10px;
+
+    @include responsive(desktop) {
+      height: 10px;
+    }
+
+    @include responsive(pc) {
+      height: 10px;
+    }
+  }
+
+  .divider-bottom-space {
+    height: 50px;
+    display: none;
+
+    @include responsive(phone) {
+      height: 4vh;
+    }
+  }
+
+  hr {
+    border-top: 5px solid $brand-color-3;
+    margin: 0.75em auto 1em;
+    width: 5vw;
+    text-align: $textalignment;
+  }
+
+  .img-wrapper {
+    position: initial !important;
+    width: 100vw !important;
+    height: 100% !important;
+    // height: 100vh !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    // background-image: url('/assets/img/header.png'); //linear-gradient( $brand-color-op, $brand-color-op),
+    // background-position: center top;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // padding: 10px 20px;
+    //  @include responsive(pc) {
+    //    background-image:url('/assets/img/header-image.jpg');
+    //   }
+  }
+
+  .share {
+    // height: 44vh;
+
+    //   min-height: 260px;
+    //   max-height: 450px;
+    //    @include responsive(phone) {
+    //     min-height: 260px;
+    //     max-height: 280px;
+    @include responsive(phone) {
+      min-height: auto; //260px;
+      max-height: 380px;
+    }
+    //   }
+    img,
+    video {
+      // width: 350px;
+      width: 100%;
+      display: block;
+      margin: 0 $marginscreenalignment 1vh; //screen center
+      z-index: 1;
+      // max-width: 63vh;
+
+      // @include responsive(pc) {
+      //   // width: 50vh;
+      //   width: 60%;
+      // }
+
+      // @include responsive(phone) {
+      //   // width: 45vh;
+      // }
+      @include responsive(tablet) {
+        // width: 50vh;
+        width: 100%;
+        height: 100%;
+      }
+      @include responsive(phone) {
+        width: 100%;
+      }
+      @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+        width: 100%;
+      }
+    }
+
+    .bannertext {
+      position: absolute;
+      top: 20px;
+      left: 12%;
+      width: 50vh;
+      margin: 20px;
+
+      @include responsive(desktop) {
+        // width: 21vh;
+        max-width: 90%;
+      }
+
+      @include responsive(tablet) {
+        width: 45vh;
+      }
+
+      @include responsive(phone) {
+        top: 10px;
+        width: 60%;
+        margin: 0;
+        min-height: 250px;
+        max-height: 255px;
+      }
+    }
+  }
+
+  .home-bg {
+    min-height: 220px;
+    max-height: 100%;
+    // height: 42vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    // background: linear-gradient(to top, rgba(30, 87, 153, 0) 0%, rgba(41, 137, 216, 0) 56.5%, #fed7b8 21%, #fed7b8 100%);
+    //  @include responsive(desktop) {
+    // height: 40vh;
+    // background: linear-gradient(to top, rgba(30, 87, 153, 0) 0%, rgba(41, 137, 216, 0) 54, #fed7b8 21%, #fed7b8 100%);
+    // }
+    @include responsive(pc) {
+      // background: linear-gradient(to top, rgba(30, 87, 153, 0) 0%, rgba(41, 137, 216, 0) 60%, #fed7b8 21%, #fed7b8 100%);
+      min-height: 190px;
+    }
+
+    .home-container {
+      margin: 1vh auto 1vh;
+      // padding: 2em;
+      text-align: $textalignment;
+      max-width: 500px;
+
+      @include responsive(desktop) {
+        // width: 45%!important;
+        margin: 1vh auto;
+      }
+
+      @include responsive(phone) {
+        // width: 100%!important;
+      }
+
+      .bigtext {
+        font-family: $brand-font-family-7;
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        // line-height: 30px;
+        // margin: 19vh $marginscreenalignment 10px;
+        // margin-left: 20vh;
+        // margin: 19vh 0 10px 10vh;
+        // text-align: $textalignment;
+        // color: $brand-color-4;
+        @include responsive(phone) {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+        .header-image {
+          max-width: 100%;
+          width: 99%;
+          margin: 0 $marginscreenalignment;
+          @include responsive(phone) {
+            max-width: 90%;
+            width: 80%;
+          }
+          // @media only screen
+          // and (min-device-width: 1024px)
+          // and (max-device-width: 1366px)
+          // and (-webkit-min-device-pixel-ratio: 2) {
+          //      max-width: 100%;
+          //          width: 99%;
+          // }
+          &.mob {
+            display: none;
+            @include responsive(desktop) {
+              display: none;
+            }
+            @include responsive(tablet) {
+              display: none;
+            }
+            @include responsive(pc) {
+              display: none;
+            }
+            @include responsive(phone) {
+              display: block;
+            }
+          }
+          &.desk {
+            display: block;
+            @include responsive(desktop) {
+              display: block;
+            }
+            @include responsive(tablet) {
+              display: block;
+            }
+            @include responsive(pc) {
+              display: block;
+            }
+            @include responsive(phone) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .sometext {
+        // font-family: $brand-font-family-1;
+        font-size: 23px;
+        // font-weight: 700;
+        line-height: 28px;
+        margin: 2vh $marginscreenalignment 0;
+        text-align: $textalignment;
+        z-index: 1;
+
+        @include responsive(phone) {
+          font-size: 20px;
+          line-height: 25px;
+          margin: 0 $marginscreenalignment 0;
+        }
+        img {
+          max-width: 90%;
+          width: 80%;
+          margin: 0 $marginscreenalignment;
+
+          // @include responsive(desktop) {
+          //   width: 32vh; //92
+          // }
+
+          // @include responsive(phone) {
+          //   width: 32vh;
+          // }
+        }
+      }
+
+      .sometext1 {
+        font-family: $brand-font-family;
+        font-size: 24px;
+        line-height: 28px;
+        margin: 2vh $marginscreenalignment 2vh;
+        text-align: $textalignment;
+        z-index: 1;
+        letter-spacing: 0.3px;
+        font-weight: 300;
+
+        @include responsive(phone) {
+          font-size: 18px;
+          line-height: 24px;
+          margin: 0 $marginscreenalignment 2vh;
+        }
+      }
+
+      .success-msg {
+        color: $sucess-color !important; // font-weight: bold;
+
+        input,
+        select {
+          border-left: 5px solid $sucess-color !important;
+        }
+      }
+
+      .email {
+        // color: $brand-color;
+        input {
+          height: 55px;
+          // margin-bottom: 2%;
+          font-size: 1.5rem;
+          border-radius: 6px;
+          border: none;
+          // color: $brand-color;
+          // border: 1px solid $form-border;
+          // border: 2px solid $brand-color-5;
+
+          &::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            // color: $brand-color;
+            opacity: 1;
+            /*Firefox*/
+          }
+
+          // &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+          //   // color: $brand-color;
+          // }
+
+          // &::-ms-input-placeholder { /* Microsoft Edge */
+          //   // color: $brand-color;
+          // }
+          @include responsive(tablet) {
+            height: 50px;
+          }
+
+          @include responsive(phone) {
+            height: 40px;
+            padding: 3px 10px;
+            // margin-bottom: 2vh;
+            font-size: 16px;
+          }
+        }
+
+        span {
+          font-size: 1rem;
+          @include responsive(phone) {
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      // .desc {
+      //   font-size: 16px;
+      //   line-height: 24px;
+      //   // color: $brand-color-1;
+      //   margin: 1vh $marginscreenalignment;
+
+      //   @include responsive(phone) {
+      //     font-size: 12px;
+      //     line-height: 14px;
+      //     margin: 1vh $marginscreenalignment;
+      //   }
+      // }
+
+      .home-head {
+        margin: 10px;
+
+        @include responsive(phone) {
+          margin: 1vh;
+        }
+
+        img {
+          width: 50%;
+          height: auto;
+          margin: 1em auto;
+          display: flex;
+
+          @include responsive(desktop) {
+            width: 70%;
+          }
+
+          @include responsive(pc) {
+            width: 80%;
+          }
+
+          @include responsive(tablet) {
+            margin: 1em auto;
+          }
+
+          @include responsive(phone) {
+            width: 75%;
+            margin: 1vh auto;
+          }
+
+          @include responsive(smp) {
+            width: 80%;
+          }
+        }
+      }
+
+      .control-label {
+        width: 100%;
+        text-align: left;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        margin-left: 2px;
+
+        @include responsive(phone) {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+
+      // height:87vh-$main-height;
+      .give {
+        width: 75%;
+        // font-family: $brand-font-family;
+        font-size: 3.5vw;
+        line-height: 3.5vw;
+        text-align: $textalignment;
+        margin: 0.2em auto;
+
+        @include responsive(desktop) {
+          width: 70%;
+          font-size: 5vw;
+          line-height: 5vw;
+          margin: 0.2em auto;
+        }
+      }
+
+      .fontchange {
+        font-family: $brand-font-family;
+
+        @include responsive(phone) {
+          font-size: 12px;
+          line-height: 12px;
+          margin: 2vh auto;
+        }
+      }
+
+      .mid-text {
+        font-size: 1.2em;
+        margin: 0.5em 0.5em;
+
+        @include responsive(phone) {
+          margin: 1vh auto;
+        }
+
+        @include responsive(smp) {
+          margin: 0.25em auto;
+        }
+      }
+    }
+  }
+
+  .money {
+    margin: 1vh auto;
+    // color:$brand-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: $textalignment;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    padding-left: 1em;
+
+    @include responsive(desktop) {
+      font-size: 25px;
+      line-height: 30px;
+      letter-spacing: 0.5px;
+      padding-left: 1em;
+    }
+
+    @include responsive(pc) {
+    }
+
+    @include responsive(phone) {
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.5px;
+      padding-left: 1em;
+      margin: 1vh auto;
+    }
+
+    img {
+      height: auto;
+      // min-width: 120px;
+      // min-height:227px;
+      max-width: 100%;
+      max-height: 35vh;
+      width: 55vh;
+      margin: 5px auto 2vh;
+      display: flex;
+      justify-content: center;
+      // margin-top: 126px;
+
+      //  @include responsive(desktop) {
+      //   margin:6vh auto 3vh;
+      // }
+      //  @include responsive(pc) {
+      //   margin:4vh auto 4vh;
+      // }
+      @include responsive(tablet) {
+        max-width: 100%;
+        max-height: 24vh;
+        width: 38vh;
+        margin: 1vh auto;
+        display: flex;
+        justify-content: center;
+        align-content: flex-end;
+      }
+
+      @include responsive(phone) {
+        // min-height:130px;
+        // width: 23vh;
+        // max-height: 18vh;
+        // max-width: 100%;
+        margin: 1vh auto;
+      }
+
+      // iPad mini 2 in portrait & landscape
+      // @media (min-device-width : 768px) and (max-device-height : 954px) {
+      // @media (min-width : 768px) and (max-width : 1024px) {
+      //   width: 42vh;
+      // }
+    }
+
+    .img-text {
+      font-size: 24px;
+      line-height: 27px;
+      margin: 2vh auto 0;
+
+      @include responsive(tablet) {
+        font-size: 18px;
+        line-height: 21px;
+      }
+
+      @include responsive(phone) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+
+    div span {
+      display: inline-block;
+    }
+  }
+
+  .win {
+    font-size: 18px;
+    line-height: 21px;
+    text-align: $textalignment;
+    margin: 1vh auto;
+    // letter-spacing: 2px;
+    // color: $brand-color;
+    //  @include responsive(desktop) {
+    // font-size: 1.5em;
+    // line-height: 1.2em;
+    // margin: 1vh auto 3vh;
+    // width: 80%;
+    // }
+    //  @include responsive(pc) {
+    // font-size: 3vw;
+    // line-height: 4vw;
+    // }
+    @include responsive(tablet) {
+      // font-size: 24px;
+      // line-height: 40px;
+      // margin: 2.25em 0;
+      width: 100%;
+      font-size: 16px;
+      line-height: 22px;
+      margin: 1vh auto;
+    }
+    @include responsive(phone) {
+      width: 100%;
+      margin: 0.5em auto;
+      font-size: 16px;
+      line-height: 19px;
+    }
+    img {
+      width: 30%;
+      height: auto;
+      margin: 1em auto;
+      display: flex;
+
+      @include responsive(tablet) {
+        width: 50%;
+      }
+
+      @include responsive(phone) {
+        width: 60%;
+        margin: 0 auto; //screen center
+      }
+    }
+  }
+
+  .content-ribbon {
+    // height: 11.2em;
+    width: 100%;
+
+    // bottom:146px;
+    //  @include responsive(pc) {
+    // height:11.7em;
+    // }
+
+    //  @include responsive(tablet) {
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   height: 9.8em;
+    // }
+
+    //  @include responsive(phone) {
+    //   height: 7.8em;
+    //   position:absolute;
+    //   bottom:90px;
+    //   height:55px;
+    // }
+    .terms {
+      left: 10%;
+      @include responsive(phone) {
+        left: 1%;
+      }
+    }
+    .footer-logo {
+      // background: $brand-color-5;
+      a img {
+        padding: 0;
+        width: 70%;
+        max-width: 100%;
+        max-height: 60%;
+        display: block;
+        margin: 1vh auto;
+        float: right;
+        @include responsive(phone) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .desc {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    @include responsive(phone) {
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+    }
+  }
+  .minimun {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    @include responsive(phone) {
+      font-size: 0.8rem;
+      line-height: 1.3rem;
+    }
+  }
+}
+
+.modal-participating {
+  padding: 0px 80px;
+
+  @include responsive(phone) {
+    padding: 0px 20px;
+  }
+
+  &.modal-header {
+    font-size: 1em;
+    margin-top: 30px;
+  }
+
+  &.modal-body {
+    font-size: 0.8em;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+.line1 {
+  width: 100%;
+  margin: 3vh auto 1vh;
+  display: flex;
+  justify-content: center;
+
+  img {
+    display: inline-block;
+    min-height: 80px;
+
+    @include responsive(phone) {
+      min-height: 40px;
+    }
+  }
+
+  .zoomin1 {
+    max-width: 30vh;
+    height: 13vh;
+
+    @include responsive(phone) {
+      max-width: 18vh;
+      height: 8vh;
+    }
+  }
+
+  .zoomin2 {
+    max-width: 15vh;
+    height: 13vh;
+
+    @include responsive(phone) {
+      max-width: 9vh;
+      height: 8vh;
+    }
+  }
+}
+
+.line2 {
+  width: 100%;
+  margin: 1vh auto 1vh;
+  display: flex;
+  justify-content: center;
+
+  img {
+    display: inline-block;
+    min-height: 150px;
+
+    @include responsive(phone) {
+      min-height: 90px;
+    }
+  }
+
+  .zoomin3 {
+    max-width: 48vh;
+    height: 23vh;
+
+    @include responsive(phone) {
+      max-width: 31vh;
+      height: 15vh;
+    }
+  }
+}
+
+/* tablet and phone*/
+@include responsive(tablet) {
+  .home-page {
+    .home-bg {
+      .container {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@include responsive(phone) {
+  .nom-text.mr-btm {
+    margin-bottom: 30px;
+  }
+}
+
+// @media screen and (max-width:350px) {
+//   .home-page .home-bg {
+//     background: linear-gradient(to top, rgba(30, 87, 153, 0) 0%, rgba(41, 137, 216, 0) 62%, #fed7b8 21%, #fed7b8 100%);
+//   }
+// }
+
+// @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+//   .home-page .home-bg {
+//     height: 69vw!important;
+//   }
+//  }

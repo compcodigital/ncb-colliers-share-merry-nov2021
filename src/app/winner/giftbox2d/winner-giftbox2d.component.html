@@ -1,0 +1,53 @@
+<div class="winner-gift-page">
+  <section class="container">
+    <div class="boxlid" [ngClass]="giftLidStyle">
+      <div id="flip" [ngClass]="clickStyle">
+        <img class="closeit" src="../../../assets/img/giftbox2d/giftboxtop.png" alt="">
+      </div>
+    </div>
+    <div id="giftbox" (click)="opengift()" class="giftbox" #giftboxtag [ngClass]="giftStyle">
+      <div class="letter" #letter>
+        <div class="winner-gift-container paper" id="paper">
+          <div class="row">
+            <div class="col-12">
+              <div class="winner-head">
+                Congratulations!
+              </div>
+              <div class="winner-head">
+                You Have Just Won A {{prizeInfoName}}.
+                <!-- You Have Just Won A .
+                You Have Just Won A . -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="winner-text">
+                You will receive a prize confirmation email. Present your email to the Customer Service Desk to claim
+                your gift card.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <div class="primarybtn btn3" (click)="onDone()">
+                NEXT
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box" [ngClass]="boxStyle">
+        <img src="../../../assets/img/giftbox2d/giftbox.png" alt="">
+        <div class="row" [ngClass]="boxStyleBtn">
+          <div class="col-12 text-center">
+            <div class="primarybtn btn2" (click)="opengift()">
+              TAP HERE TO PLAY
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-height"></div>
+    </div><!-- End #giftbox -->
+  </section>
+</div>

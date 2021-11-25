@@ -1,0 +1,187 @@
+//variables
+@import '../../variable.scss';
+.breadcrum{
+    // background-color: $brand-color;
+    // position: absolute;
+    // top:0;
+    // left:0;
+    // right:0;
+    .status-page {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1em 0;
+        background: transparent;
+        font-family: $brand-font-family;
+
+        @include responsive(tablet) {
+          padding: 1em 0;
+        }
+        @include responsive(phone) {
+          padding: 0.7em 1em 1.5em;
+        }
+        .image {
+          position: relative;
+
+          .image-1,
+          .image-2,
+          .image-3,
+          .image-4 {
+            /*small version*/
+            // width: 45px;
+            // height: 45px;
+            /*large version*/
+            width: 36px;
+            height: 38px;
+            margin: 0 auto; //screen center
+            background-size: 100%;
+            background-repeat: no-repeat;
+
+            @include responsive(tablet) {
+              width: 35px;
+              height: 35px;
+            }
+
+            @include responsive(phone) {
+              width: 35px;
+              height: 35px;
+            }
+          }
+
+          .image-1 {
+            background-image: url($image-1);
+          }
+
+          .image-2 {
+            background-image: url($image-2);
+          }
+
+          .image-3 {
+            background-image: url($image-3);
+          }
+
+          .image-4 {
+            background-image: url($image-4);
+          }
+
+          &.active {
+            .image-1 {
+              background-image: url($activeimage-1);
+            }
+
+            .image-2 {
+              background-image: url($activeimage-2);
+            }
+
+            .image-3 {
+              background-image: url($activeimage-3);
+            }
+
+            .image-4 {
+              background-image: url($activeimage-4);
+            }
+
+
+            .title {
+              color: #FFFFFF;
+            }
+          }
+
+          .title {
+            /*small version*/
+            // position: absolute;
+            // bottom: -35px;
+            // left: -12px;
+            // width: 140px;
+            // color: #ffffff;
+            // font-size: 0.7em;
+            /*large version*/
+            position: absolute;
+            bottom: -27px;
+            left: -62px;
+            width: 164px;
+            color: $status-color;
+            font-size: 0.9em;
+            letter-spacing: -0.2px;
+            text-align: center;
+
+            @include responsive(phone) {
+              width: 50px;
+              font-size: 10px;
+              line-height: 12px;
+              bottom: -26px;
+              left: -7px;
+            }
+          }
+
+          .title:first-child {
+            background: yellow;
+          }
+        }
+
+        .borde {
+          width: 5em;
+          margin: 0 0.4em;
+          border: 1px solid #FFFFFF;
+          @include responsive(phone) {
+            width: 2em;
+          }
+        }
+      }
+      .top-logo {
+        margin-top:5vh;
+        margin-left: 1vh;
+        @include responsive(phone) {
+          margin-top:2vh;
+            }
+      }
+      .bred2 {
+        width:60%;
+        margin: 5vh $marginscreenalignment 1vh;
+        margin-left:25vh;
+        @include responsive(phone) {
+          margin-top:2vh;
+          margin-left:10vh;
+            }
+            @include responsive(tablet) {
+              margin-top:2vh;
+          margin-left:10vh;
+            }
+            @media only screen
+        and (min-device-width: 1024px)
+        and (max-device-width: 1366px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          margin-top:2vh;
+          margin-left:10vh;
+      }
+    }
+      .bred3 {
+        width:50%;
+        float: right;
+        @include responsive(phone) {
+         width:60%;
+            }
+      }
+      // .side-logo {
+      //   width: 60%;
+      //   margin-top: 4vh;
+      //   margin-left: 20vh;
+      //   @include responsive(tablet) {
+      //     margin-left: 3vh;//4vh
+      //   }
+      //   @include responsive(phone) {
+      //     margin-left: 3vh;
+      //   }
+      //   @media only screen and (min-width : 1400px)  {
+      //    // margin-left: 7vh;
+      //   }
+      //   @media only screen
+      //   and (min-device-width: 1024px)
+      //   and (max-device-width: 1366px)
+      //   and (-webkit-min-device-pixel-ratio: 2) {
+      //     margin-left: 7vh;
+      //   }
+      // }
+
+}

@@ -1,0 +1,249 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import '../../../variable.scss';
+
+.winner-safelocker-page {
+  .winner-safelocker-container {
+    margin-top: 2vh;
+    //   min-height: 92vh;
+    .winner-container {
+      display: none;
+      text-align: center;
+      width: 480px;
+      height: 450px;
+      margin:0 22%;
+      padding: 5em 0 0;
+      letter-spacing: -0.4%;
+      background-color: transparent;
+      color: $brand-color-3;
+      position: relative;
+
+      .winner-head {
+        height: auto;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 40px;
+        line-height: 40px;
+        font-weight: 700;
+        font-family: $brand-font-family-7;
+
+        img {
+          width: 60%;
+          margin:0 auto 1vh;
+        }
+      }
+
+      hr {
+        border-top: 2px dotted #000000;
+        margin: 1rem auto;
+        width: 90%;
+        text-align: center;
+      }
+
+      .winner-text {
+        // width:75%;
+        margin: 1rem auto;
+        line-height: 35px;
+        font-size: 30px;
+      }
+
+      .winner-text-1 {
+        margin: 5px auto;
+        line-height: 30px;
+        font-size: 25px;
+      }
+      // .btn1{
+      //   width:400px;
+      // }
+
+      a {
+        color: #ffffff;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .perspective {
+      width:747px;
+      height: 771px;
+      margin: 0px auto;
+      perspective:2100;
+      -webkit-perspective: 2100;
+      border-radius: 3px;
+      box-sizing: border-box;
+      position: relative;
+
+
+      img {
+        display: block;
+        margin: auto;
+        // width: 100%;
+      }
+    }
+
+    .thumb {
+      // left:13%;
+      position: absolute;
+      box-sizing: border-box;
+      border-radius: 3px;
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, .0) inset;
+      transition: 1s transform linear;
+      transform-origin: left;
+      cursor: pointer;
+      background: url('../../../assets/img/safe/safedoor.png') no-repeat;
+      background-size: cover;
+      width: 747px;
+      height: 771px;
+      z-index: 1;
+    }
+
+    
+    .thumb1 {
+      // left:13%;
+      position: absolute;
+      box-sizing: border-box;
+      border-radius: 3px;
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, .0) inset;
+      transition: 3s transform linear;
+      transform-origin: left;
+      cursor: pointer;
+      background: url('../../../assets/img/safe/frameopen.png') no-repeat;
+      background-size: cover;
+      background-position: center center;
+      width: 747px;
+      height: 771px;
+      z-index: 1;
+    }
+    .frame{
+      background: url("../../../assets/img/safe/safeframe_coins.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    .frame1{
+      background: url("../../../assets/img/safe/frameopen.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    .dissolve{
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
+    }
+    .thumbOpened {
+      transform: rotateY(-90deg);
+      transform-origin:120px;
+      transform-style: preserve-3d;
+      transition: 2s linear;//2s
+      
+    }
+    .thumbOpenDoor{
+      background: url('../../../assets/img/safe/safeopen.png') no-repeat;
+      // transition: .5s linear;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 992px) {
+
+}
+
+/* tablet and phone*/
+@media only screen and (max-width: 767px) {
+  .winner-safelocker-page {
+    .winner-safelocker-container {
+      padding: 0;
+      .winner-container {
+        width: 55%;
+        height: 300px;
+        padding:0;
+        margin: 0 27%;
+        .col-12{
+          padding:0 2px;
+        }
+        .winner-head {
+          margin: 33px auto 2px;
+          font-size: 18px;
+          line-height: 20px;
+        }
+
+        hr {
+          margin: 1em auto;
+        }
+
+        .winner-text {
+          margin: 2px auto;
+          font-size: 15px;
+          line-height: 19px;
+        }
+
+        .winner-text-1 {
+          margin: 2px auto;
+          font-size: 13px;
+          line-height: 16px;
+          small{
+            font-size: 11px;
+            line-height: 15px;
+          }
+        }
+        .btn1,.btn2{
+          margin: 5px auto;
+          width: 200px;
+          padding: 5px 10px;
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+      .perspective {
+        width:320px;
+        height: 450px;
+      }
+      
+      .thumb {
+        background: url('../../../assets/img/safe/win_safedoor_mobile.png') no-repeat;
+        background-size: cover;
+        width: 320px;
+        height: 450px;
+        z-index: 1;
+      }
+  
+      
+      .thumb1 {
+        background: url('../../../assets/img/safe/win_frameopen_mobile.png') no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 320px;
+        height: 450px;
+        z-index: 1;
+      }
+      .frame{
+        background: url("../../../assets/img/safe/win_safeframe_mobile_coins.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .frame1{
+        background: url("../../../assets/img/safe/win_frameopen_mobile.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .thumbOpenDoor{
+        background: url('../../../assets/img/safe/safeopen_mobile.png') no-repeat;
+        // transition: .5s linear;
+      }
+    }
+
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 580px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {}

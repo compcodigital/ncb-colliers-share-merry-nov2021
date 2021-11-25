@@ -1,0 +1,64 @@
+<div class="thankyou-page">
+  <!--  -->
+  <section class="container">
+    <!-- <div class="divider-top-space"></div> -->
+    <div class="gingerbread m-0">
+      <img src="../../../assets/img/gingerbread/gingerbreadhouse2.png" alt="gingerbreadhouse"  (load)="tapVisible()">
+    </div>
+    <div class="" [ngClass]="slidingStyle">
+      <div class="thankyou-container">
+        <!-- <div class="row">
+          <div class="col-12">
+            <img src="../../../assets/img/gingerbread/betterluck.png" alt="">
+          </div>
+        </div> -->
+        <div class="thankyou-board">
+          <div class="row">
+            <div class="col-12">
+              <div class="thankyou-head">
+                You are not an instant winner.
+              </div>
+            </div>
+          </div>
+          <!-- <hr> -->
+          <div class="row">
+            <div class="col-12">
+              <div class="thankyou-text">
+                Thank you for signing <br> up to our newsletter.
+              </div>
+            </div>
+          </div>
+          <!-- <hr> -->
+          <div class="row">
+            <div class="col-12">
+              <div class="thankyou-text-1">
+                Don’t forget to take a sneak peak inside the <br> Gingerbread Village.<br>
+                30 November – 24 December <br> 9:00am – 8:15pm
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider-bottom-space"></div>
+    <div class="finish" [ngClass]="finishStyle">
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="primarybtn btn" (click)="onDone()">
+            FINISH
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tap" [ngClass]="tapStyle">
+      <div class="row ">
+        <div class="col-12 text-center">
+          <div class="primarybtn btn2" (click)="board()">
+            TAP HERE TO REVEAL <br> IF YOU ARE A WINNER
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

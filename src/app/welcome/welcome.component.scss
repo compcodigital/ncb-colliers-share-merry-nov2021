@@ -1,0 +1,29 @@
+//variables
+@import '../../variable.scss';
+
+.share {
+  img {
+    width: 100%;
+    display: block;
+    margin: 0 $marginscreenalignment 1vh; //screen center
+    z-index: 1;
+
+    @media (max-width: 1200px) {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+  }
+}
+.bigtext {
+    width:80%;
+    margin: 1vh $marginscreenalignment 1vh;
+    text-align: $textalignment;
+
+    img {
+      width: 100%;
+    }
+  }

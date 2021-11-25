@@ -1,0 +1,128 @@
+<div class="winner-page">
+  <!-- <div class="app-content-wrapper m-0">
+  </div> -->
+  <section class="container">
+    <div class="divider-top-space"></div>
+    <div class="winner-container " [@fadeIn]>
+      <!-- <div class="row">
+        <div class="col-12">
+          <div class="winner-head">
+            <img src="../../assets/img/winner.png" alt="">
+          </div>
+        </div>
+      </div> -->
+      <!-- <hr> -->
+      <div class="row">
+        <div class="col-12">
+          <div class="winner-text">
+            Congratulations, you’ve won a {{prizeInfoName}}.
+            <!-- Congratulations, you have won a  -->
+          </div>
+        </div>
+      </div>
+      <!-- <hr> -->
+      <div class="row">
+        <div class="col-12">
+          <div class="winner-text-1">
+            Plus, you have been entered into the draw for your chance to win 1 of the 6 weekly prizes.
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-12">
+          <div class="winner-text-2">
+              You have also been entered into the major prize draw for a chance to win a Flight & Dining experience at Levantine Hill.
+            <a (click)="openModal(participat)">participating store</a> for more chances to win!
+          </div>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="secondarybtn btn1" (click)="onDone()">
+            DONE
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-12 text-center">
+            <div class="fourthbtn btn2" (click)="anotherCode()">
+              ENTER ANOTHER CODE
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <!-- <div class="divider-bottom-space"></div> -->
+</div>
+<!-- <div class="ribbon">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <strong>Entries close 5pm, Sunday 16 September 2018.</strong>
+      </div>
+    </div>
+  </div>
+</div> -->
+<ng-template #participat>
+  <div class="modal-header">
+    PARTICIPATING STORES
+    <button type="button" class="close float-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Entries available at participating stores within any of the following Vicinity shopping centres.
+    <div class="two-col">
+      <ng-container>
+        <div class="mr-btm">
+          <strong>New South Wales</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{Lscenters.website}}" target="_blank">
+              <div *ngIf="Lscenters.state==='NSW'">{{Lscenters.name}}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Queensland</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{Lscenters.website}}" target="_blank">
+              <div *ngIf="Lscenters.state==='QLD'">{{Lscenters.name}}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>South Australia</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{Lscenters.website}}" target="_blank">
+              <div *ngIf="Lscenters.state==='SA'">{{Lscenters.name}}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Tasmania</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{Lscenters.website}}" target="_blank">
+              <div *ngIf="Lscenters.state==='TAS'">{{Lscenters.name}}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Victoria</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{Lscenters.website}}" target="_blank">
+              <div *ngIf="Lscenters.state==='VIC'">{{Lscenters.name}}</div>
+            </a>
+          </div>
+        </div>
+        <div class="mr-btm">
+          <strong>Western Australia</strong>
+          <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+            <a href="{{Lscenters.website}}" target="_blank">
+              <div *ngIf="Lscenters.state==='WA'">{{Lscenters.name}}</div>
+            </a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>

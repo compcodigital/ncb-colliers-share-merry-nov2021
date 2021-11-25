@@ -1,0 +1,169 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import '../../../variable.scss';
+
+.thankyou-page {
+
+  //   height: 850px;
+
+  .slidedown {
+    -webkit-animation: slidedown 2s ease-in;
+    animation: slidedown 2s ease-in;
+    -webkit-animation-fill-mode: initial;
+    animation-fill-mode: initial;
+
+  }
+
+  @keyframes slidedown {
+    0% {
+      transform: translateY(-100vh);
+      z-index: 2;
+    }
+
+    100% {
+      transform: translateY(0%);
+      z-index: 2;
+    }
+  }
+
+  @-webkit-keyframes slidedown {
+    0% {
+      transform: translateY(-100vh);
+      z-index: 2;
+    }
+
+    100% {
+      transform: translateY(0%);
+      z-index: 2;
+    }
+  }
+
+  .gingerbread {
+    img {
+      width: 100%;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+  }
+
+  .thankyou-container {
+    text-align: center;
+    margin: 0 auto 2vh;
+    padding: 0px;
+    letter-spacing: -0.4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../assets/img/gingerbread/displayboard.png'); //linear-gradient( $brand-color-op, $brand-color-op),
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $brand-color-1;
+    width: 630px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    .thankyou-board {
+      position: relative;
+      color: $brand-color;
+      padding: 50px;
+
+      .thankyou-head {
+        height: auto;
+        text-align: center;
+        margin: 5vh auto 1vh;
+        font-size: 35px;
+        line-height: 38px;
+        font-family: $brand-font-family-3;
+
+      }
+
+      .thankyou-text {
+        margin: 1vh auto;
+        line-height: 34px;
+        font-size: 28px;
+        // font-family: $brand-font-family-3;
+      }
+
+      .thankyou-text-1 {
+        margin: 1vh auto;
+        line-height: 27px;
+        font-size: 22px;
+      }
+    }
+  }
+
+  .finish {
+    margin: 3vh auto;
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+  }
+
+  .tap {
+    margin: 3vh auto;
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {}
+
+@media only screen and (max-width: 992px) {
+  .thankyou-page {
+    .thankyou-container {
+      .thankyou-head {
+        font-size: 32px;
+        line-height: 36px;
+      }
+
+      .thankyou-text {
+        line-height: 32px;
+        font-size: 27px;
+      }
+    }
+  }
+}
+
+/* tablet and phone*/
+@media only screen and (max-width: 767px) {
+  .thankyou-page {
+
+    .thankyou-container {
+
+      .thankyou-head {
+        font-size: 24px;
+        line-height: 28px;
+
+      }
+
+      .thankyou-text {
+        font-size: 18px;
+        line-height: 21px;
+      }
+
+      .thankyou-text-1 {
+        font-size: 16px;
+        line-height: 19px;
+      }
+
+    }
+  }
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px) {}

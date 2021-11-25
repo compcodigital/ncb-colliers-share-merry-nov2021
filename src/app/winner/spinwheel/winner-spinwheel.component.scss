@@ -1,0 +1,321 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import '../../../variable.scss';
+
+.winner-spinwheel-page {
+  margin: 0;
+
+  // background-color: #000;
+  // background: url('../../../assets/img/thankyoubg.png') no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  // // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  .img-wrapper {
+    position: initial !important;
+    width: 100%;
+    height: 100% !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    margin: 0 auto;
+    text-align: center;
+    // -webkit-overflow-scrolling: touch;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    .share {
+      // width: 100%;
+
+      img {
+        // width: 350px;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        // margin: 2vh $marginscreenalignment 1vh; //screen center
+        z-index: 1;
+
+        @media (max-width: 1200px) {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        @media (max-width: 576px) {
+          width: 100%;
+          max-width: 100%;
+        }
+
+      }
+
+      .wheel {
+        width: 100%;
+        // max-width: 550px;
+        height: inherit;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        height: 550px;
+        @media (max-width: 576px) {
+          height: 400px;
+        }
+        img {
+          width: auto;
+          position: absolute;
+          max-height:500px;
+          vertical-align: middle;
+          @media (max-width: 576px) {
+            width: 80%; 
+
+          }
+        }
+
+        .pointer,
+        .spinword {
+          box-sizing: border-box;
+          z-index: 5;
+        }
+
+        .spin {
+          margin: 6vh auto 0;
+          @media screen and (max-width:768px) {
+            margin:4vh auto 0;
+          }
+          @media (max-width: 576px) {
+            margin: 4vh auto 0;
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .overlapcontainer {
+    border: 3px solid $brand-color-1;
+    background-color: $brand-color-3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%);
+    z-index: 5;
+    margin: 0 auto;
+    width: 65%;
+    // height:500px;
+    max-width: 600px;
+    display: none;
+  }
+
+  .winner-container {
+    text-align: center!important;
+    margin: 0.5em auto 1em;
+    padding: 1em 0;
+    letter-spacing: -0.4%;
+    height:550px;
+    // position: relative;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // background-color: $brand-color;
+    // -webkit-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // -moz-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // border:4px solid white;
+    color: $black;
+
+    .winner-head {
+      height: auto;
+      text-align: center;
+      margin: 1vh auto;
+      font-size: 5vw;
+      line-height: 5vw;
+      color: $brand-color-1;
+
+      // font-family: $brand-font-family1;
+      img {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+
+    hr {
+      border-top: 2px dotted #000000;
+      margin: 1rem auto;
+      width: 80%;
+      text-align: center;
+    }
+
+    .winner-text {
+      // width:75%;
+      margin: 2vh auto;
+      line-height: 30px;
+      font-size: 26px;
+      // font-style: italic;
+      // font-family: $brand-font-family1;
+    }
+
+    .winner-text-1 {
+      width: 100%;
+      margin: 10px auto;
+      line-height: 30px;
+      font-size: 22px;
+    }
+
+    .winner-text-2 {
+      font-size: 1em;
+      line-height: 21px;
+      margin: 1rem auto;
+    }
+
+    a {
+      color: #ffffff;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  // .winner-spinwheel-page {
+  //   // min-height:97vh;
+  //   height: 740px;
+
+  //   .winner-container {
+  //     // min-height:66vh;
+  //     width: 90%;
+  //   }
+  // }
+}
+
+@media only screen and (max-width: 992px) {
+  .winner-spinwheel-page {
+    .winner-container {
+      // margin: 1em auto 1em;
+
+      .winner-head {
+        margin: 1vh auto;
+        font-size: 5vw;
+        line-height: 5vw;
+      }
+
+      hr {
+        margin: 0.5rem auto;
+      }
+
+      // .winner-text {
+      //   width: 75%;
+      //   line-height: 30px;
+      //   font-size: 27px;
+      // }
+    }
+  }
+}
+
+/* tablet and phone*/
+@media only screen and (max-width: 767px) {
+  .winner-spinwheel-page {
+    // height: 605px;
+
+    .winner-container {
+      margin: 0.2em auto 1em;
+      padding: 1em 0;
+      // width: 90%;
+      // height: 600px;
+      // min-height: 65vh;
+      // overflow-wrap: break-word;
+      // word-wrap: break-word;
+
+      .winner-head {
+        margin: 1vh auto;
+        font-size: 7vw;
+        line-height: 7vw;
+      }
+
+      hr {
+        margin: 0.25rem auto;
+      }
+
+      // .winner-text {
+      //   width: 75%;
+      //   margin: 0.25rem auto;
+      //   line-height: 30px;
+      //   font-size: 27px;
+      // }
+
+      // .winner-text-1 {
+      //   margin: 1em 1em 0 1em;
+      // }
+    }
+  }
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px) {
+  .winner-spinwheel-page {
+    // height: 480px;
+
+    .winner-container {
+      margin: 1vh auto;
+      padding: 1vh 0;
+      width: 100%;
+      height: 100%;
+
+      // min-height: 62vh;
+      .winner-head {
+        width: 100%;
+        height: auto;
+        min-height: 30px;
+        text-align: center;
+        margin: 1vh auto;
+        font-size: 8vw;
+        line-height: 8vw;
+
+        img {
+          width: 65%;
+        }
+      }
+
+      hr {
+        margin: 0.2em auto;
+      }
+
+      .winner-text {
+        width: 100%;
+        margin: 1vh auto;
+        font-size: 18px;
+        line-height: 21px;
+      }
+
+      .winner-text-1 {
+        margin: 1em auto;
+        font-size: 16px;
+        line-height: 19px;
+      }
+
+      .winner-text-2 {
+        margin: 0.25rem auto;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .winner-spinwheel-page {
+    .winner-container {
+      margin: 0.4em auto;
+      padding: 0.25em;
+      width: 100%;
+    }
+  }
+}

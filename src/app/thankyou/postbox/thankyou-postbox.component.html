@@ -1,0 +1,54 @@
+<div class="thankyou-post-page">
+  <section class="container">
+    <div class="tap row z-20" [ngClass]="boxStyleBtn">
+      <div class="col-12 text-center">
+        <div class="primarybtn btn2" (click)="openpost()">
+          TAP HERE TO PLAY
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container-fluid">
+    <div id="postbox" (click)="openpost()" class="postbox" [ngClass]="postStyle">
+      <div class="letter" #letter>
+        <div class="thankyou-post-container paper" id="paper" [ngClass]="paperStyle">
+          <div class="row">
+            <div class="col-12">
+              <div class="thankyou-head">
+                Better Luck Next Time
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="thankyou-text">
+                You have been entered into the daily major prize draw for the chance to win one of 12 prizes.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <div class="secondarybtn btn4" (click)="onDone()">
+                DONE
+              </div>
+            </div>
+          </div>
+          <div class="row" [ngClass]="flipStyle">
+            <div class="col-12 text-center">
+              <div class="fourthbtn btn4" (click)="anotherCode()">
+                ENTER ANOTHER CODE
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-box" [ngClass]="boxStyle">
+        <div class="box" id="slide" [ngClass]="slideStyle">
+          <div class="box-cover">
+            <img [ngClass]="boxMoveStyle" src="{{src}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

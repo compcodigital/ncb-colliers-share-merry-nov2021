@@ -1,0 +1,315 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import '../../../variable.scss';
+
+.thankyou-spinwheel-page {
+  margin: 0;
+
+  // background-color: #000;
+  // background: url('../../../assets/img/thankyoubg.png') no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  // // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  .img-wrapper {
+    position: initial !important;
+    width: 100%;
+    height: 100% !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    margin: 0 auto;
+    text-align: center;
+    // -webkit-overflow-scrolling: touch;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    .share {
+      // width: 100%;
+
+      img {
+        // width: 350px;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        // margin: 2vh $marginscreenalignment 1vh; //screen center
+        z-index: 1;
+
+        @media (max-width: 1200px) {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        @media (max-width: 576px) {
+          width: 100%;
+          max-width: 100%;
+        }
+
+      }
+
+      .wheel {
+        width: 100%;
+        // max-width: 550px;
+        height: inherit;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        height: 550px;
+        @media (max-width: 576px) {
+          height: 400px;
+        }
+        img {
+          width: auto;
+          position: absolute;
+          max-height:500px;
+          vertical-align: middle;
+          @media (max-width: 576px) {
+            width: 80%; 
+
+          }
+        }
+
+        .pointer,
+        .spinword {
+          box-sizing: border-box;
+          z-index: 5;
+        }
+
+        .spin {
+          margin: 6vh auto 0;
+          @media screen and (max-width:768px) {
+            margin:4vh auto 0;
+          }
+          @media (max-width: 576px) {
+            margin: 4vh auto 0;
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .overlapcontainer {
+    border: 3px solid $brand-color-1;
+    background-color: $brand-color-3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%);
+    z-index: 5;
+    margin: 0 auto;
+    width: 65%;
+    // height:500px;
+    max-width: 600px;
+    display: none;
+  }
+
+
+
+  .thankyou-container {
+    text-align: center!important;
+    margin: 0.5em auto 1em;
+    padding: 1em 0;
+    letter-spacing: -0.4%;
+    height:550px;
+    // position: relative;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // background-color: $brand-color;
+    // -webkit-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // -moz-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // border: 4px solid white;
+    color: $brand-color;
+
+    .thankyou-head {
+      height: auto;
+      text-align: center;
+      margin: 1vh auto;
+      font-size: 4vw;
+      line-height: 4vw;
+      font-weight: 700;
+      color: $brand-color-1;
+
+      // font-family: $brand-font-family1;
+      img {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+
+    hr {
+      border-top: 2px dotted #000000;
+      margin: 1rem auto;
+      width: 90%;
+      text-align: center;
+    }
+
+    .thankyou-text {
+      // width:75%;
+      color: $black;
+      margin: 2vh auto;
+      line-height: 30px;
+      font-size: 24px;
+    }
+
+    .thankyou-text-1 {
+      width: 100%;
+      margin: 10px auto;
+      line-height: 45px;
+      font-size: 36px;
+
+      img {
+        margin: 0;
+        text-align: left;
+      }
+    }
+
+    a {
+      color: #ffffff;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  // .thankyou-spinwheel-page {
+
+  //   // min-height:97vh;
+  //   // height:740px;
+  //   .thankyou-container {
+  //     // min-height:66vh;
+  //     width: 100%;
+  //   }
+  // }
+}
+
+@media only screen and (max-width: 992px) {
+  .thankyou-spinwheel-page {
+    .thankyou-container {
+
+      // margin: 10vh auto;
+      .thankyou-head {
+        margin: 1vh auto;
+        font-size: 5vw;
+        line-height: 5vw;
+      }
+
+      // .thankyou-text {
+      //   width: 100%;
+      //   margin: 10px auto;
+      //   line-height: 33px;
+      //   font-size: 30px;
+      // }
+
+      // .thankyou-text-1 {
+      //   margin: 10px;
+      //   line-height: 1.5em;
+      //   font-size: 1.2em;
+      // }
+    }
+  }
+}
+
+/* tablet and phone*/
+@media only screen and (max-width: 767px) {
+  .thankyou-spinwheel-page {
+
+    // height:515px;
+    .thankyou-container {
+      margin: 0.2rem auto;
+      padding: 1em 0;
+      // width: 90%;
+
+      // min-height: 65vh;
+      // overflow-wrap: break-word;
+      // word-wrap: break-word;
+      .thankyou-head {
+        margin: 1vh auto;
+        font-size: 7vw;
+      }
+
+      hr {
+        margin: 1em auto;
+      }
+
+      // .thankyou-text {
+      //   // width: 75%;
+      //   margin: 0.5em auto;
+      //   line-height: 34px;
+      //   font-size: 1.2em;
+      // }
+
+      // .thankyou-text-1 {
+      //   margin: 1em 1em 0 1em;
+      //   line-height: 20px;
+      //   font-size: 1.2em;
+      // }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px) {
+  .thankyou-spinwheel-page {
+
+    // height:480px;
+    .thankyou-container {
+      margin: 1vh auto;
+      padding: 1vh 0;
+      width: 100%;
+      height: 100%;
+
+      // min-height: 62vh;
+      .thankyou-head {
+        width: 100%;
+        height: auto;
+        min-height: 30px;
+        text-align: center;
+        margin: 1vh auto;
+        font-size: 8vw;
+        line-height: 8vw;
+      }
+
+      hr {
+        margin: 0.2em auto;
+      }
+
+      .thankyou-text {
+        width: 100%;
+        margin: 1vh auto;
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+      .thankyou-text-1 {
+        margin: 1em auto;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .thankyou-spinwheel-page {
+    .thankyou-container {
+      margin: 0.25em auto;
+      padding: 0.25em 0;
+      width: 100%;
+    }
+  }
+}

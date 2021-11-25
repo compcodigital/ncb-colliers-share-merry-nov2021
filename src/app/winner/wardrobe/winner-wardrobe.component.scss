@@ -1,0 +1,330 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import '../../../variable.scss';
+.winner-wardrobe-page{
+//   height: 850px;
+  // background: url('../../assets/img/background.jpg');
+  .winner-container {
+    text-align: center;
+    width: 70%;
+    // height: 700px;
+    // min-height:65vh;
+    margin: 1em auto 1em;
+    padding: 1em;
+    letter-spacing: -0.4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background-color: $brand-color-3;
+    // -webkit-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // -moz-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // border:4px solid white;
+    color: $brand-color;
+    position: relative;
+    .winner-head {
+      height: auto;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 70px;
+      line-height: 70px;
+      font-family: $brand-font-family-7;
+      img{
+        width:75%;
+      }
+    }
+    hr{
+      border-top: 2px dotted #000000;
+      margin:1rem auto;
+      width:80%;
+      text-align: center;
+    }
+    .winner-text {
+      // width:75%;
+      margin: 1em auto;
+      line-height: 34px;
+      font-size: 2em;
+      // font-style: italic;
+      // font-family: $brand-font-family1;
+    }
+
+    .winner-text-1 {
+      margin: 1rem auto;
+      line-height: 1.1em;
+      font-size: 1.2em;
+    }
+    .winner-text-2 {
+      font-size: 1em;
+      line-height: 21px;
+      margin: 1rem auto;
+    }
+    a {
+      color: #ffffff;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+  .perspective {
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    perspective: 450;
+    -webkit-perspective: 450;
+    border-radius: 3px;
+    box-sizing: border-box;
+    position: relative;
+    background-color: $brand-color-3;
+    img {
+      display: block;
+      margin: auto;
+      width: 100%;
+    }
+  }
+
+  .thumb {
+    width: 39%;
+    height: auto;
+    // top: 9.6%;
+    left: 0;
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, .0) inset;
+    transition: 1s transform linear;
+    transform-origin: left;
+    cursor: pointer;
+    background: url('../../../assets/img/wardrobe/leftdoor1140pxX650px.png') no-repeat;
+    background-size: contain;
+    width: 571px;
+    height: 651px;
+    z-index: 1;
+    // width: 100%;
+    // height: auto;
+    // padding-top:114%;
+  }
+
+  .thumb1 {
+    width: 39%;
+    height: auto;
+    // top: 9.6%;
+    right: 0;
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: 0 10px 0 0 rgba(255, 255, 255, .0) inset;
+    transition: 1s transform linear;
+    transform-origin: right;
+    cursor: pointer;
+    background: url('../../../assets/img/wardrobe/rightdoor1140pxX650px.png') no-repeat;
+    background-size: contain;
+    width: 571px;
+    height: 651px;
+    z-index: 1;
+  }
+
+  .thumbOpened {
+    transform: rotateY(-90deg);
+    transition: .5s linear;
+  }
+
+  .thumbOpened1 {
+    transform: rotateY(90deg);
+    transition: .5s linear;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .winner-wardrobe-page{
+    // min-height:97vh;
+    // height:740px;
+    // .winner-container {
+    // //   // min-height:66vh;
+    // //   width:90%;
+    // }
+    
+    .thumb {
+        background: url('../../../assets/img/wardrobe/leftdoor940pxX650px.png') no-repeat;
+        background-size: contain;
+        width: 471px;
+        height: 651px;
+      }
+  
+      .thumb1 {
+        background: url('../../../assets/img/wardrobe/rightdoor940pxX650px.png') no-repeat;
+        background-size: contain;
+        width: 471px;
+        height: 651px;
+      }
+  }
+}
+@media only screen and (max-width: 992px) {
+  .winner-wardrobe-page{
+    .winner-container {
+      // margin: 1em auto 1em;
+      padding: 1.6em 1em;
+        width: 100%;
+      .winner-head {
+        margin: 10px auto;
+        font-size: 50px;
+        line-height:50px;
+      }
+      hr{
+        margin:0.5rem auto;
+      }
+      .winner-text {
+        // width:75%;
+        line-height: 30px;
+        font-size: 27px;
+        margin:0.5em auto;
+      }
+      .winner-text-1{
+          margin:0.5em auto;
+      }
+      .winner-text-2{
+        margin:0.5em auto;
+    }
+    }
+    .thumb {
+        background: url('../../../assets/img/wardrobe/leftdoor720X547.png') no-repeat;
+        background-size: contain;
+        width: 361px;
+        height: 547px;
+      }
+  
+      .thumb1 {
+        background: url('../../../assets/img/wardrobe/rightdoor720X547.png') no-repeat;
+        background-size: contain;
+        width: 361px;
+        height: 547px;
+      }
+  }
+}
+
+/* tablet and phone*/
+@media only screen and (max-width: 767px) {
+  .winner-wardrobe-page{
+    // height:605px;
+    .winner-container {
+      padding: 1.8em 1em;
+      width: 100%;
+      height:100%;
+      // min-height: 62vh;
+      .winner-head {
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        text-align: center;
+        margin: 0 auto;
+        img{
+          width:65%;
+        }
+      }
+      hr{
+        margin:0.2em auto;
+      }
+      .winner-text {
+        width:90%;
+        margin: 0.5em auto;
+        font-size:18px;
+        line-height: 21px;
+      }
+      .winner-text-1 {
+        margin: 0.25rem auto;
+        font-size:16px;
+        line-height: 19px;
+      }
+      .winner-text-2 {
+        margin: 0.25rem auto;
+        font-size:14px;
+        line-height: 17px;
+      }
+    }
+    .perspective {
+        width: 450px;
+      }
+  
+      .thumb {
+        background: url('../../../assets/img/wardrobe/leftdoor450X450.png') no-repeat;
+        background-size: contain;
+        width: 225px;
+        height: 450px;
+      }
+  
+      .thumb1 {
+        background: url('../../../assets/img/wardrobe/rightdoor450X450.png') no-repeat;
+        background-size: contain;
+        width: 225px;
+        height: 450px;
+      }
+  }
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 576px) {
+  .winner-wardrobe-page{
+    // height:480px;
+    .winner-container {
+    //   margin: 0.4rem auto;
+      padding: 1.8em 1em;
+      width: 100%;
+      height:100%;
+      // min-height: 62vh;
+      .winner-head {
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        text-align: center;
+        margin: 0 auto;
+        img{
+          width:65%;
+        }
+      }
+      hr{
+        margin:0.2em auto;
+      }
+      .winner-text {
+        width:90%;
+        margin: 0.5em auto;
+        font-size:18px;
+        line-height: 21px;
+      }
+      .winner-text-1 {
+        margin: 0.25rem auto;
+        font-size:16px;
+        line-height: 19px;
+      }
+      .winner-text-2 {
+        margin: 0.25rem auto;
+        font-size:14px;
+        line-height: 17px;
+      }
+    }
+    .perspective {
+        width: 301px;
+      }
+  
+      .thumb {
+        background: url('../../../assets/img/wardrobe/leftdoor300X450.png') no-repeat;
+        background-size: contain;
+        width: 151px;
+        height: 451px;
+      }
+  
+      .thumb1 {
+        background: url('../../../assets/img/wardrobe/rightdoor300X450.png') no-repeat;
+        background-size: contain;
+        width: 151px;
+        height: 451px;
+      }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  
+}
+

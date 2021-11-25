@@ -1,0 +1,373 @@
+// - Regular CSS - Desktop First approach - //
+//variables
+@import '../../../variable.scss';
+
+@mixin cusFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin backgoundalign {
+  background-size: cover;
+  background-position: center;
+  // bottom: -7%;
+}
+@mixin rotating($x){
+  -ms-transform: rotate($x);/* IE 9 */
+  -webkit-transform: rotate($x);
+  transform: rotate($x);
+}
+
+@mixin abs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+@mixin absrotate {
+  z-index: 0;
+  transition: 0.66s ease-out;
+  bottom: -3%;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+}
+@mixin animated{
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-iteration-count:infinite;
+  animation-iteration-count:infinite;
+}
+.plantanimat {
+  @include cusFlex;
+  text-align: center;
+
+  button.btn {
+    margin: 0 auto;
+  }
+}
+
+
+.plantanimleft {
+  background: url('../../../assets/img/plant/plantLeft.png') no-repeat;
+  @include backgoundalign;
+  @include abs;
+  z-index: 5;
+}
+
+.plantanimright {
+  background: url('../../../assets/img/plant/plantRight.png') no-repeat;
+  @include backgoundalign;
+  @include abs;
+  z-index: 5;
+}
+.plantanimleftrotate {
+  background: url('../../../assets/img/plant/plantLeft.png') no-repeat;
+  @include backgoundalign;
+  @include abs;
+  @include rotating(-13deg);
+  @include absrotate;
+  right: 44%;
+}
+
+.plantanimrightrotate {
+  background: url('../../../assets/img/plant/plantRight.png') no-repeat;
+  @include backgoundalign;
+  @include abs;
+  @include rotating(13deg);
+  @include absrotate;
+  left: 44%;
+}
+
+//rotateright
+@-webkit-keyframes RotRig {
+  0% {
+    @include rotating(0deg);
+    left: 0%;
+  }
+
+  100% {
+    @include rotating(13deg);
+    left: 44%;
+  }
+}
+
+@keyframes RotRig {
+  0% {
+    @include rotating(0deg);
+    left: 0%;
+  }
+
+  100% {
+    @include rotating(13deg);
+    left: 44%;
+  }
+}
+
+.RotRigAn {
+  @include animated;
+  -webkit-animation-name: RotRig;
+  animation-name: RotRig;
+}
+//rotateleft
+@-webkit-keyframes RotLef {
+  0% {
+    @include rotating(0deg);
+    right: 0%;
+  }
+
+  100% {
+    @include rotating(-13deg);
+    right: 44%;
+  }
+}
+
+@keyframes RotLef {
+  0% {
+    @include rotating(0deg);
+    right: 0%;
+  }
+
+  100% {
+    @include rotating(-13deg);
+    right: 44%;
+  }
+}
+
+.RotLefAn {
+  @include animated;
+  -webkit-animation-name: RotLef;
+  animation-name: RotLef;
+}
+
+.thankyou-page-animation-static {
+  background: url('../../../assets/img/plant/plant.png') no-repeat;
+  @include backgoundalign;
+  @include abs;
+  z-index: 5;
+}
+
+
+.thankyou-page-animation {
+  background: url('../../../assets/img/plant/QueensgateKioskFinal2.gif') no-repeat;
+  @include backgoundalign;
+  @include abs;
+  z-index: 5;
+}
+
+.thankyou-plant-page {
+  // height: 850px;
+  background: url('../../../assets/img/plant/QueensgateBground2.png') no-repeat;
+  @include backgoundalign;
+  @include cusFlex;
+
+  .thankyou-container {
+    text-align: center;
+    width: 60%;
+    // height: 630px;
+    // min-height:65vh;
+    margin: 0.5em auto 1em;
+    padding: 1em;
+    letter-spacing: -0.4%;
+    @include cusFlex;
+    // background-color: $brand-color;
+    // -webkit-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // -moz-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+    // border:4px solid white;
+    color: $brand-color-1;
+
+    .thankyou-head {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 5vw;
+      line-height: 5vw;
+      font-family: $brand-font-family;
+      letter-spacing: 1.2px;
+
+      img {
+        width: 75%;
+      }
+
+      span {
+        font-size: 6vw;
+        line-height: 6vw;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    hr {
+      border-top: 2px dotted #000000;
+      margin: 1rem auto;
+      width: 90%;
+      text-align: center;
+    }
+
+    .thankyou-text {
+      width: 100%;
+      margin: 1rem auto;
+      line-height: 50px;
+      font-size: 36px;
+      font-family: $brand-font-family-1;
+    }
+
+    .thankyou-text-1 {
+      width: 100%;
+      margin: 2rem auto;
+      line-height: 45px;
+      font-size: 36px;
+      font-family: $brand-font-family-1;
+
+      img {
+        margin: 0;
+        text-align: left;
+      }
+    }
+
+    a {
+      color: #ffffff;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .thankyou-plant-page {
+
+    // min-height:97vh;
+    // height:740px;
+    .thankyou-container {
+      // min-height:66vh;
+      width: 60%;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .thankyou-plant-page {
+    .thankyou-container {
+
+      // margin: 10vh auto;
+      .thankyou-head {
+        margin: 10px auto;
+        font-size: 5vw;
+        line-height: 5vw;
+      }
+
+      .thankyou-text {
+        margin: 1em auto;
+        line-height: 35px;
+        font-size: 30px;
+      }
+
+      .thankyou-text-1 {
+        margin: 1em;
+        line-height: 1.5em;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+/* tablet and phone*/
+@media only screen and (max-width: 767px) {
+  .thankyou-plant-page {
+
+    // height:515px;
+    .thankyou-container {
+      margin: 0.2rem auto;
+      padding: 1em 0.5em;
+      // width: 90%;
+
+      // min-height: 65vh;
+      // overflow-wrap: break-word;
+      // word-wrap: break-word;
+      .thankyou-head {
+        margin: 10px auto;
+        font-size: 7vw;
+        line-height: 7vw;
+      }
+
+      hr {
+        margin: 1em auto;
+      }
+
+      .thankyou-text {
+        margin: 0.5em auto;
+        line-height: 34px;
+        font-size: 1.2em;
+      }
+
+      .thankyou-text-1 {
+        margin: 1em 1em 0 1em;
+        line-height: 20px;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .thankyou-plant-page {
+
+    // height:480px;
+    .thankyou-container {
+      margin: 0.5rem auto;
+      padding: 0.5em;
+      // width: 100%;
+      // height: 100%;
+
+      // min-height: 62vh;
+      .thankyou-head {
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 7vw;
+        line-height: 7vw;
+
+        span {
+          font-size: 9vw;
+          line-height: 9vw;
+        }
+      }
+
+      hr {
+        margin: 0.2em auto;
+      }
+
+      .thankyou-text {
+        margin: 0.5em auto;
+        font-size: 4vw;
+        line-height: 5vw;
+      }
+
+      .thankyou-text-1 {
+        margin: 1em auto;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .thankyou-plant-page {
+    .thankyou-container {
+      margin: 0.25em auto;
+      padding: 0.25em;
+      // width: 100%;
+    }
+  }
+}

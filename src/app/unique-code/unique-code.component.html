@@ -1,0 +1,564 @@
+<!-- <div class="coin-anim">
+    <div class="coin2" style="left:10%;">
+      <img class="move-down-slow" src="../../../assets/img/coins/coinsmall.gif" alt="">
+    </div>
+    <div class="coin1" style="left:20%;">
+      <img class="move-down-mid" src="../../../assets/img/coins/CoinB_small.gif" alt="">
+    </div>
+    <div class="coin2" style="left:30%;">
+      <img class="move-down-slow1" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+    </div>
+    <div class="coin2" style="left:40%;">
+      <img class="move-down-slow2" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+    </div>
+    <div class="coin3 float-right" style="left:70%;">
+      <img class="move-down" src="../../../assets/img/coins/CoinC_small.gif" alt="">
+    </div>
+    <div class="coin2" style="left:90%;">
+      <img class="move-down-slow3" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+    </div>
+  </div> -->
+<!-- <div class="cloud-anim">
+    <div class="cloud1 desktop" data-type="cloudtype7" style="top: 4%;" data-speed="1"></div> -->
+<!-- <div class="cloud" data-type="cloudtype2" style="top: 35%;" data-speed="2"></div> -->
+<!-- <div class="cloud desktop" data-type="cloudtype1" style="top: 45%;" data-speed="3"></div>
+    <div class="cloud desktop" data-type="cloudtype3" style="top: 52%;" data-speed="4"></div>
+    <div class="cloud2 desktop" data-type="cloudtype5" style="top: 6%;" data-speed="5"></div> -->
+<!-- <div class="cloud2 desktop" data-type="cloudtype4" style="top: 9%;" data-speed="6"></div> -->
+<!-- <div class="cloud1" data-type="cloudtype6" style="top: 25%;" data-speed="7"></div> -->
+<!-- <div class="cloud3 desktop" data-type="cloudtype8" style="top: 59%;" data-speed="8"></div>
+  </div> -->
+<!-- <div class="app-content-wrapper m0">
+  </div> -->
+<div class="unique-code-page">
+  <section class="container" *ngIf="!showSpentInput">
+    <!-- <div class="divider-top-space"></div> -->
+    <div class="enter-code-container  z-i5">
+      <!-- <div class="enter-code-img">
+          <div class="row">
+            <div class="col-12">
+              <img src="../../assets/img/enter-code-header.png" alt="enter-code-header" class="img-responsive">
+            </div>
+          </div>
+        </div> -->
+      <div class="code-container">
+        <div class="row">
+          <div class="col-12">
+            <div class="enter-code-text">
+              <!-- Enter your unique code on your game card to see if you are an instant winner. -->
+              <!-- Enter your unique code on your game card to see if you are an
+              instant winner. -->
+              Enter the unique code  from your  game card to enter the draw.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="nom-text">
+              <!-- Don’t have a game card? Collect one when you make a purchase of
+              $10 or more at a participating retailer in 24 Days of Christmas. -->
+
+              Don't have a game card? Collect a game card when you present
+              your receipt of $10 or more from any participating Ocean Keys
+              retailer at the giant advent calendar next to the Information Desk.
+              <!-- <small>${{ minispend }} -->
+              <!-- <a (click)="openModal(participat)">participating centre</a>. -->
+              <!-- </small> -->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- <div class="col-1"></div> -->
+          <div class="col-12">
+            <div class="error-text" *ngIf="errorMsg.message">
+              {{ errorMsg.message }}
+            </div>
+          </div>
+        </div>
+        <div class="uniqueform-container">
+          <div class="row">
+            <!-- <div class="col-1"></div> -->
+            <div class="col-12">
+              <div class="unique-box">
+                <!-- <div class="unique-text">
+                  YOUR UNIQUE CODE
+                </div> -->
+                <div class="code-pad">
+                  <div class="code-pad-item">
+                    <input
+                      type="text"
+                      id="code1"
+                      [(ngModel)]="code1"
+                      (keyup)="onKeyUp($event)"
+                      maxlength="5"
+                      size="5"
+                      appAutoFocus
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-1"></div> -->
+          </div>
+
+          <div class="row">
+            <div class="col-12 textalignment">
+              <button
+                class="primarybtn btn1 text-center"
+                (click)="onEnterCode()"
+                (keyup)="onKeyUp($event)"
+                [disabled]="buttonDisabled"
+              >
+                <img
+                  src="../../assets/img/loadingWheel.gif"
+                  alt=""
+                  [ngClass]="loadingStyle"
+                />
+                <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
+                NEXT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 m0">
+        <div class="float-right close-home up-mb">
+          <!-- <a href="/home" title="back to home"><img class="img-reponsive" src="../../assets/img/Close-Button.png" alt=""></a> -->
+          <!-- <button type="submit" (click)="backHome()">
+              <img class="img-reponsive" src="../../assets/img/Close-Button.png" alt="">
+            </button> -->
+          <input
+            type="image"
+            src="../../assets/img/Close-Button.png"
+            alt="Back to Home"
+            (click)="backHome()"
+            width="50"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="enter-code-container mobile">
+        <div class="enter-code-img">
+          <div class="row">
+            <div class="col-12">
+              <img src="../../assets/img/enter-code-header.png" alt="enter-code-header" class="img-responsive">
+            </div>
+          </div>
+        </div>
+        <div class="code-container">
+          <div class="row">
+            <div class="col-12">
+              <div class="enter-code-text">
+                Enter the 5 digit unique code from your game card to see if you’re an instant winner today!
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="error-text" *ngIf="errorMsg.message">
+                {{errorMsg.message}}
+              </div>
+            </div>
+          </div>
+          <div class="uniqueform-container">
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-10">
+                <div class="unique-box">
+                  <div class="unique-text">
+                    YOUR UNIQUE CODE
+                  </div>
+                  <div class="code-pad">
+                    <div class="code-pad-item">
+                      <input type="text" id="code1" #inputCode1 [(ngModel)]="code1" (keyup)="onKeyUp($event)" maxlength="5" size="5" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1"></div>
+            </div>
+            <div class="row">
+              <div class="col-12 text-center">
+                <button class="btn secondarybtn text-center" (click)="onEnterCode()" (keyup)="onKeyUp($event)">
+                  SUBMIT
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    <div class="divider-bottom-space"></div>
+  </section>
+
+  <section class="container" *ngIf="showSpentInput">
+    <div class="spent-form-container  z-i5">
+      <div class="row">
+        <div class="col-12  textalignment">
+          <div class="title">
+            Almost done.
+            <!-- <img src="../../assets/img/unihead1.png" alt="Almost done."> -->
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="needStoreName">
+        <div class="col-12 textalignment">
+          <div class="subtitle">
+            <!-- Please answer the final questions to be entered into the draw. -->
+            <!-- Please answer the final question. -->
+            Please answer the final two question to see if you are an instant
+            winner and to be entered into the major draw for a chance to win
+            $2,000 in Ocean Keys gift cards.
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="!needStoreName">
+        <div class="col-12 textalignment">
+          <div class="subtitle">
+            <!-- <strong> -->
+            Thanks for making a purchase at {{ this.outletName }}.
+            <!-- </strong> -->
+            <!-- at {{ this.centreName }}  -->
+            <br /><br />
+            Please answer the final question.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="error-text" *ngIf="errorMsg.message">
+            {{ errorMsg.message }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <form
+          action=""
+          class="form-horizontal"
+          [formGroup]="spentForm"
+          autocomplete="{{ acc }}"
+        >
+          <!-- <div class="col-12" [ngClass]="purchaseDateStyle">
+              <label class="control-label register-label">*Date purchase was made:</label>
+              <input *ngIf="!isMobile" type="text" class="form-control" [minDate]="minDate" [maxDate]="maxDate"
+                [bsConfig]="{dateInputFormat: 'DD/MM/YYYY'}" #dp="bsDatepicker" bsDatepicker formControlName="purchaseDate"
+                placeholder="dd/mm/yyyy" autocomplete="{{acc}}">
+              <input *ngIf="isMobile" type="date" class="form-control" formControlName="purchaseDate" placeholder="dd/mm/yyyy"
+                autocomplete="{{acc}}">
+          </div> -->
+
+          <div class="col-12 mtb2" [ngClass]="storeStyle" *ngIf="needStoreName">
+            <label class="control-label register-label"
+              >*Retailer where spend was made:</label
+            >
+            <br />
+            <!-- <small>Excludes Major Stores Coles, Woolworths, Kmart and Big W</small> -->
+            <select class="form-control" formControlName="store">
+              <option disabled selected value>Please select</option>
+              <option
+                *ngFor="let retailer of retailersOfSelectedCenter"
+                [value]="retailer.id"
+                >{{ retailer.name }}
+              </option>
+            </select>
+            <!-- <section class="filter-wrapper">
+              <div class="keyword-wrapper">
+                <input type="text" class="form-control" formControlName="store" placeholder="Retailer Name"
+                  autocomplete="{{acc}}" (focus)="displayblock()" (keyup)="getStores($event)" required>
+                <ul class="filter-select" [ngClass]="displayStyle">
+                  <li *ngFor="let rstore of refStores" class="filter-select-list">
+                    <button class="tags" (click)="fill(rstore.outlet_name)">{{rstore.outlet_name}}</button>
+                  </li>
+                </ul>
+              </div>
+            </section> -->
+          </div>
+          <div class="col-12" [ngClass]="spendStyle">
+            <label class="control-label register-label">
+              *Amount spent:
+              <!-- <small>(Minimum ${{ minispend }} spend. Please retain receipts for proof of purchase.)</small> -->
+              <br />
+              <small>Please retain receipts for proof of purchase.</small>
+              <!-- <small>A minimum spend of ${{ minispend }} is required for entry. A minimum spend of $20 is required for
+                entry. Please keep your receipts, proof of purchase is required to
+                redeem your prize.</small> -->
+            </label>
+            <div class="input-group">
+              <div class="input-group-addon">$</div>
+              <input
+                type="number"
+                class="form-control pl0"
+                formControlName="spend"
+                placeholder=""
+                autocomplete="{{ acc }}"
+                onkeyup="if (/^(\d+\.\d{2})\d+$/g.test(this.value)) this.value = this.value.replace(/^(\d+\.\d{2})\d+$/g,'')"
+                appAutoFocus
+              />
+            </div>
+            <!-- <select class="form-control" formControlName="spend">
+              <option disabled selected value>Please select</option>
+              <option value="< $5">< $5</option>
+              <option value="$5 - $10">$5 - $10</option>
+              <option value="$10 - $15">$10 - $15</option>
+              <option value="> $15"> > $15</option>
+            </select> -->
+          </div>
+          <!-- <div class="col-12">
+            <small>A minimum spend of $20 is required for
+              entry. Please keep your receipts, proof of purchase is required to
+              redeem your prize.</small>
+          </div> -->
+          <div class="col-12 textalignment  mt20">
+            <button
+              type="submit"
+              class="primarybtn btn1"
+              (click)="onSpent(this.campaignCenterService.email)"
+              [disabled]="buttonDisabled"
+            >
+              <img
+                src="../../assets/img/loadingWheel.gif"
+                alt=""
+                [ngClass]="loadingStyle"
+              />
+              <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
+              ENTER
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="float-right close-home up-mb">
+        <!-- <a href="/home" title="back to home"><img class="img-reponsive" src="../../assets/img/Close-Button.png" alt=""></a> -->
+        <!-- <button type="submit" (click)="backHome()">
+            <img class="img-reponsive" src="../../assets/img/Close-Button.png" alt="">
+          </button> -->
+        <!-- <input type="image" src="../../assets/img/Close-Button.png" alt="Back to Home" (click)="backHome()" width="50"> -->
+      </div>
+    </div>
+    <div class="divider-bottom-space"></div>
+  </section>
+  <ng-template #templateInvalidCode>
+    <div class="modal-header modal-header-customize">
+      <button
+        type="button"
+        class="close float-right close-bigsize"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+        [disabled]="submitted"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <br /><br />
+    </div>
+    <div class="modal-body modal-body-large-text">
+      <div class="oops">OOPS...</div>
+      <br />
+      <div>
+        <!-- Looks like you have
+        <br> entered an invalid code. -->
+        The code is invalid.
+        <br />
+        <br />
+        <!-- <small> Please try another code. </small> -->
+        <br />
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #customError>
+    <div class="modal-header modal-header-customize">
+      <button
+        type="button"
+        class="close float-right close-bigsize"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+        [disabled]="submitted"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <br /><br />
+    </div>
+    <div class="modal-body modal-body-large-text">
+      <div class="oops">OOPS!</div>
+      <br />
+      <div>
+        Your purchase is less than the ${{ minispend }} minimum spend required
+        for entry.
+        <br />
+        <br />
+        <!-- <small> Please try again when you spend ${{ minispend }} or more. </small> -->
+        <br />
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #customError1>
+    <div class="modal-header modal-header-customize">
+      <button
+        type="button"
+        class="close float-right close-bigsize"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+        [disabled]="submitted"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <br /><br />
+    </div>
+    <div class="modal-body modal-body-large-text">
+      <div class="oops">OOPS!</div>
+      <br />
+      <div>
+        Your spend looks rather high, please enter the correct spend and retain
+        your receipt to claim your prize. Spend must not exceed $9,999.
+        <br />
+        <br />
+        <!-- <small> Please try again when you spend ${{ minispend }} or more. </small> -->
+        <br />
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #templateAlreadyEntered>
+    <div class="modal-header modal-header-customize">
+      <button
+        type="button"
+        class="close float-right close-bigsize"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <br /><br />
+    </div>
+    <div class="modal-body modal-body-large-text">
+      <div class="oops">OOPS...</div>
+      Looks like you have already <br />
+      entered this code.
+      <br />
+      <br />
+      Please try another code.
+    </div>
+  </ng-template>
+
+  <ng-template #serverErrorCode>
+    <div class="modal-header modal-header-customize">
+      <button
+        type="button"
+        class="close float-right close-bigsize"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+        [disabled]="submitted"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <br /><br />
+    </div>
+    <div class="modal-body modal-body-large-text">
+      <!-- <div class="oops">OOOPS!</div> -->
+      <br />
+      <div>
+        Oops! We seem to be having an issue.
+        <br /><br />
+        <small> Please try again later. </small>
+        <br />
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #participat>
+    <div class="modal-header modal-participating">
+      <div class="row">
+        <div class="col-12">
+          <img src="../../assets/img/logo.png" class="modal-logo" alt="" />
+        </div>
+        <div class="col-12 mb10"></div>
+        <div class="col-12">
+          Participating Centres
+        </div>
+      </div>
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="modalRef.hide()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body tc modal-participating">
+      <div class="row">
+        <div class="col-12">
+          Entries available at participating stores within any of the following
+          participating centres.
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-6">
+          <strong>New South Wales</strong>
+          <div>
+            Armidale Central <br />
+            Lake Haven Centre <br />
+            Lennox Village <br />
+            Nepean Village <br />
+            Riverside Plaza <br />
+          </div>
+          <br />
+          <strong>Queensland</strong>
+          <div>
+            Buranda Village <br />
+            Gympie Central <br />
+            Milton Village <br />
+            Mount Pleasant Centre <br />
+            Runaway Bay Centre <br />
+            Taigum Square <br />
+            Whitsunday Plaza <br />
+          </div>
+          <br />
+          <strong>South Australia</strong>
+          <div>
+            Castle Plaza <br />
+            Kurralta Central <br />
+          </div>
+        </div>
+        <div class="col-6">
+          <strong>Tasmania</strong>
+          <div>Northgate <br /></div>
+          <br />
+          <strong>Victoria</strong>
+          <div>
+            Altona Gate<br />
+            Broadmeadows Central <br />
+            Corio Central <br />
+            Mildura Central <br />
+            Mornington Central <br />
+            Oakleigh Central <br />
+            Roxburgh Village <br />
+            Sunshine Marketplace <br />
+          </div>
+          <br />
+          <strong>Western Australia</strong>
+          <div>
+            Dianella Plaza <br />
+            Halls Head Central <br />
+            Karratha City <br />
+            Livingston Marketplace <br />
+            Maddington Central <br />
+            Victoria Park Central <br />
+            Warwick Grove <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+<!-- <div class="ribbon">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <strong>Don’t have an entry form?</strong> Collect one when you make a purchase at any
+        <a (click)="openModal(participat)">participating store</a>.
+      </div>
+    </div>
+  </div>
+</div> -->

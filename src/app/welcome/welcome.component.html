@@ -1,0 +1,27 @@
+<div class="welcome-page" id="reg">
+  <div class="img-wrapper m0 z-i5">
+    <div class="container-fluid">
+      <div class="share">
+        <img src="../../assets/img/header-image.png" alt="">
+      </div>
+    </div>
+  </div>
+  <section class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="bigtext">
+          <img src="../../assets/img/header.png" alt="8 CARS, 8 WEEKS, 8 WINNERS">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 textalignment ">
+        <button type="submit" class="primarybtn btn1" [disabled]="buttonDisabled" (click)="start()">
+          <img src="../../assets/img/loadingWheel.gif" alt="" [ngClass]="loadingStyle">
+          PLAY
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div>

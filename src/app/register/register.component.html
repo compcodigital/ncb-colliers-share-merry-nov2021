@@ -1,0 +1,966 @@
+<!-- <div class="coin-anim">
+    <div class="coin2" style="left:10%;">
+      <img class="move-down-slow1" src="../../../assets/img/coins/coinsmall.gif" alt="">
+    </div> -->
+<!-- <div class="coin1" style="left:20%;">
+      <img class="move-down-mid" src="../../../assets/img/coins/CoinB_small.gif" alt="">
+    </div>
+    <div class="coin2" style="left:30%;">
+      <img class="move-down-slow" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+    </div>
+    <div class="coin2" style="left:40%;">
+      <img class="move-down-slow2" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+    </div> -->
+<!-- <div class="coin3 float-right" style="left:65%;">
+      <img class="move-down" src="../../../assets/img/coins/CoinC_small.gif" alt="">
+    </div> -->
+<!-- <div class="coin2" style="left:90%;">
+      <img class="move-down-slow3" src="../../../assets/img/coins/CoinB_medium.gif" alt="">
+    </div>
+  </div> -->
+<!-- <div class="cloud-anim">
+    <div class="cloud1 desktop" data-type="cloudtype7" style="top: 2%;" data-speed="1"></div> -->
+<!-- <div class="cloud" data-type="cloudtype2" style="top: 35%;" data-speed="2"></div> -->
+<!-- <div class="cloud" data-type="cloudtype1" style="top: 45%;" data-speed="3"></div> -->
+<!-- <div class="cloud" data-type="cloudtype3" style="top: 52%;" data-speed="4"></div> -->
+<!-- <div class="cloud2 desktop" data-type="cloudtype5" style="top: 11%;" data-speed="5"></div> -->
+<!-- <div class="cloud2 desktop" data-type="cloudtype4" style="top: 9%;" data-speed="6"></div> -->
+<!-- <div class="cloud1 desktop" data-type="cloudtype6" style="top: 25%;" data-speed="7"></div>
+    <div class="cloud3 desktop" data-type="cloudtype8" style="top: 59%;" data-speed="8"></div>
+  </div> -->
+
+<div class="register-page">
+  <!-- <div class="divider-top-space"></div> -->
+  <section class="container">
+    <div class="register-container z-i5" *ngIf="!showConfirmDetails">
+      <div class="row">
+        <!-- <div class="col-12 textalignment plus">
+          <img src="../../assets/img/logo.png" alt="">
+        </div> -->
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="plus text-center my-5">Just a few more details.</div>
+        </div>
+      </div>
+      <div class="row" *ngIf="errorMsg.message">
+        <div class="col-12">
+          <div class="error-text">
+            {{ errorMsg.message }}
+          </div>
+        </div>
+      </div>
+      <div class="register-form-container">
+        <form
+          class="form-horizontal"
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmit()"
+          autocomplete="{{ acc }}"
+        >
+          <div class="row">
+            <div class="col-12" [ngClass]="centreStyle" *ngIf="isCentre">
+              <label class="control-label register-label"
+                >*Your local centre
+              </label>
+              <div>
+                <select
+                  class="form-control"
+                  formControlName="center"
+                  (change)="onCenterChange($event)"
+                >
+                  <option disabled selected value>Please select</option>
+                  <optgroup
+                    *ngFor="let Lscenters of this.campaignCenterService.centers"
+                    label="{{ Lscenters.state }}"
+                  >
+                    <ng-container
+                      *ngFor="
+                        let Lcenters of this.campaignCenterService.centers
+                      "
+                    >
+                      <option
+                        *ngIf="Lscenters.state === Lcenters.state"
+                        [value]="Lcenters.id"
+                      >
+                        {{ Lcenters.name }}
+                      </option>
+                    </ng-container>
+                  </optgroup>
+                  <optgroup label="NSW">
+                    <ng-container
+                      *ngFor="
+                        let Lscenters of this.campaignCenterService.centers
+                      "
+                    >
+                      <option
+                        *ngIf="Lscenters.state === 'NSW'"
+                        [value]="Lscenters.id"
+                      >
+                        {{ Lscenters.name }}
+                      </option>
+                    </ng-container>
+                  </optgroup>
+                  <optgroup label="QLD">
+                    <ng-container
+                      *ngFor="
+                        let Lscenters of this.campaignCenterService.centers
+                      "
+                    >
+                      <option
+                        *ngIf="Lscenters.state === 'QLD'"
+                        [value]="Lscenters.id"
+                      >
+                        {{ Lscenters.name }}
+                      </option>
+                    </ng-container>
+                  </optgroup>
+                  <optgroup label="SA">
+                    <ng-container
+                      *ngFor="
+                        let Lscenters of this.campaignCenterService.centers
+                      "
+                    >
+                      <option
+                        *ngIf="Lscenters.state === 'SA'"
+                        [value]="Lscenters.id"
+                      >
+                        {{ Lscenters.name }}
+                      </option>
+                    </ng-container>
+                  </optgroup>
+                  <optgroup label="TAS">
+                    <ng-container
+                      *ngFor="
+                        let Lscenters of this.campaignCenterService.centers
+                      "
+                    >
+                      <option
+                        *ngIf="Lscenters.state === 'TAS'"
+                        [value]="Lscenters.id"
+                      >
+                        {{ Lscenters.name }}
+                      </option>
+                    </ng-container>
+                  </optgroup>
+                  <optgroup label="VIC">
+                    <ng-container
+                      *ngFor="
+                        let Lscenters of this.campaignCenterService.centers
+                      "
+                    >
+                      <option
+                        *ngIf="Lscenters.state === 'VIC'"
+                        [value]="Lscenters.id"
+                      >
+                        {{ Lscenters.name }}
+                      </option>
+                    </ng-container>
+                  </optgroup>
+                  <optgroup label="WA">
+                    <ng-container
+                      *ngFor="
+                        let Lscenters of this.campaignCenterService.centers
+                      "
+                    >
+                      <option
+                        *ngIf="Lscenters.state === 'WA'"
+                        [value]="Lscenters.id"
+                      >
+                        {{ Lscenters.name }}
+                      </option>
+                    </ng-container>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-12" [ngClass]="fnStyle" *ngIf="isFn">
+              <label class="control-label register-label">*First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="firstname"
+                placeholder=""
+                autocomplete="{{ acc }}"
+                appAutoFocus
+              />
+              <!-- pattern="^[\p{L}- ]{1,}$"> -->
+            </div>
+            <div class="col-sm-6 col-12" [ngClass]="lnStyle" *ngIf="isLn">
+              <label class="control-label register-label">*Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="lastname"
+                placeholder=""
+                autocomplete="{{ acc }}"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="col-sm-12 col-12"
+              [ngClass]="emailStyle"
+              *ngIf="isEmail"
+            >
+              <label class="control-label register-label">*Email</label>
+              <input
+                type="email"
+                class="form-control"
+                formControlName="email"
+                placeholder=""
+                autocomplete="{{ acc }}"
+              />
+            </div>
+            <div
+              class="col-sm-12 col-12"
+              [ngClass]="phoneStyle"
+              *ngIf="isPhone"
+            >
+              <label class="control-label register-label">*Mobile</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="phone"
+                placeholder=""
+                pattern="[0-9]*"
+                inputmode="numeric"
+                autocomplete="{{ acc }}"
+                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-sm-6 col-12"
+              [ngClass]="hearStyle"
+              *ngIf="isHear && isAge"
+            >
+              <label class="control-label register-label"> *Age:</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="hearabout"
+                placeholder="Age"
+                ng-pattern="/^[0-9]*$/"
+                autocomplete="{{ acc }}"
+                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
+              />
+            </div>
+
+            <div class="col-sm-6 col-12" [ngClass]="dobStyle" *ngIf="isDob">
+              <label class="control-label register-label">*Date of birth</label>
+              <input
+                *ngIf="!isMobile"
+                type="text"
+                class="form-control"
+                [minDate]="minDate"
+                [maxDate]="maxDate"
+                [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"
+                #dp="bsDatepicker"
+                bsDatepicker
+                formControlName="dob"
+                placeholder="dd/mm/yyyy"
+                autocomplete="{{ acc }}"
+              />
+              <!-- [(bsValue)]="myDateValue" -->
+              <input
+                *ngIf="isMobile"
+                type="date"
+                class="form-control"
+                formControlName="dob"
+                placeholder="dd/mm/yyyy"
+                autocomplete="{{ acc }}"
+              />
+            </div>
+            <div class="col-sm-6 col-12" [ngClass]="yobStyle" *ngIf="isYob">
+              <label class="control-label register-label">*Year of birth</label>
+              <select
+                name="year"
+                id=""
+                class="form-control"
+                formControlName="yob"
+              >
+                <option disabled selected value>Select Year</option>
+                <option *ngFor="let yob1 of yearList" value="{{ yob1 }}">
+                  {{ yob1 }}
+                </option>
+              </select>
+            </div>
+            <!-- </div> -->
+            <div
+              class="col-sm-12 col-12"
+              [ngClass]="streetStyle"
+              *ngIf="isStreet"
+            >
+              <label class="control-label register-label"
+                >*Street Address</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                formControlName="street"
+                placeholder="Street Address"
+                autocomplete="{{ acc }}"
+              />
+            </div>
+
+            <!-- <div class="row"> -->
+            <div
+              class="col-sm-5 col-12"
+              [ngClass]="suburbStyle"
+              *ngIf="isSuburb"
+            >
+              <label class="control-label register-label">*Suburb</label>
+              <!-- <input type="text" class="form-control" formControlName="suburb" placeholder="Suburb" autocomplete="{{acc}}"> -->
+              <section class="filter-wrapper">
+                <div class="keyword-wrapper">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="suburb"
+                    placeholder=""
+                    id="city"
+                    autocomplete="{{ acc }}"
+                    (keyup)="getSuburbs($event)"
+                  />
+                  <ul class="filter-select" [ngClass]="displayStyle">
+                    <!--(focusout)="displaynone()"(focus)="" getSuburb()-->
+                    <li
+                      *ngFor="let rsuburb of refSuburbs"
+                      class="filter-select-list"
+                      (click)="
+                        fillsub(rsuburb.suburb, rsuburb.state, rsuburb.postcode)
+                      "
+                    >
+                      <span class="tags">
+                        {{ rsuburb.suburb }}, {{ rsuburb.state }},
+                        {{ rsuburb.postcode }}
+                        <!--*ngIf="rsuburb.state=='QLD'"  -->
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+            <div class="col-sm-4 col-12" [ngClass]="stateStyle" *ngIf="isState">
+              <label class="control-label register-label">*State</label>
+              <select
+                class="form-control"
+                formControlName="state"
+                placeholder=""
+              >
+                <option disabled selected value>State</option>
+                <option value="NSW">NSW</option>
+                <option value="QLD">QLD</option>
+                <option value="SA">SA</option>
+                <option value="TAS">TAS</option>
+                <option value="VIC">VIC</option>
+                <option value="WA">WA</option>
+                <option value="NT">NT</option>
+                <option value="ACT">ACT</option>
+              </select>
+            </div>
+            <div
+              class="col-sm-3 col-12"
+              [ngClass]="postcodeStyle"
+              *ngIf="isPostcode"
+            >
+              <label class="control-label register-label">*Postcode</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="postcode"
+                placeholder=""
+                ng-pattern="/^[0-9]*$/"
+                autocomplete="{{ acc }}"
+                onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
+              />
+            </div>
+            <!-- <div style="clear:both;"></div>
+            <div class="col-sm-6 col-12" [ngClass]="storeStyle">
+              <label class="control-label register-label">Store where you made your spend?</label>
+              <input type="text" class="form-control" formControlName="store" placeholder="Store Name" autocomplete="{{acc}}">
+            </div>
+            <div class="col-sm-6 col-12" [ngClass]="spendStyle">
+              <label class="control-label register-label">Spend amount</label>
+              <input type="amount" class="form-control" formControlName="spend" placeholder="$" autocomplete="{{acc}}">
+            </div> -->
+            <!--</div>-->
+            <!-- <div class="col-sm-8 col-12" [ngClass]="storeStyle">
+              <label class="control-label register-label">*Store where purchase was made:</label>
+              <select class="form-control" formControlName="store">
+                <option disabled selected value>Please select</option>
+                <option *ngFor="let retailer of retailersOfSelectedCenter" [value]="retailer.name">{{retailer.name}}
+                </option>
+              </select>
+              <-- <input type="text" class="form-control" formControlName="store" placeholder="Store Name"  id="keyword" > -->
+            <!-- <section class="filter-wrapper">
+                <div class="keyword-wrapper">
+                  <input type="text" class="form-control" formControlName="store" placeholder="Store Name" id="keyword"
+                    autocomplete="{{acc}}" (focus)="displayblock()" x>
+                  <ul class="filter-select" [ngClass]="displayStyle" (focus)="displayblock()">
+                    <li *ngFor="let rstore of refStores" class="filter-select-list">
+                      <span class="tags" (click)='fill(rstore)'>{{rstore}}</span>
+                    </li>
+                  </ul>
+                </div>
+              </section> --
+            </div> -->
+            <!-- <div class="input-group">
+                <div class="input-group-addon">$</div> --
+              <input type="number" class="form-control" formControlName="spend" placeholder="$" autocomplete="{{acc}}">
+              <-- </div>
+            </div> -->
+            <div
+              class="col-sm-12 col-12"
+              [ngClass]="hearStyle"
+              *ngIf="isHear && isOther"
+            >
+              <label class="control-label register-label">
+                *How often do you come to the Food Hall?</label
+              >
+              <!-- <input type="text" class="form-control" formControlName="hearabout" placeholder="Retailer Name"> -->
+              <select class="form-control" formControlName="hearabout">
+                <option disabled selected value>Please select</option>
+                <option value="This is my first time">
+                  This is my first time
+                </option>
+                <option value="Once a week">Once a week</option>
+                <option value="A few times a week">A few times a week</option>
+                <option value="Once a month">Once a month</option>
+                <option value="A few times a month">A few times a month</option>
+              </select>
+            </div>
+            <div
+              class="col-sm-12 col-12"
+              [ngClass]="hearStyle"
+              *ngIf="isHear && isInterest"
+            >
+              <label class="control-label register-label"> *Interests:</label>
+              <br />
+              <div
+                class="customcheck round"
+                *ngFor="let inter of interest; let i = index"
+                formArrayName="hearabout"
+              >
+                <input
+                  [formControlName]="i"
+                  id="check{{ [i] }}"
+                  type="checkbox"
+                  [value]="inter.value"
+                  (change)="onCheckChange($event)"
+                />
+                <label for="check{{ [i] }}"></label>
+                <span> {{ inter.name }}</span>
+              </div>
+              <!-- {{registerForm.controls.hearabout.controls}} -->
+              <!-- <div class="customcheck round">
+                  <input type="checkbox" formControlName="hearabout" name="interest1" id="interest1" value="shopping">
+                  <label for="interest1"></label>
+                  <span>Shopping</span>
+                </div>
+                <div class="customcheck round">
+                  <input type="checkbox" formControlName="hearabout" name="interest2" id="interest2" value="offers">
+                  <label for="interest2"></label>
+                  <span>Offers</span>
+                </div>
+                <div class="customcheck round">
+                  <input type="checkbox" formControlName="hearabout" name="interest3" id="interest3" value="events">
+                  <label for="interest3"></label>
+                  <span>Events</span>
+                </div> -->
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="col-sm-12 col-12"
+              [ngClass]="genderStyle"
+              *ngIf="isGender"
+            >
+              <label class="control-label register-label">*Gender</label>
+              <div>
+                <label class="radio-inline">
+                  <input
+                    type="radio"
+                    name="gender"
+                    class="option-input radio"
+                    formControlName="gender"
+                    value="m"
+                  />
+                  Male
+                </label>
+                <label class="radio-inline">
+                  <input
+                    type="radio"
+                    name="gender"
+                    class="option-input radio"
+                    formControlName="gender"
+                    value="f"
+                  />
+                  Female
+                </label>
+                <label class="radio-inline">
+                  <input
+                    type="radio"
+                    name="gender"
+                    class="option-input radio"
+                    formControlName="gender"
+                    value="u"
+                  />
+                  Unspecified
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" [ngClass]="termStyle" *ngIf="isTerm">
+              <div class="TCcheckbox">
+                <!-- <label for="termscon">*Terms & Conditions</label> -->
+                <div class="customcheck smallbox">
+                  <div class="check-input">
+                    <input
+                      type="checkbox"
+                      formControlName="termsConditions"
+                      id="termscon"
+                    />
+                    <label for="termscon"></label>
+                  </div>
+                  <!-- class="css-label lite-green-check termscheck" name="checkbox1_lbl"  -->
+                  <div class="check-text">
+                    <span>
+                      *By checking the box you declare acceptance of the
+                      <a
+                        (click)="openModal(terms)"
+                        data-target="#terms"
+                        class="footer-tnc-link"
+                      >
+                        Terms & Conditions</a
+                      >
+                      and will be subscribed to the Karingal Hub database.
+                      <!-- <a (click)="openModal(terms)" data-target="#terms" class="footer-tnc-link">terms and conditions</a> -->
+                      <!-- <a (click)="openModal(privacy)" data-target="#privacy" class="footer-tnc-link">privacy notice</a>. -->
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" [ngClass]="subscribeStyle" *ngIf="isSubscribe">
+              <div class="TCcheckbox sub">
+                <div class="customcheck smallbox">
+                  <div class="check-input">
+                    <input
+                      type="checkbox"
+                      formControlName="subscribe"
+                      id="subscribe"
+                    />
+                    <label for="subscribe"></label>
+                  </div>
+                  <div class="check-text">
+                    <span>
+                      Subscribe to the centre’s database to receive the latest
+                      offers and promotions.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-12">
+              *To view full Terms & Conditions click
+            </div> -->
+          <!-- <div class="col-12 textalignment mandatory mt30">
+              <br>
+              <br>
+              <strong>*Mandatory fields</strong>
+            </div> -->
+          <div class="row mt-4">
+            <div class="col-12 textalignment">
+              <button type="submit" class="primarybtn btn1">
+                <img
+                  src="../../assets/img/loadingWheel.gif"
+                  alt=""
+                  [ngClass]="loadingStyle"
+                />
+                <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
+                NEXT
+              </button>
+              <!-- (click)="onSubmit()" -->
+            </div>
+          </div>
+          <!-- <div class="col-10"></div> -->
+          <!-- <div class="col-12">
+              <div class="float-right close-home">
+                <-- <a href="/home" title="back to home"><img class="img-reponsive" src="../../assets/img/Close-Button.png"
+                    alt=""></a> --
+                <input type="image" src="../../assets/img/Close-Button.png" alt="Back to Home" (click)="backHome()"
+                  width="50">
+              </div>
+            </div> -->
+        </form>
+      </div>
+    </div>
+    <div class="register-container z-i5" *ngIf="showConfirmDetails">
+      <div class="row my-4 my-md-5">
+        <div class="col-12 plus text-center">
+          <div>Let's confirm your details.</div>
+          <!-- <img src="../../assets/img/reghead2.png" alt="Let's confirm your details."> -->
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="textalignment plus1">
+            Check your details are correct as they will be used for your future
+            entries. Your next entry will only require your email address.
+          </div>
+        </div>
+        <!-- <div class="col-12">
+          <div class="nom-text">
+            Your next entry will only require your email address.
+          </div>
+        </div> -->
+      </div>
+      <div class="confirm-container">
+        <div class="content">
+          <div class="row">
+            <div class="col-12 mb10 mt10" *ngIf="isFn">
+              <div class="title">First name:</div>
+              <div class="value" id="firstname">
+                {{ registerForm.value.firstname }}
+              </div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isLn">
+              <div class="title">Last name:</div>
+              <div class="value" id="lastname">
+                {{ registerForm.value.lastname }}
+              </div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isEmail">
+              <div class="title">Email:</div>
+              <div class="value" id="email">{{ registerForm.value.email }}</div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isPhone">
+              <div class="title">Mobile:</div>
+              <div class="value" id="phone">{{ registerForm.value.phone }}</div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isDob">
+              <div class="title">DOB:</div>
+              <div class="value" id="email">
+                {{
+                  this.datePipe.transform(
+                    this.registerForm.controls.dob.value,
+                    "dd/MM/yyyy"
+                  )
+                }}
+              </div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isYob">
+              <div class="title">Year of Birth:</div>
+              <div class="value" id="email">{{ registerForm.value.yob }}</div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isGender">
+              <div class="title">Gender:</div>
+              <div class="value" id="phone">
+                <span *ngIf="registerForm.value.gender === 'f'">Female</span>
+                <span *ngIf="registerForm.value.gender === 'm'">Male</span>
+                <span *ngIf="registerForm.value.gender === 'u'"
+                  >Unspecified</span
+                >
+              </div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isSuburb">
+              <div class="title">Suburb:</div>
+              <div class="value" id="suburb">
+                {{ registerForm.value.suburb }}
+              </div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isState">
+              <div class="title">State:</div>
+              <div class="value" id="state">{{ registerForm.value.state }}</div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isPostcode">
+              <div class="title">Postcode:</div>
+              <div class="value" id="postcode">
+                {{ registerForm.value.postcode }}
+              </div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isHear && isAge">
+              <div class="title">Age:</div>
+              <div class="value" id="hearabout">
+                {{ registerForm.value.hearabout }}
+              </div>
+            </div>
+            <div class="col-12 mb10" *ngIf="isHear && isInterest">
+              <div class="title">Interest:</div>
+              <div
+                class="value initCaps"
+                *ngFor="
+                  let interest of selectedInterest;
+                  let i = index;
+                  let isLast = last
+                "
+              >
+                {{ interest }}{{ isLast ? "" : ", " }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="confirm-buttons">
+        <div class="row mt-4">
+          <div class="col-12 textalignment">
+            <button
+              type="submit"
+              class="primarybtn btn1"
+              (click)="confirmDetails()"
+              [disabled]="buttonDisabled"
+            >
+              <img
+                src="../../assets/img/loadingWheel.gif"
+                alt=""
+                [ngClass]="loadingStyle"
+              />
+              <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
+              YES, CORRECT
+            </button>
+          </div>
+          <div class="col-12 textalignment">
+            <button
+              type="submit"
+              class="thirdbtn btn4"
+              (click)="showConfirmDetails = false"
+            >
+              Incorrect, edit my details
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-12">
+        <div class="float-right close-home">
+          <-- <a href="/home" title="back to home">
+            <img class="img-reponsive" src="../../assets/img/Close-Button.png" alt="">
+          </a> -->
+      <!-- <button type="submit" (click)="backHome()">
+            <img class="img-reponsive" src="../../assets/img/Close-Button.png" alt="" (click)="backHome()">
+          </button> --
+          <input type="image" src="../../assets/img/Close-Button.png" alt="Back to Home" (click)="backHome()"
+            width="50">
+        </div>
+      </div> -->
+    </div>
+  </section>
+  <!-- <div class="divider-bottom-space"></div>-->
+  <div style="clear: both"></div>
+</div>
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-6 float-left">
+      <a (click)="openModal(terms)" data-target="#terms" class="footer-tnc-link">
+        Terms & Conditions</a> apply.
+    </div>
+    <div class="col-6  bottomlogo">
+      <img src="../../assets/img/bottom-logo.png" class="float-right" alt="">
+    </div>
+  </div>
+</div> -->
+<ng-template #serverErrorCode>
+  <div class="modal-header modal-header-customize">
+    <button
+      type="button"
+      class="close float-right close-bigsize"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+      [disabled]="submitted"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body modal-body-large-text">
+    <!-- <div class="oops">OOOPS!</div> -->
+    <br /><br />
+    <div>
+      Oops! We seem to be having an issue.
+      <br /><br />
+      <small> Please try again later. </small>
+      <br />
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #terms>
+  <div class="modal-header tc">
+    <div class="row">
+      <div class="col-12 text-center modal-adj-head">
+        <div class="mt-3 mt-md-4">
+          <strong
+            >TERMS AND CONDITIONS FOR “24 DAYS OF MERRY MOMENTS” PROMOTION
+          </strong>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <img src="../../assets/img/close-modal.png" class="modal-close" />
+    </button>
+  </div>
+  <div class="modal-body tc">
+    <app-terms></app-terms>
+  </div>
+</ng-template>
+
+<ng-template #privacy>
+  <div class="modal-header">
+    <div class="row">
+      <!-- <div class="col-12">
+        <img src="../../assets/img/logo.png" class="modal-logo" alt="">
+      </div> -->
+      <div class="col-12">
+        <h3>Privacy policy</h3>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body tc">
+    <div>
+      <app-privacy></app-privacy>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #templateAlreadyEntered>
+  <div class="modal-header modal-header-customize">
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <br /><br />
+    <div class="title">
+      One entry per day.
+      <br /><br />
+      It looks like you have already entered today.
+    </div>
+  </div>
+  <div class="modal-body modal-body-large-text">
+    Please enter again tomorrow.
+  </div>
+</ng-template>
+
+<ng-template #ageLimit>
+  <div class="modal-header modal-header-customize">
+    <button
+      type="button"
+      class="close float-right close-bigsize"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <br /><br />
+    <div class="title">
+      SORRY YOU MUST BE AT LEAST 15 YEARS OF AGE TO ENTER.
+    </div>
+  </div>
+  <div class="modal-body modal-body-large-text">
+    <small>Full Terms And Conditions Apply.</small>
+  </div>
+</ng-template>
+
+<ng-template #modalMsg0nlyStateQLD>
+  <div class="modal-header modal-header-customize">
+    <button
+      type="button"
+      class="close float-right close-bigsize"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="title">Sorry,</div>
+  </div>
+  <div class="modal-body modal-body-large-text">
+    This competition is only open to QLD residents.
+  </div>
+</ng-template>
+
+<!-- <ng-template #participat>
+<div class="modal-header">
+  PARTICIPATING STORES
+  <button type="button" class="close float-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  Entries available at participating stores within any of the following Vicinity shopping centres.
+ <div class="two-col">
+    <ng-container>
+      <div class="mr-btm">
+        <strong>New South Wales</strong>
+        <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+          <a href="{{Lscenters.website}}" target="_blank">
+            <div *ngIf="Lscenters.state==='NSW'">{{Lscenters.name}}</div>
+          </a>
+        </div>
+      </div>
+      <div class="mr-btm">
+        <strong>Queensland</strong>
+        <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+          <a href="{{Lscenters.website}}" target="_blank">
+            <div *ngIf="Lscenters.state==='QLD'">{{Lscenters.name}}</div>
+          </a>
+        </div>
+      </div>
+      <div class="mr-btm">
+        <strong>South Australia</strong>
+        <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+          <a href="{{Lscenters.website}}" target="_blank">
+            <div *ngIf="Lscenters.state==='SA'">{{Lscenters.name}}</div>
+          </a>
+        </div>
+      </div>
+      <div class="mr-btm">
+        <strong>Tasmania</strong>
+        <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+          <a href="{{Lscenters.website}}" target="_blank">
+            <div *ngIf="Lscenters.state==='TAS'">{{Lscenters.name}}</div>
+          </a>
+        </div>
+      </div>
+      <div class="mr-btm">
+        <strong>Victoria</strong>
+        <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+          <a href="{{Lscenters.website}}" target="_blank">
+            <div *ngIf="Lscenters.state==='VIC'">{{Lscenters.name}}</div>
+          </a>
+        </div>
+      </div>
+      <div class="mr-btm">
+        <strong>Western Australia</strong>
+        <div *ngFor="let Lscenters of this.campaignCenterService.centers">
+          <a href="{{Lscenters.website}}" target="_blank">
+            <div *ngIf="Lscenters.state==='WA'">{{Lscenters.name}}</div>
+          </a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+</ng-template> -->

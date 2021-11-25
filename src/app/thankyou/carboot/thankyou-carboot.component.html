@@ -1,0 +1,63 @@
+<div class="thankyou-carboot-page">
+  
+  <!-- <div class="divider-top-space"></div> -->
+  <div class="container thankyou-carboot-container">
+    <div class="perspective" (click)="openDoor()">
+      <div class="thumb" [ngClass]="carbootStyle"></div>
+      <div class="thankyou-container"  [@fadeIn] [ngClass]="displayStyle">
+        <div class="row">
+          <div class="col-12">
+            <div class="thankyou-head">
+              <img src="../../assets/img/logo.png" alt="">
+              Better luck next time
+            </div>
+          </div>
+        </div>
+        <!-- <hr> -->
+        <!-- <div class="row">
+          <div class="col-12">
+            <div class="thankyou-text">
+              Success, you have been entered into the draw to win a $100 Gift Card.
+              <a (click)="openModal(participat)">participating store</a>
+            </div>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col-12">
+            <div class="thankyou-text-1">
+              You have been entered into the draw for a chance to 
+              WIN a Volkswagen Polo valued at $19,750.
+              <br><br>
+              Remember you can enter as many times as you 
+              like, provided you have made a qualifying 
+              purchase of $10 or more.
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-12">
+            <div><small>ENTRIES CLOSE 9PM, 31 MARCH 2019.</small></div>
+          </div>
+        </div> -->
+        
+      </div>
+    </div>
+    <div class="text-center" *ngIf="carbootbtnStyle">
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="primarybtn btn1" (click)="onDone()">
+            DONE
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="secondarybtn btn1" (click)="anotherCode()">
+            ENTER ANOTHER SPEND
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
