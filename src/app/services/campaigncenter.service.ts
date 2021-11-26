@@ -52,7 +52,7 @@ export class CampaignCenterService {
     this.showFooter = false;
     this.footerSecondary = false;
     this.companyId = "91"; // wm_niw_com
-    this.campaignId = 5000386;
+    this.campaignId = 5000382;
     this.apiAuthKey =
       "NOV5000386C16ABBA5BBC361C3A2FF07AF1D764C6F98B157D4DF854F082020NN";
     this.apiUrl =

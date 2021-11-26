@@ -84,34 +84,22 @@ body {
   /* enables “momentum” (smooth) scrolling */
   // background: $brand-color;
   z-index: 2;
-  //   //  @include responsive(desktop) {
-  //   //   background-image: url('/assets/img/FoodImage-Ipad2.jpg');
-  //   // }
-  //   // @include responsive(tablet) {
-  //   //   background-image: url('/assets/img/FoodImage-Mobile2.jpg');
-  //   // }
-  background: url("assets/img/bg-home-web.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  
+  // background: url("assets/img/bg-home-web.png");
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
   background-color: $brand-color;
-  // background-attachment: fixed;
   @include responsive(phone) {
-    background: url("assets/img/bg-home-mob.png");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: $brand-color;
+    // background: url("assets/img/bg-home-mob.png");
+    // background-position: bottom;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-color: $brand-color;
   }
 }
 
 .fit-device.home {
-  // background-image: url(/assets/img/background.png);
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
-  // background-size: cover;
-  // background: transparent;
 }
 .fit-device.entercode {
   position: relative !important;

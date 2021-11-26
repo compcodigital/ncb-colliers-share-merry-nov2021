@@ -1,77 +1,75 @@
 //variables
-
 @font-face {
-  font-family: "Gilroy-Bold";
-  src: url("/assets/font/Gilroy-Bold/@font-face/1064f0ad1cb65fdab43bb592ddd8aa91.eot"); /* IE9*/
-  src: url("/assets/font/Gilroy-Bold/@font-face/1064f0ad1cb65fdab43bb592ddd8aa91.eot?#iefix")
+  font-family: "Larsseit Regular";
+  src: url("/assets/font/Larsseit Regular/@font-face/1a0f9c82ae37cc35dc3c8e6c81ea95a4.eot"); /* IE9*/
+  src: url("/assets/font/Larsseit Regular/@font-face/1a0f9c82ae37cc35dc3c8e6c81ea95a4.eot?#iefix")
       format("embedded-opentype"),
     /* IE6-IE8 */
-      url("/assets/font/Gilroy-Bold/@font-face/1064f0ad1cb65fdab43bb592ddd8aa91.woff2")
+      url("/assets/font/Larsseit Regular/@font-face/1a0f9c82ae37cc35dc3c8e6c81ea95a4.woff2")
       format("woff2"),
     /* chrome、firefox */
-      url("/assets/font/Gilroy-Bold/@font-face/1064f0ad1cb65fdab43bb592ddd8aa91.woff")
+      url("/assets/font/Larsseit Regular/@font-face/1a0f9c82ae37cc35dc3c8e6c81ea95a4.woff")
       format("woff"),
     /* chrome、firefox */
-      url("/assets/font/Gilroy-Bold/@font-face/1064f0ad1cb65fdab43bb592ddd8aa91.ttf")
+      url("/assets/font/Larsseit Regular/@font-face/1a0f9c82ae37cc35dc3c8e6c81ea95a4.ttf")
       format("truetype"),
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-      url("/assets/font/Gilroy-Bold/@font-face/1064f0ad1cb65fdab43bb592ddd8aa91.svg#Gilroy-Bold")
+      url("/assets/font/Larsseit Regular/@font-face/1a0f9c82ae37cc35dc3c8e6c81ea95a4.svg#Larsseit Regular")
+      format("svg"); /* iOS 4.1- */
+}
+@font-face {
+  font-family: "Larsseit-Bold";
+  src: url("/assets/font/Larsseit-Bold/@font-face/f4c9951744c0ef14010218fc1b2f7938.eot"); /* IE9*/
+  src: url("/assets/font/Larsseit-Bold/@font-face/f4c9951744c0ef14010218fc1b2f7938.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("/assets/font/Larsseit-Bold/@font-face/f4c9951744c0ef14010218fc1b2f7938.woff2")
+      format("woff2"),
+    /* chrome、firefox */
+      url("/assets/font/Larsseit-Bold/@font-face/f4c9951744c0ef14010218fc1b2f7938.woff")
+      format("woff"),
+    /* chrome、firefox */
+      url("/assets/font/Larsseit-Bold/@font-face/f4c9951744c0ef14010218fc1b2f7938.ttf")
+      format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("/assets/font/Larsseit-Bold/@font-face/f4c9951744c0ef14010218fc1b2f7938.svg#Larsseit-Bold")
       format("svg"); /* iOS 4.1- */
 }
 
-@font-face {
-  font-family: "TT Commons Regular";
-  src: url("/assets/font/TT Commons Regular/@font-face/791b34a71c48acc600f240e9fdb57fb6.eot"); /* IE9*/
-  src: url("/assets/font/TT Commons Regular/@font-face/791b34a71c48acc600f240e9fdb57fb6.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */
-      url("/assets/font/TT Commons Regular/@font-face/791b34a71c48acc600f240e9fdb57fb6.woff2")
-      format("woff2"),
-    /* chrome、firefox */
-      url("/assets/font/TT Commons Regular/@font-face/791b34a71c48acc600f240e9fdb57fb6.woff")
-      format("woff"),
-    /* chrome、firefox */
-      url("/assets/font/TT Commons Regular/@font-face/791b34a71c48acc600f240e9fdb57fb6.ttf")
-      format("truetype"),
-    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-      url("/assets/font/TT Commons Regular/@font-face/91b34a71c48acc600f240e9fdb57fb6.svg#TT Commons Regular")
-      format("svg"); /* iOS 4.1- */
-}
-
-$brand-color: #84C5E8;
-$brand-color-1: #FFFFFF;
-$brand-color-2: #F5A0B3;
-$brand-color-3: #F3718D;
-$brand-color-4: #FF315C;
-$brand-color-5: #000000;
+$brand-color: #dd1b32;
+$brand-color-1: #ffffff;
+$brand-color-2: #d7ba6f;
+$brand-color-3: #b49b5b;
+$brand-color-4: #f28baf;
+$brand-color-5: #ff689d;
 $brand-color-6: #000000;
 $brand-color-7: #000000;
 $brand-color-8: #000000;
 
-$error-color: #D5252C;
-$sucess-color: #FFF78D;
+$error-color: #55000a;
+$sucess-color: #d7ba6f;
 $font-color: #ffffff;
 
-$brand-font-family: "TT Commons Regular";
-$brand-font-family-1: "Gilroy-Bold";
-$brand-font-family-2: "Gilroy-Bold";
-$brand-font-family-3: "Gilroy-Bold";
-$brand-font-family-4: "Gilroy-Bold";
-$brand-font-family-5: "Gilroy-Bold";
-$brand-font-family-6: "Gilroy-Bold";
-$brand-font-family-7: "Gilroy-Bold";
-$brand-font-family-8: "Gilroy-Bold";
+$brand-font-family: "Larsseit Regular";
+$brand-font-family-1: "Larsseit-Bold";
+$brand-font-family-2: "Larsseit-Bold";
+$brand-font-family-3: "Larsseit-Bold";
+$brand-font-family-4: "Larsseit-Bold";
+$brand-font-family-5: "Larsseit-Bold";
+$brand-font-family-6: "Larsseit-Bold";
+$brand-font-family-7: "Larsseit-Bold";
+$brand-font-family-8: "Larsseit-Bold";
 
 $white: #ffffff;
 $black: #000000;
 $form-border: #000000;
 $marginscreenalignment: auto; //auto| 0(zero) if need center use auto or if need left use 0;
 $textalignment: center; //need center|left|right alignment in all places
-$btn_radius: 0px; //52px; //need btn in square use 0|need btn in rounded corner use 52px
+$btn_radius: 15px; //52px; //need btn in square use 0|need btn in rounded corner use 52px
 $primarybtn: $brand-color-2;
-$primarybtn-color: $brand-color-1;
+$primarybtn-color: $brand-color;
 $primarybtnop: $brand-color-3;
-$primarybtnop-color: $brand-color-1;
+$primarybtnop-color: $brand-color;
 $secondarybtn: $brand-color-4;
 $secondarybtn-color: $brand-color-1;
 $secondarybtnop: $brand-color-4;
