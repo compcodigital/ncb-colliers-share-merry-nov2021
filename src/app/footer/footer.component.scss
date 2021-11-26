@@ -11,13 +11,14 @@
   justify-content: center;
   align-content: flex-end;
   z-index: 20;
-
+  background-color: $brand-color-1;
   @include responsive(phone) {
     font-size: 0.9rem;
     line-height: 1.4rem;
   }
-  .footer-logo {
-    max-width: 200px;
+  .footer-logo-1 {
+  }
+  .footer-logo-2 {
   }
   a {
     color: $brand-color-3;

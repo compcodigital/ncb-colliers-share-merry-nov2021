@@ -11,14 +11,20 @@
 </div> -->
 
 <section class="footer" *ngIf="this.campaignCenterService.showFooter">
-  <div class="row text-center p-5">
-    <div class="col-12">
+  <div class="row text-center p-2 p-md-3 d-flex align-items-center">
+    <div class="col-8 col-md-6">
+      <img
+        src="./assets/img/kellyville-footer.png"
+        class="img-fluid footer-logo-1"
+      />
+    </div>
+    <div class="col-4 col-md-6">
       <!-- Entries close 11:59pm Friday 24th December.
       <a (click)="openModal(terms)" class="footer-tnc-link"
         >*Terms & Conditions</a
       >
       apply. -->
-      <img src="./assets/img/logo-karingal.png" class="img-fluid footer-logo" />
+      <img src="./assets/img/ispt-logo.png" class="img-fluid footer-logo-2" />
     </div>
   </div>
   <!-- *ngIf="this.campaignCenterService.showFooter" *ngIf="!this.campaignCenterService.footerSecondary" class="footer {{ this.campaignCenterService.footerSecondary ? 'secondary': '' }}" -->
