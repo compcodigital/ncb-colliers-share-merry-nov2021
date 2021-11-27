@@ -40,7 +40,9 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <div class="plus text-center my-5">Just a few more details.</div>
+          <div class="plus text-center my-5 mb-md-5 mt-md-0">
+            Just a few more details.
+          </div>
         </div>
       </div>
       <div class="row" *ngIf="errorMsg.message">
@@ -531,15 +533,21 @@
                   <!-- class="css-label lite-green-check termscheck" name="checkbox1_lbl"  -->
                   <div class="check-text">
                     <span>
-                      *By checking the box you declare acceptance of the
+                      *I agree to the
                       <a
                         (click)="openModal(terms)"
                         data-target="#terms"
                         class="footer-tnc-link"
                       >
-                        Terms & Conditions</a
+                        Terms & Conditions
+                      </a>
+                      of entry. I agree to subscribe to the Kellyville Village
+                      database and receive our latest news and updates. You may
+                      unsubscribe at any time.
+                      <a href="" target="_blank" class="footer-tnc-link"
+                        >Click here</a
                       >
-                      and will be subscribed to the Karingal Hub database.
+                      to view our privacy policy.
                       <!-- <a (click)="openModal(terms)" data-target="#terms" class="footer-tnc-link">terms and conditions</a> -->
                       <!-- <a (click)="openModal(privacy)" data-target="#privacy" class="footer-tnc-link">privacy notice</a>. -->
                     </span>
@@ -578,7 +586,7 @@
               <br>
               <strong>*Mandatory fields</strong>
             </div> -->
-          <div class="row mt-4">
+          <div class="row mt-4 mb-5">
             <div class="col-12 textalignment">
               <button type="submit" class="primarybtn btn1">
                 <img
@@ -711,7 +719,7 @@
         </div>
       </div>
       <div class="confirm-buttons">
-        <div class="row mt-4">
+        <div class="row my-4">
           <div class="col-12 textalignment">
             <button
               type="submit"

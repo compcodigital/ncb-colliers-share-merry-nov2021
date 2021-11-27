@@ -43,7 +43,7 @@
 
     .form-control {
       // border: 1px solid $form-border;
-      border-radius: 8px;
+      border-radius: 0px;
     }
 
     .detail {
@@ -69,7 +69,7 @@
       font-size: 1.2rem;
       line-height: 1.8rem;
       @include responsive(phone) {
-        font-size: 1.0rem;
+        font-size: 1rem;
         line-height: 1.5rem;
       }
     }
@@ -250,7 +250,7 @@
       /************checkbox ***********/
 
       .TCcheckbox {
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-family: $brand-font-family;
         // height: 80px;
         display: flex;
@@ -258,6 +258,10 @@
         align-items: flex-start;
         margin: 2vh auto 2vh; //2vh auto 5vh
         flex-direction: column;
+
+        @include responsive(phone) {
+          font-size: 0.8rem;
+        }
 
         // margin:15px auto 15px;
         // @media only screen and (max-width: 1200px) {
@@ -288,7 +292,7 @@
     }
 
     .confirm-container {
-      border: 4px solid $brand-color-1;
+      border: 4px solid $brand-color-4;
       background-color: transparent; //$brand-color-3; ////
       // color: $brand-color-3;
       padding: 10px 0 10px 30px;
@@ -297,7 +301,6 @@
       font-size: 1rem;
       line-height: 1em;
       @include responsive(phone) {
-
       }
       // text-align: center;
       .content {
@@ -514,7 +517,6 @@
     .register-container {
       // width: 60%;
 
-    
       .detail {
         font-size: 2em;
         line-height: 33px;
@@ -598,7 +600,6 @@
         line-height: 30px;
         // margin: 0.3em 0;
       }
-
 
       .ends {
         font-size: 0.9em;

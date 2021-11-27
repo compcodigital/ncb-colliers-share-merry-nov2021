@@ -42,7 +42,7 @@ $brand-color-2: #d7ba6f;
 $brand-color-3: #b49b5b;
 $brand-color-4: #f28baf;
 $brand-color-5: #ff689d;
-$brand-color-6: #000000;
+$brand-color-6: #DDBC86;
 $brand-color-7: #000000;
 $brand-color-8: #000000;
 
@@ -65,7 +65,7 @@ $black: #000000;
 $form-border: #000000;
 $marginscreenalignment: auto; //auto| 0(zero) if need center use auto or if need left use 0;
 $textalignment: center; //need center|left|right alignment in all places
-$btn_radius: 15px; //52px; //need btn in square use 0|need btn in rounded corner use 52px
+$btn_radius: 10px; //52px; //need btn in square use 0|need btn in rounded corner use 52px
 $primarybtn: $brand-color-2;
 $primarybtn-color: $brand-color;
 $primarybtnop: $brand-color-3;
@@ -80,16 +80,16 @@ $dot2: #03312d;
 $dot3: #f5941d;
 $dot4: #ffffff;
 $statusbg: $brand-color;
-$image-1: "/assets/img/status-page-icons/details-inactive.png";
-$image-2: "/assets/img/status-page-icons/spend-inactive.png";
-$image-3: "/assets/img/status-page-icons/reveal-inactive.png";
-$image-4: "/assets/img/status-page-icons/reveal-inactive.png";
-$status-color: #ffffff;
-$activeimage-1: "/assets/img/status-page-icons/details-active.png";
-$activeimage-2: "/assets/img/status-page-icons/spend-active.png";
-$activeimage-3: "/assets/img/status-page-icons/reveal-active.png";
-$activeimage-4: "/assets/img/status-page-icons/reveal-active.png";
-$status-active-color: #ab9b4e;
+$image-1: "/assets/img/status-page-icons/yourdetails-inactive.png";
+$image-2: "/assets/img/status-page-icons/spenddetails-inactive.png";
+$image-3: "/assets/img/status-page-icons/enterdraw-inactive.png";
+$image-4: "/assets/img/status-page-icons/enterdraw-inactive.png";
+$status-color: $brand-color-6;
+$activeimage-1: "/assets/img/status-page-icons/yourdetails-active.png";
+$activeimage-2: "/assets/img/status-page-icons/spenddetails-active.png";
+$activeimage-3: "/assets/img/status-page-icons/enterdraw-active.png";
+$activeimage-4: "/assets/img/status-page-icons/enterdraw-active.png";
+$status-active-color: $brand-color-1;
 
 $desktop: 1200px; //Desktop screen size.
 $pc: 992px; // PC screen size.
