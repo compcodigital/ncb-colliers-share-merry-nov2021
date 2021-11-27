@@ -38,7 +38,7 @@ declare let gtag: Function;
 @Injectable()
 export class AppComponent implements OnInit, AfterViewInit {
   // title is used as a title in all the places
-  title = "24 DAYS OF SUMMER SURPRISES";
+  title = "KELLYVILLE";
   centers: Center[];
   deviceInfo = null;
   deviceStyle: string;

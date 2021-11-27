@@ -698,30 +698,16 @@ button.close_bottom {
 // .unique-code-page,
 .winner-page,
 .thankyou-page {
-  min-height: 90vh; //92
-
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   @include responsive(desktop) {
-    min-height: 90vh; //92
+    min-height: 90vh; 
   }
-
   @include responsive(phone) {
     min-height: 80vh;
   }
-
-  // iPad in portrait & landscape
-  // @media only screen
-  // and (min-device-width : 768px)
-  // and (max-device-width : 1023px)  {
-  //   min-height: auto;
-  // }
-  // @media only screen
-  // and (min-device-width : 1024px)
-  // and (max-device-height : 1390px)  {
-  //   min-height: auto;
-  // }
 }
 
 .closeday {
@@ -765,15 +751,6 @@ button.close_bottom {
 .winner-safelocker-page,
 .thankyou-page,
 .winner-page {
-  min-height: 87vh; //92
-
-  @include responsive(desktop) {
-    min-height: 90vh; //92
-  }
-
-  @include responsive(phone) {
-    min-height: 80vh;
-  }
 }
 
 .register-page,
@@ -1221,10 +1198,11 @@ ul.active li {
   border: 0;
   width: 250px;
   min-width: 18%;
-  border-radius: 0px;
+  border-radius: $btn_radius;
   letter-spacing: 2.2px;
   margin: 0.5em auto;
   padding: 7px 20px;
+  font-family: $brand-font-family;
 
   // padding: 5px 15px;
   @include responsive(phone) {

@@ -2,7 +2,7 @@
 //variables
 @import "../../variable.scss";
 .multiple-unique-code-page {
-  margin: 10vh;
+  // margin: 10vh;
   @include responsive(phone) {
     margin: 0;
     margin-top: 5vh;
@@ -158,29 +158,28 @@
       }
     }
     .title {
-      margin: 2vh auto 2vh;
-      line-height: 2.9em;
-      font-size: 1.5em;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
       font-family: $brand-font-family-7;
       @media (max-width: 576px) {
-        font-size: 1.5em;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
       }
     }
     .subtitle {
-      margin: 0 auto 2vh;
-      font-size: 1.2rem;
-      line-height: 1.5em;
+      font-size: 1.1rem;
+      line-height: 1.7rem;
       @media (max-width: 576px) {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
       }
     }
-    .subtitle1 {
-      margin: 0 auto 2vh;
-      font-size: 1.1em;
-      line-height: 1.1em;
-      // color: $brand-color-4;
+    .subtitle-2 {
+      font-size: 0.9rem;
+      line-height: 0.5rem;
       @media (max-width: 576px) {
-        font-size: 16px;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
       }
     }
     .form-control {
@@ -278,12 +277,12 @@
         border: 1px solid $brand-color-1;
       }
       .btn-remove-retailer {
-        background: $brand-color-4;
+        background: $brand-color-2;
         border-radius: 52px;
         border: none;
         font-size: 12px;
         float: right;
-        color: $brand-color-1;
+        color: $brand-color;
         padding: 6px 10px;
         width: 100%;
         // &:hover {

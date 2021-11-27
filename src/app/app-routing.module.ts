@@ -51,6 +51,17 @@ const routes: Routes = [
     component: MultipleUniqueCodeComponent,
     // canActivate: [SecurityGuard],
   },
+
+  {
+    path: "thankyou",
+    component: ThankyouSimpleComponent,
+    // , canActivate: [SecurityGuard]
+  },
+  {
+    path: "winner",
+    component: WinnerSimpleComponent,
+    // canActivate: [SecurityGuard],
+  },
   // {
   //   // 1 box one code design good to use it but multiple time unique and multiple receipts
   //   path: 'entercode',
@@ -63,18 +74,18 @@ const routes: Routes = [
   // component: ThankyouGiftboxComponent
   // , canActivate: [SecurityGuard]
   // },
-  {
-    // just to fadeIn
-    path: "winner",
-    component: WinnerEnvelopeComponent,
-    // canActivate: [SecurityGuard],
-  },
-  {
-    // scratch card
-    path: "thankyou",
-    component: ThankyouEnvelopeComponent,
-    // canActivate: [SecurityGuard],
-  },
+  // {
+  //   // just to fadeIn
+  //   path: "winner",
+  //   component: WinnerEnvelopeComponent,
+  //   // canActivate: [SecurityGuard],
+  // },
+  // {
+  //   // scratch card
+  //   path: "thankyou",
+  //   component: ThankyouEnvelopeComponent,
+  //   // canActivate: [SecurityGuard],
+  // },
   // {
   //   // scratch card
   //   path: 'winner',
@@ -165,16 +176,16 @@ const routes: Routes = [
   //   component: WinnerSpinwheelComponent
   //   // , canActivate: [SecurityGuard]
   // },
-  {
-    path: "thankyou9",
-    component: ThankyouGiftboxComponent,
-    // canActivate: [SecurityGuard]
-  },
-  {
-    path: "winner9",
-    component: WinnerGiftboxComponent,
-    // canActivate: [SecurityGuard]
-  },
+  // {
+  //   path: "thankyou9",
+  //   component: ThankyouGiftboxComponent,
+  //   // canActivate: [SecurityGuard]
+  // },
+  // {
+  //   path: "winner9",
+  //   component: WinnerGiftboxComponent,
+  //   // canActivate: [SecurityGuard]
+  // },
   // {
   //   path: 'thankyou10',
   //   component: ThankyouGiftbox2dComponent,

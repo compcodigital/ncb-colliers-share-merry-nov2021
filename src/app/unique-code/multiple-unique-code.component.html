@@ -212,16 +212,30 @@
         </div> -->
       <div class="row">
         <div class="col-12 textalignment">
-          <div class="title">Almost Done.</div>
+          <div class="title">Almost Done</div>
         </div>
       </div>
-      <div class="row" *ngIf="needStoreName">
+      <div class="row mt-4">
+        <div class="col-12 textalignment">
+          <div class="subtitle">Please answer the final questions.</div>
+        </div>
+      </div>
+      <div class="row mt-2" *ngIf="needStoreName">
         <div class="col-12 textalignment">
           <div class="subtitle">
-            Please answer the final questions below. A minimum of $20 spend is
-            required in a single day across a maximum of 4 receipts.
+            A minimum spend of $30 is required and all purchases must be made
+            within the promotional period.
           </div>
         </div>
+      </div>
+      <div class="row mt-2 mt-md-4">
+        <div class="col-12 textalignment">
+          <div class="subtitle-2">
+            Please retain receipt(s). All receipt(s) must be dated between
+            Wednesday 1 - Friday 24 December, 2021.
+          </div>
+        </div>
+
         <!-- <div class="col-12 textalignment">
             <div class="subtitle">
               A minimum spend of $150 is required. Shop in-centre at any <a (click)="openModal(participat)"
@@ -240,7 +254,7 @@
            -->
       </div>
 
-      <div class="row" *ngIf="!needStoreName">
+      <div class="row mt-2 mt-md-4" *ngIf="!needStoreName">
         <div class="col-12 textalignment">
           <div class="subtitle">
             <strong
@@ -252,7 +266,7 @@
           </div>
         </div>
       </div>
-      <div class="row mb-3" *ngIf="errorMsg.message">
+      <div class="row" *ngIf="errorMsg.message">
         <div class="col-12">
           <div class="error-text">
             {{ errorMsg.message }}
@@ -261,7 +275,7 @@
       </div>
       <form
         action=""
-        class="form-horizontal"
+        class="form-horizontal mt-4 mt-md-5"
         [formGroup]="spentForm"
         autocomplete="off"
       >
@@ -339,8 +353,8 @@
                       [ngClass]="storeStyles[i]"
                       *ngIf="needStoreName"
                     >
-                      <label class="control-label register-label mt-1 mt-md-0"
-                        >*Store where the purchase was made.
+                      <label class="control-label register-label pt-0 mt-md-0"
+                        >*Store where the purchase was made:
                       </label>
 
                       <!-- <select class="form-control" formControlName="store">
@@ -386,6 +400,33 @@
                           </ul>
                         </div>
                       </section>
+                    </div>
+                    <div class="col-12" [ngClass]="spendStyles[i]">
+                      <label class="control-label register-label">
+                        *Amount Spent:
+                        <!-- <small>(Minimum ${{ minispend }} spend. Please retain receipts for proof of purchase.)</small> -->
+                        <!-- <br>
+                           <small>Minimum $30 spend. Please retain receipts for proof of purchase. <br> Receipts must be shown at Customer Service to claim your instant prize.</small> -->
+                      </label>
+                      <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input
+                          type="number"
+                          class="form-control"
+                          formControlName="spend"
+                          placeholder=""
+                          autocomplete="off"
+                          onkeyup="if (/^(\d+\.\d{2})\d+$/g.test(this.value)) this.value = this.value.replace(/^(\d+\.\d{2})\d+$/g,'')"
+                        />
+                      </div>
+
+                      <!-- <select class="form-control" formControlName="spend">
+                             <option disabled selected value>Please select</option>
+                             <option value="< $5">< $5</option>
+                             <option value="$5 - $10">$5 - $10</option>
+                             <option value="$10 - $15">$10 - $15</option>
+                             <option value="> $15"> > $15</option>
+                          </select> -->
                     </div>
 
                     <div class="col-12" [ngClass]="purchaseDateStyle">
@@ -438,34 +479,6 @@
                       </div>
                     </div>
 
-                    <div class="col-12" [ngClass]="spendStyles[i]">
-                      <label class="control-label register-label">
-                        *Amount spent:
-                        <!-- <small>(Minimum ${{ minispend }} spend. Please retain receipts for proof of purchase.)</small> -->
-                        <!-- <br>
-                           <small>Minimum $30 spend. Please retain receipts for proof of purchase. <br> Receipts must be shown at Customer Service to claim your instant prize.</small> -->
-                      </label>
-                      <div class="input-group">
-                        <div class="input-group-addon">$</div>
-                        <input
-                          type="number"
-                          class="form-control"
-                          formControlName="spend"
-                          placeholder=""
-                          autocomplete="off"
-                          onkeyup="if (/^(\d+\.\d{2})\d+$/g.test(this.value)) this.value = this.value.replace(/^(\d+\.\d{2})\d+$/g,'')"
-                        />
-                      </div>
-
-                      <!-- <select class="form-control" formControlName="spend">
-                             <option disabled selected value>Please select</option>
-                             <option value="< $5">< $5</option>
-                             <option value="$5 - $10">$5 - $10</option>
-                             <option value="$10 - $15">$10 - $15</option>
-                             <option value="> $15"> > $15</option>
-                          </select> -->
-                    </div>
-
                     <br />
 
                     <!-- <div class="col-12">
@@ -504,7 +517,7 @@
               [disabled]="buttonDisabled"
               (click)="addItems()"
             >
-              + ANOTHER SPEND
+              + Another Spend
             </button>
           </div>
           <!-- <div class="col-12 text-center">
@@ -514,7 +527,7 @@
             </div> -->
         </div>
 
-        <div class="row enter-step2">
+        <div class="row enter-step2 mb-4">
           <div class="col-12 textalignment">
             <button
               type="submit"
