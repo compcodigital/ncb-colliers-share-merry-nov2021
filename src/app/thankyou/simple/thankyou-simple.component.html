@@ -1,57 +1,80 @@
 <div class="thankyou-page">
   <section class="container">
-    <div class="thankyou-container" [@fadeIn]>
-      <div class="row d-flex align-items-center">
-        <div class="col-12 col-md-6">
-          <div class="thankyou-head text-center text-md-left">
-            <img src="../../assets/img/gift-win.png" alt="" class="img-fluid" />
+    <div class="thankyou-container">
+      <div [ngClass]="clickStyle">
+        <div class="row d-flex align-items-center">
+          <div class="col-12">
+            <img src="{{ src }}" alt="Cookies" class="img-fluid" />
+            <div class="text-center mb-5">
+              <div
+                class="primarybtn btn"
+                (click)="opengift()"
+                [ngClass]="boxStyleBtn"
+              >
+                OPEN TO SEE IF YOU ARE A WINNER
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-6">
-          <!-- <div class="row">
+      </div>
+
+      <div [@fadeIn] [ngClass]="displayStyle">
+        <div class="row d-flex align-items-center">
+          <div class="col-12 col-md-6">
+            <div class="thankyou-head text-center text-md-left">
+              <img
+                src="../../assets/img/gift-win.png"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <!-- <div class="row">
                   <div class="col-12">
                     <div class="thankyou-text">You have won a {{ prizeInfoName }}.</div>
                   </div>
                 </div> -->
-          <div class="row mt-4">
-            <div class="col-12">
-              <div class="thankyou-text-2 text-center text-md-left">
-                Thank you for entering our weekly draw to win a $250 Centre Gift
-                Card, your support to Hills Community Aid is greatly
-                appreciated.*
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="thankyou-text-2 text-center text-md-left">
+                  Thank you for entering our weekly draw to win a $250 Centre
+                  Gift Card, your support to Hills Community Aid is greatly
+                  appreciated.*
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-12">
-              <div class="thankyou-text-3 text-center text-md-left">
-                Plus, you have been entered into the major draw for a chance to
-                win a $1,000 EFTPOS Gift Card.*
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="thankyou-text-3 text-center text-md-left">
+                  Plus, you have been entered into the major draw for a chance
+                  to win a $1,000 EFTPOS Gift Card.*
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-12">
-              <div class="thankyou-text-4 text-center text-md-left">
-                *<a (click)="openModal(terms)" class="footer-tnc-link"
-                  >Terms and Conditions</a
-                >
-                apply.
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="thankyou-text-4 text-center text-md-left">
+                  *<a (click)="openModal(terms)" class="footer-tnc-link"
+                    >Terms and Conditions</a
+                  >
+                  apply.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row mt-4 mb-5">
-            <div class="col-12 text-center text-md-left">
-              <div class="primarybtn btn1" (click)="onDone()">DONE</div>
+            <div class="row mt-4 mb-5">
+              <div class="col-12 text-center text-md-left">
+                <div class="primarybtn btn1" (click)="onDone()">DONE</div>
+              </div>
             </div>
-          </div>
-          <!-- <div class="row">
+            <!-- <div class="row">
             <div class="col-12 text-center">
               <div class="fourthbtn btn" (click)="anotherCode()">
                 ENTER ANOTHER SPEND
               </div>
             </div>
           </div> -->
+          </div>
         </div>
       </div>
     </div>

@@ -1,55 +1,84 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { CampaignCenterService } from '../../services/campaigncenter.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { BsModalService, BsModalRef } from '../../../../node_modules/ngx-bootstrap/modal';
-import { fadeIn } from '../../shared/animation';
+import { Component, OnInit, TemplateRef, ViewChild } from "@angular/core";
+import { CampaignCenterService } from "../../services/campaigncenter.service";
+import { ActivatedRoute, Router } from "@angular/router";
+import {
+  BsModalService,
+  BsModalRef,
+} from "../../../../node_modules/ngx-bootstrap/modal";
+import { fadeIn } from "../../shared/animation";
 
 @Component({
-  selector: 'app-thankyou-simple',
-  templateUrl: './thankyou-simple.component.html',
-  styleUrls: ['./thankyou-simple.component.scss'],
-  animations: [
-    fadeIn
-  ]
+  selector: "app-thankyou-simple",
+  templateUrl: "./thankyou-simple.component.html",
+  styleUrls: ["./thankyou-simple.component.scss"],
+  animations: [fadeIn],
 })
 export class ThankyouSimpleComponent implements OnInit {
   website: any;
   modalRef: BsModalRef;
   weeklyEntries: number;
   entry: string;
-  @ViewChild('participat', { static: false }) template: TemplateRef<any>;
+  src: string;
+  displayStyle: string;
+  clickStyle: string;
+  status: boolean;
+  @ViewChild("participat", { static: false }) template: TemplateRef<any>;
   constructor(
     private campaignCenterService: CampaignCenterService,
     private router: Router,
     private route: ActivatedRoute,
-    private modalService: BsModalService) {
-  }
+    private modalService: BsModalService
+  ) {}
 
   ngOnInit() {
     this.weeklyEntries = this.campaignCenterService.weeklyEntry;
     // console.log(this.campaignCenterService.weeklyEntry,this.weeklyEntries);
     if (this.weeklyEntries === 1) {
-      this.entry = 'entry';
+      this.entry = "entry";
     } else {
-      this.entry = 'entries';
+      this.entry = "entries";
     }
+    this.weeklyEntries = this.campaignCenterService.weeklyEntry;
+    if (window.innerWidth < 1024) {
+      this.src = "./assets/img/cookies/box.jpg";
+    } else {
+      this.src = "./assets/img/cookies/box.jpg";
+    }
+    this.status = false;
+    this.displayStyle = "displaynone";
   }
   openModal(participat: TemplateRef<any>) {
     this.modalRef = this.modalService.show(participat);
   }
   anotherCode() {
     if (this.campaignCenterService.pubid) {
-      this.router.navigate(['/entercode'], { relativeTo: this.route });
+      this.router.navigate(["/entercode"], { relativeTo: this.route });
     }
   }
   onDone() {
     // clear up
-    localStorage.removeItem('prize_info');
-    localStorage.removeItem('prize_info_name');
-    localStorage.removeItem('prize_info_retailer');
-    this.campaignCenterService.pubid = '';
-    this.router.navigate(['/home'], { relativeTo: this.route });
+    localStorage.removeItem("prize_info");
+    localStorage.removeItem("prize_info_name");
+    localStorage.removeItem("prize_info_retailer");
+    this.campaignCenterService.pubid = "";
+    this.router.navigate(["/home"], { relativeTo: this.route });
   }
-
-
+  opengift() {
+    console.log("openfunction");
+    if (this.status === false) {
+      console.log("open cookies");
+      if (window.innerWidth < 1024) {
+        this.src = "../../../assets/img/cookies/box.gif";
+      } else {
+        this.src = "../../../assets/img/cookies/box.gif";
+      }
+      this.status = true;
+      setTimeout(() => {
+        if (this.status === true) {
+          this.clickStyle = "d-none";
+          this.displayStyle = "d-block animated fadeIn";
+        }
+      }, 3500);
+    }
+  }
 }
