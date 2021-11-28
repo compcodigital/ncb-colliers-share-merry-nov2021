@@ -259,7 +259,8 @@
         width: 100%;
         display: none;
         font-size: 1rem;
-        border: 1px solid $brand-color-1;
+        // border: 1px solid $brand-color-1;
+        border: 1px solid #F28BAF;
         @include responsive(phone) {
           font-size: 0.9rem;
         }
@@ -274,7 +275,8 @@
       .retailer-item-input {
         padding: 30px;
         display: block;
-        border: 1px solid $brand-color-1;
+        // border: 1px solid $brand-color-1;
+        border: 1px solid #F28BAF;
       }
       .btn-remove-retailer {
         background: $brand-color-2;

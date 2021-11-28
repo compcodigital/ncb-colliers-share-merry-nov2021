@@ -90,6 +90,7 @@ body {
   // background-repeat: no-repeat;
   // background-size: cover;
   background-color: $brand-color;
+
   @include responsive(phone) {
     // background: url("assets/img/bg-home-mob.png");
     // background-position: bottom;
@@ -731,17 +732,25 @@ button.close_bottom {
 }
 
 .home-page {
-  min-height: 100vh;
+  min-height: 93vh; //100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-image: url("assets/img/bg-home-web.png");
+  background-repeat: no-repeat;
+  background-size: 540px;
+
   @include responsive(desktop) {
     // min-height: 70vh;
   }
 
   @include responsive(phone) {
     min-height: 90vh;
+
+    background-image: url("assets/img/bg-home-mob.png");
+    background-size: 100%;
   }
 }
 
@@ -910,7 +919,8 @@ input[type="number"] {
 .input-group-addon {
   align-items: center;
   background: #fff;
-  color: $brand-color;
+  // color: $brand-color;
+  color: #000;
   display: flex;
   margin: 0;
   padding: 0 2px 0 0;
