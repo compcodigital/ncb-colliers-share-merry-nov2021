@@ -29,8 +29,9 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
     this.title = this.campaignCenterService.campaignTitle;
     setTimeout(() => {
+      console.log("change footer");
       this.companyId = this.campaignCenterService.companyId;
-    }, 1000);
+    }, 2000);
 
     this.currentLocation();
   }
