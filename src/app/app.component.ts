@@ -342,7 +342,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.campaignCenterService.campaignSettings().subscribe(
       (response) => {
         console.log(response);
-        this.titleService.setTitle(response.form_fields.centre_name);
         this.campaignOpenDate = response.form_fields.start_time_format;
         this.campaignCloseDate = response.form_fields.end_time_format;
         this.campaignCenterService.linkPrivacy =
@@ -423,6 +422,8 @@ export class AppComponent implements OnInit, AfterViewInit {
           .checkUrlCampaign(subdomain)
           .subscribe((response: any) => {
             if (response.company && response.company.company_id) {
+              this.titleService.setTitle(response.company.centreName);
+
               this.campaignCenterService.companyId =
                 response.company.company_id;
               this.campaignCenterService.entryLocation =
