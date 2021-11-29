@@ -38,7 +38,7 @@ declare let gtag: Function;
 @Injectable()
 export class AppComponent implements OnInit, AfterViewInit {
   // title is used as a title in all the places
-  title = "KELLYVILLE";
+  title = "Sharethemerry";
   centers: Center[];
   deviceInfo = null;
   deviceStyle: string;
@@ -159,7 +159,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.pageNotAvailable = false;
     this.requiredsubdomain = true;
     this.comingsoon = false;
-    this.titleService.setTitle(this.title);
+    // this.titleService.setTitle(this.title);
     this.metaService.addTags([
       { name: "keywords", content: this.title },
       { name: "description", content: this.title },
@@ -342,8 +342,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.campaignCenterService.campaignSettings().subscribe(
       (response) => {
         console.log(response);
+        this.titleService.setTitle(response.form_fields.centre_name);
         this.campaignOpenDate = response.form_fields.start_time_format;
         this.campaignCloseDate = response.form_fields.end_time_format;
+        this.campaignCenterService.linkPrivacy =
+          response.form_fields.link_privacy;
         // this.campaignOpenDate = new Date('14 October 2019 09:00:00');
         // console.log(this.campaignOpenDate);
         console.log(this.campaignCloseDate);

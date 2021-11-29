@@ -156,6 +156,7 @@ export class RegisterComponent implements OnInit {
   isTerm: boolean;
   isSubscribe: boolean;
   acc: string; //check auto complete browser
+  companyId: string;
   constructor(
     private router: Router,
     private location: Location,
@@ -175,6 +176,7 @@ export class RegisterComponent implements OnInit {
     console.log("Page Register");
     this.checkAuto();
     this.title = this.campaignCenterService.campaignTitle;
+    this.companyId = this.campaignCenterService.companyId;
     this.buttonDisabled = false;
     this.loadingStyle = "displaynone";
     this.isMobile = false;

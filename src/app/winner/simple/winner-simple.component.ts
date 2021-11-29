@@ -56,8 +56,9 @@ export class WinnerSimpleComponent implements OnInit {
     this.status = false;
     this.displayStyle = "displaynone";
   }
-  openModal(participat: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(participat);
+  openModal(template: TemplateRef<any>, size = "lg") {
+    let modalCss = { class: "modal-dialog-centered modal-" + size };
+    this.modalRef = this.modalService.show(template, modalCss);
   }
   anotherCode() {
     if (this.campaignCenterService.pubid) {

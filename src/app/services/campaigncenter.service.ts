@@ -47,6 +47,7 @@ export class CampaignCenterService {
   weeklyEntry: number;
   prizesRemaining: number;
   numberEntriesBySpend: number;
+  linkPrivacy: string;
   companies: Companies[];
   constructor(private http: HttpClient, private datePipe: DatePipe) {
     this.showFooter = false;
