@@ -50,6 +50,9 @@ export class MultipleUniqueCodeComponent implements OnInit {
   templateEntryInvalid: TemplateRef<any>;
   @ViewChild("templateDuplicateValuesEntered", { static: false })
   templateDuplicateValuesEntered: TemplateRef<any>;
+  @ViewChild("templateMiniSpend", { static: false })
+  templateMiniSpend: TemplateRef<any>;
+
   submitted: boolean;
   /*for the drop list*/
   centers: Center[];
@@ -369,8 +372,8 @@ export class MultipleUniqueCodeComponent implements OnInit {
                 this.openModal(this.memberNotFound, "sm");
                 this.resetCode();
               } else if (response.error.code === "NCB-0027") {
-                // already entered
-                this.openModal(this.templateDuplicateValuesEntered, "sm");
+                this.openModal(this.templateMiniSpend, "sm");
+                // this.openModal(this.templateDuplicateValuesEntered, "sm");
                 this.resetCode();
               } else {
                 this.openModal(this.templateInvalidCode, "sm"); // invalid code
@@ -790,7 +793,8 @@ export class MultipleUniqueCodeComponent implements OnInit {
             this.buttonDisabled = false;
           } else if (response.error.code === "NCB-0027") {
             // duplicate details, already entered
-            this.openModal(this.templateDuplicateValuesEntered, "sm");
+            this.openModal(this.templateMiniSpend, "sm");
+            // this.openModal(this.templateDuplicateValuesEntered, "sm");
             this.loadingStyle = "displaynone";
             this.buttonDisabled = false;
           } else {
@@ -879,7 +883,8 @@ export class MultipleUniqueCodeComponent implements OnInit {
             this.resetCode();
           } else if (response.error.code === "NCB-0027") {
             // already entered
-            this.openModal(this.templateDuplicateValuesEntered, "sm");
+            this.openModal(this.templateMiniSpend, "sm");
+            // this.openModal(this.templateDuplicateValuesEntered, "sm");
             this.resetCode();
           } else {
             this.openModal(this.serverErrorCode, "sm");

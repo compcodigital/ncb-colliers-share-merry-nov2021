@@ -78,7 +78,7 @@ export class ThankyouSimpleComponent implements OnInit {
           this.clickStyle = "d-none";
           this.displayStyle = "d-block animated fadeIn";
         }
-      }, 3500);
+      }, 4000);
     }
   }
 }

@@ -51,13 +51,13 @@ export class CampaignCenterService {
   constructor(private http: HttpClient, private datePipe: DatePipe) {
     this.showFooter = false;
     this.footerSecondary = false;
-    this.companyId = "91"; // wm_niw_com
-    this.campaignId = 5000382;
+    this.companyId = "1321"; // wm_niw_com
+    this.campaignId = 5000381;
     this.apiAuthKey =
       "NOV5000386C16ABBA5BBC361C3A2FF07AF1D764C6F98B157D4DF854F082020NN";
     this.apiUrl =
       "https://www.campaigncentre.com.au/_winme/web/app_dev.php/api/v1.02/ncb/web/";
-    this.campaignType = "uniqueCode"; // entryOnly || uniqueCode || spentOnly
+    this.campaignType = "spentOnly"; // entryOnly || uniqueCode || spentOnly
   }
 
   /*Check validation limit for number*/
@@ -111,7 +111,11 @@ export class CampaignCenterService {
       "X-Authorization-NCB": this.apiAuthKey,
       "Content-Type": "application/json",
     });
-    const url = this.apiUrl + this.campaignId + "/form_fields";
+    const url =
+      this.apiUrl +
+      this.campaignId +
+      "/form_fields?company_id=" +
+      this.companyId;
 
     const httpObservable = this.http.get<any>(url, { headers });
 

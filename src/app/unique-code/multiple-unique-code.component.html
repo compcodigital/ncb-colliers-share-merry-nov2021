@@ -266,20 +266,17 @@
           </div>
         </div>
       </div>
-      <div class="row" *ngIf="errorMsg.message">
-        <div class="col-12">
-          <div class="error-text">
-            {{ errorMsg.message }}
-          </div>
+      <div class="mt-4 mt-md-5">
+        <div class="error-text mb-3" *ngIf="errorMsg.message">
+          {{ errorMsg.message }}
         </div>
-      </div>
-      <form
-        action=""
-        class="form-horizontal mt-4 mt-md-5"
-        [formGroup]="spentForm"
-        autocomplete="off"
-      >
-        <!-- <div class="retailer-item enter-step1">
+        <form
+          action=""
+          class="form-horizontal"
+          [formGroup]="spentForm"
+          autocomplete="off"
+        >
+          <!-- <div class="retailer-item enter-step1">
             <div class="retailer-item-date">
               <div class="row">
                 <div class="col-12" [ngClass]="purchaseDateStyle">
@@ -300,253 +297,258 @@
             <br>
           </div> -->
 
-        <!-- purchaseDate =
+          <!-- purchaseDate =
         {{
           this.spentForm.controls.spentretailer.value[0].purchaseDate
             | date: "dd/MM/yy"
         }} -->
-        <div
-          class="enter-step2"
-          formArrayName="spentretailer"
-          *ngIf="showFormMultipleUniqueCode"
-        >
           <div
-            class="retailer-item"
-            *ngFor="
-              let item of spentForm.controls.spentretailer.controls;
-              let i = index
-            "
-            [formGroupName]="i"
+            class="enter-step2"
+            formArrayName="spentretailer"
+            *ngIf="showFormMultipleUniqueCode"
           >
-            <div class="retailer-item-label" id="retailer-item-label-{{ i }}">
-              <div class="row">
-                <div class="col-9 col-lg-10">
-                  <div class="row">
-                    <div class="col-4">{{ item.controls.store.value }}</div>
-                    <div class="col-4">${{ item.controls.spend.value }}</div>
-                    <div class="col-4">
-                      {{ item.controls.purchaseDate.value | date: "dd/MM/yy" }}
+            <div
+              class="retailer-item"
+              *ngFor="
+                let item of spentForm.controls.spentretailer.controls;
+                let i = index
+              "
+              [formGroupName]="i"
+            >
+              <div class="retailer-item-label" id="retailer-item-label-{{ i }}">
+                <div class="row">
+                  <div class="col-9 col-lg-10">
+                    <div class="row">
+                      <div class="col-4">{{ item.controls.store.value }}</div>
+                      <div class="col-4">${{ item.controls.spend.value }}</div>
+                      <div class="col-4">
+                        {{
+                          item.controls.purchaseDate.value | date: "dd/MM/yy"
+                        }}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="
-                    col-3 col-lg-2
-                    d-flex
-                    align-items-center
-                    justify-content-end
-                  "
-                >
-                  <button class="btn-remove-retailer" (click)="removeItem(i)">
-                    remove
-                  </button>
+                  <div
+                    class="
+                      col-3 col-lg-2
+                      d-flex
+                      align-items-center
+                      justify-content-end
+                    "
+                  >
+                    <button class="btn-remove-retailer" (click)="removeItem(i)">
+                      remove
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="retailer-item-input" id="retailer-item-input-{{ i }}">
-              <div class="row">
-                <div class="col-9 col-md-10">
-                  <div class="row">
-                    <div
-                      class="col-12"
-                      [ngClass]="storeStyles[i]"
-                      *ngIf="needStoreName"
-                    >
-                      <label class="control-label register-label pt-0 mt-md-0"
-                        >*Store where the purchase was made:
-                      </label>
+              <div class="retailer-item-input" id="retailer-item-input-{{ i }}">
+                <div class="row">
+                  <div class="col-9 col-md-10">
+                    <div class="row">
+                      <div
+                        class="col-12"
+                        [ngClass]="storeStyles[i]"
+                        *ngIf="needStoreName"
+                      >
+                        <label class="control-label register-label pt-0 mt-md-0"
+                          >*Store where the purchase was made:
+                        </label>
 
-                      <!-- <select class="form-control" formControlName="store">
+                        <!-- <select class="form-control" formControlName="store">
                           <option disabled selected value>Select retailer</option>
                           <option *ngFor="let retailer of retailersOfSelectedCenter"
                             [value]="retailer.id">{{retailer.name}}
                           </option>
                         </select> -->
 
-                      <section class="filter-wrapper">
-                        <div class="keyword-wrapper">
-                          <!-- <input type="text" class="form-control" formControlName="storeid"> -->
-                          <input
-                            value="05/11/2021"
-                            type="text"
-                            class="form-control"
-                            formControlName="store"
-                            placeholder="Enter retailer"
-                            autocomplete="off"
-                            (keyup)="getStores($event, i)"
-                            required
-                            appAutoFocus
-                          />
-                          <!-- (focus)="displayblock()"  -->
-                          <!-- <ul class="filter-select" [ngClass]="displayStyle"> -->
-                          <ul
-                            class="filter-select"
-                            *ngIf="showStoreByKey == i && refStores.length > 0"
-                          >
-                            <li
-                              *ngFor="let store of refStores"
-                              class="filter-select-list"
+                        <section class="filter-wrapper">
+                          <div class="keyword-wrapper">
+                            <!-- <input type="text" class="form-control" formControlName="storeid"> -->
+                            <input
+                              value="05/11/2021"
+                              type="text"
+                              class="form-control"
+                              formControlName="store"
+                              placeholder="Enter retailer"
+                              autocomplete="off"
+                              (keyup)="getStores($event, i)"
+                              required
+                              appAutoFocus
+                            />
+                            <!-- (focus)="displayblock()"  -->
+                            <!-- <ul class="filter-select" [ngClass]="displayStyle"> -->
+                            <ul
+                              class="filter-select"
+                              *ngIf="
+                                showStoreByKey == i && refStores.length > 0
+                              "
                             >
-                              <button
-                                class="tags"
-                                (click)="
-                                  fill(i, store.outlet_id, store.outlet_name)
-                                "
+                              <li
+                                *ngFor="let store of refStores"
+                                class="filter-select-list"
                               >
-                                {{ store.outlet_name }}
-                              </button>
-                            </li>
-                          </ul>
-                        </div>
-                      </section>
-                    </div>
-                    <div class="col-12" [ngClass]="spendStyles[i]">
-                      <label class="control-label register-label">
-                        *Amount Spent:
-                        <!-- <small>(Minimum ${{ minispend }} spend. Please retain receipts for proof of purchase.)</small> -->
-                        <!-- <br>
-                           <small>Minimum $30 spend. Please retain receipts for proof of purchase. <br> Receipts must be shown at Customer Service to claim your instant prize.</small> -->
-                      </label>
-                      <div class="input-group">
-                        <div class="input-group-addon">$</div>
-                        <input
-                          type="number"
-                          class="form-control"
-                          formControlName="spend"
-                          placeholder=""
-                          autocomplete="off"
-                          onkeyup="if (/^(\d+\.\d{2})\d+$/g.test(this.value)) this.value = this.value.replace(/^(\d+\.\d{2})\d+$/g,'')"
-                        />
+                                <button
+                                  class="tags"
+                                  (click)="
+                                    fill(i, store.outlet_id, store.outlet_name)
+                                  "
+                                >
+                                  {{ store.outlet_name }}
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                        </section>
                       </div>
+                      <div class="col-12" [ngClass]="spendStyles[i]">
+                        <label class="control-label register-label">
+                          *Amount Spent:
+                          <!-- <small>(Minimum ${{ minispend }} spend. Please retain receipts for proof of purchase.)</small> -->
+                          <!-- <br>
+                           <small>Minimum $30 spend. Please retain receipts for proof of purchase. <br> Receipts must be shown at Customer Service to claim your instant prize.</small> -->
+                        </label>
+                        <div class="input-group">
+                          <div class="input-group-addon">$</div>
+                          <input
+                            type="number"
+                            class="form-control"
+                            formControlName="spend"
+                            placeholder=""
+                            autocomplete="off"
+                            onkeyup="if (/^(\d+\.\d{2})\d+$/g.test(this.value)) this.value = this.value.replace(/^(\d+\.\d{2})\d+$/g,'')"
+                          />
+                        </div>
 
-                      <!-- <select class="form-control" formControlName="spend">
+                        <!-- <select class="form-control" formControlName="spend">
                              <option disabled selected value>Please select</option>
                              <option value="< $5">< $5</option>
                              <option value="$5 - $10">$5 - $10</option>
                              <option value="$10 - $15">$10 - $15</option>
                              <option value="> $15"> > $15</option>
                           </select> -->
-                    </div>
-
-                    <div class="col-12" [ngClass]="purchaseDateStyle">
-                      <label class="control-label register-label"
-                        >*Receipt Date:</label
-                      >
-                      <div class="input-calendar" *ngIf="!isMobile">
-                        <input
-                          type="text"
-                          class="form-control"
-                          [minDate]="minDate"
-                          [maxDate]="maxDate"
-                          [bsConfig]="{
-                            dateInputFormat: 'DD/MM/YYYY',
-                            showWeekNumbers: false,
-                            todayHighligh: true
-                          }"
-                          #dp="bsDatepicker"
-                          bsDatepicker
-                          formControlName="purchaseDate"
-                          placeholder="dd/mm/yyyy"
-                          autocomplete="off"
-                          [dateCustomClasses]="dateCustomClasses"
-                        />
-                        <label for="input-calendar">
-                          <img
-                            src="../../assets/img/icon-calendar.png"
-                            class="img-fluid"
-                            (click)="dp.toggle()"
-                            [attr.aria-expanded]="dp.isOpen"
-                          />
-                        </label>
                       </div>
-                      <div class="input-calendar-mobile" *ngIf="isMobile">
-                        <input
-                          type="date"
-                          min="{{ minDate | date: 'yyyy-MM-dd' }}"
-                          max="{{ maxDate | date: 'yyyy-MM-dd' }}"
-                          class="form-control"
-                          formControlName="purchaseDate"
-                          placeholder="dd/mm/yyyy"
-                          autocomplete="off"
-                        />
-                        <label for="input-calendar-mobile">
-                          <img
-                            src="../../assets/img/icon-calendar.png"
-                            class="img-fluid"
+
+                      <div class="col-12" [ngClass]="purchaseDateStyle">
+                        <label class="control-label register-label"
+                          >*Receipt Date:</label
+                        >
+                        <div class="input-calendar" *ngIf="!isMobile">
+                          <input
+                            type="text"
+                            class="form-control"
+                            [minDate]="minDate"
+                            [maxDate]="maxDate"
+                            [bsConfig]="{
+                              dateInputFormat: 'DD/MM/YYYY',
+                              showWeekNumbers: false,
+                              todayHighligh: true
+                            }"
+                            #dp="bsDatepicker"
+                            bsDatepicker
+                            formControlName="purchaseDate"
+                            placeholder="dd/mm/yyyy"
+                            autocomplete="off"
+                            [dateCustomClasses]="dateCustomClasses"
                           />
-                        </label>
+                          <label for="input-calendar">
+                            <img
+                              src="../../assets/img/icon-calendar.png"
+                              class="img-fluid"
+                              (click)="dp.toggle()"
+                              [attr.aria-expanded]="dp.isOpen"
+                            />
+                          </label>
+                        </div>
+                        <div class="input-calendar-mobile" *ngIf="isMobile">
+                          <input
+                            type="date"
+                            min="{{ minDate | date: 'yyyy-MM-dd' }}"
+                            max="{{ maxDate | date: 'yyyy-MM-dd' }}"
+                            class="form-control"
+                            formControlName="purchaseDate"
+                            placeholder="dd/mm/yyyy"
+                            autocomplete="off"
+                          />
+                          <label for="input-calendar-mobile">
+                            <img
+                              src="../../assets/img/icon-calendar.png"
+                              class="img-fluid"
+                            />
+                          </label>
+                        </div>
                       </div>
-                    </div>
 
-                    <br />
+                      <br />
 
-                    <!-- <div class="col-12">
+                      <!-- <div class="col-12">
                          <small>
                           A minimum spend of $35 in Centre is required for entry. One entry per
                           customer, per day.
                          </small>
                       </div> -->
+                    </div>
+                  </div>
+                  <div
+                    *ngIf="i > 0"
+                    class="
+                      col-3 col-md-2
+                      d-flex
+                      align-items-center
+                      justify-content-end
+                    "
+                  >
+                    <button class="btn-remove-retailer" (click)="removeItem(i)">
+                      remove
+                    </button>
                   </div>
                 </div>
-                <div
-                  *ngIf="i > 0"
-                  class="
-                    col-3 col-md-2
-                    d-flex
-                    align-items-center
-                    justify-content-end
-                  "
-                >
-                  <button class="btn-remove-retailer" (click)="removeItem(i)">
-                    remove
-                  </button>
-                </div>
               </div>
+
+              <br />
             </div>
-
-            <br />
           </div>
-        </div>
 
-        <div class="row enter-step2">
-          <div class="col-12 text-center">
-            <button
-              type="submit"
-              class="secondarybtn btn5"
-              [disabled]="buttonDisabled"
-              (click)="addItems()"
-            >
-              + Another Spend
-            </button>
-          </div>
-          <!-- <div class="col-12 text-center">
+          <div class="row enter-step2">
+            <div class="col-12 text-center">
+              <button
+                type="submit"
+                class="secondarybtn btn5"
+                [disabled]="buttonDisabled"
+                (click)="addItems()"
+              >
+                + Another Spend
+              </button>
+            </div>
+            <!-- <div class="col-12 text-center">
               <button type="submit" class="secondarybtn btn5" [disabled]="buttonDisabled"
                 (click)="removeItems()">+
                 REMOVE RECEIPT</button>
             </div> -->
-        </div>
-
-        <div class="row enter-step2 mb-4">
-          <div class="col-12 textalignment">
-            <button
-              type="submit"
-              class="primarybtn btn1"
-              [disabled]="buttonDisabled"
-              (click)="onSpent(this.campaignCenterService.email)"
-            >
-              <!-- (this.campaignCenterService.email)" -->
-              <img
-                src="../../assets/img/loadingWheel.gif"
-                alt=""
-                [ngClass]="loadingStyle"
-              />
-              <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
-              ENTER
-            </button>
           </div>
-        </div>
-      </form>
+
+          <div class="row enter-step2 mb-4">
+            <div class="col-12 textalignment">
+              <button
+                type="submit"
+                class="primarybtn btn1"
+                [disabled]="buttonDisabled"
+                (click)="onSpent(this.campaignCenterService.email)"
+              >
+                <!-- (this.campaignCenterService.email)" -->
+                <img
+                  src="../../assets/img/loadingWheel.gif"
+                  alt=""
+                  [ngClass]="loadingStyle"
+                />
+                <!-- <span class="loading" [ngClass]="loadingStyle"></span> -->
+                ENTER
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <!-- <div class="col-12">
         <div class="float-right close-home up-mb"> -->
@@ -562,29 +564,24 @@
     <div class="divider-bottom-space"></div>
   </section>
   <ng-template #templateInvalidCode>
-    <div class="modal-header modal-header-customize">
+    <div class="modal-header">
       <button
         type="button"
-        class="close float-right close-bigsize"
+        class="close float-right"
         aria-label="Close"
         (click)="modalRef.hide()"
         [disabled]="submitted"
       >
-        <span aria-hidden="true">&times;</span>
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
       </button>
-      <br /><br />
     </div>
-    <div class="modal-body modal-body-large-text">
-      <div class="oops">OOPS!</div>
-      <br />
-      <div>
-        Looks like you have
-        <br />
-        entered an invalid code.
-        <br />
-        <br />
-        <small> Please try another code. </small>
-        <br />
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small
+          >Looks like you have entered an invalid code. Please try another
+          code.</small
+        >
       </div>
     </div>
   </ng-template>
@@ -655,6 +652,28 @@
       </div>
     </div>
   </ng-template>
+  <ng-template #templateMiniSpend>
+    <div class="modal-header">
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="closeModalToHome()"
+        [disabled]="submitted"
+      >
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
+      </button>
+    </div>
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small
+          >Your purchase is less than the ${{ minispend }} minimum spend
+          required for entry.</small
+        >
+      </div>
+    </div>
+  </ng-template>
   <ng-template #templateAlreadyEntered>
     <div class="modal-header">
       <button
@@ -677,23 +696,25 @@
     </div>
   </ng-template>
   <ng-template #templateDuplicateValuesEntered>
-    <div class="modal-header modal-header-customize">
+    <div class="modal-header">
       <button
         type="button"
-        class="close float-right close-bigsize"
+        class="close float-right"
         aria-label="Close"
         (click)="modalRef.hide()"
+        [disabled]="submitted"
       >
-        <span aria-hidden="true">&times;</span>
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
       </button>
-      <br /><br />
     </div>
-    <div class="modal-body modal-body-large-text">
+    <div class="modal-body modal-alert">
       <div class="oops">Oops...</div>
-      It looks like this receipt has been used before, <br />
-      please update one of the fields to proceed or enter a new spend.
-      <!-- Looks like the email or phone number you have entered has been used today. -->
-      <!-- It looks like the email and telephone number you have used don’t match. -->
+      <div class="mt-4">
+        <small
+          >It looks like this receipt has been used before, please update one of
+          the fields to proceed or enter a new spend.</small
+        >
+      </div>
     </div>
   </ng-template>
   <ng-template #serverErrorCode>
@@ -717,28 +738,21 @@
   </ng-template>
 
   <ng-template #templateEntryInvalid>
-    <div class="modal-header modal-header-customize">
+    <div class="modal-header">
       <button
         type="button"
-        class="close float-right close-bigsize"
+        class="close float-right"
         aria-label="Close"
-        (click)="modalRef.hide()"
+        (click)="closeModalToHome()"
         [disabled]="submitted"
       >
-        <span aria-hidden="true">&times;</span>
+        <img src="../../assets/img/close-modal.png" class="modal-close" />
       </button>
-      <br /><br />
     </div>
-    <div class="modal-body modal-body-large-text">
-      <div class="oops">OOPS!</div>
-      <br />
-      <div>
-        Looks like you have
-        <br />
-        entered an Invalid entry
-        <br />
-        <br />
-        <br />
+    <div class="modal-body modal-alert">
+      <div class="oops">Oops...</div>
+      <div class="mt-4">
+        <small>Looks like you have entered an Invalid entry.</small>
       </div>
     </div>
   </ng-template>
@@ -927,13 +941,3 @@
     </div>
   </div>
 </ng-template>
-<!-- <div class="ribbon">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <strong>Don’t have an entry form?</strong> Collect one when you make a purchase at any
-            <a (click)="openModal(participat)">participating store</a>.
-          </div>
-        </div>
-      </div>
-    </div> -->

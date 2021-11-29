@@ -363,7 +363,7 @@ hr {
   background-color: #fff;
 }
 small {
-  font-family: $brand-font-family-2;
+  font-family: $brand-font-family;
 }
 .smallerText {
   font-size: 0.9em !important;
@@ -445,9 +445,9 @@ small {
   align-items: center;
   flex-direction: column;
   margin: 5px auto;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   @include responsive(phone) {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 20px auto 0;
   }
 }
@@ -707,7 +707,7 @@ button.close_bottom {
     min-height: 90vh; 
   }
   @include responsive(phone) {
-    min-height: 80vh;
+    min-height: 83vh;
   }
 }
 
@@ -1088,8 +1088,8 @@ ul.active li {
 
   @include responsive(phone) {
     margin: 5px auto;
-    padding: 4px 20px;
-    font-size: 16px;
+    padding: 9px 20px;
+    font-size: 0.9rem;
     line-height: 21px;
   }
 }

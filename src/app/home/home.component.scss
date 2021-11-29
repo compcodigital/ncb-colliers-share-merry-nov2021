@@ -310,7 +310,7 @@
         input {
           height: 55px;
           // margin-bottom: 2%;
-          font-size: 1.5rem;
+          font-size: 1.1rem;
           border-radius: 6px;
           border: none;
           // color: $brand-color;
@@ -338,8 +338,7 @@
           @include responsive(phone) {
             height: 40px;
             padding: 3px 10px;
-            // margin-bottom: 2vh;
-            font-size: 16px;
+            font-size: 1rem;
           }
         }
 
