@@ -344,14 +344,14 @@ export class AppComponent implements OnInit, AfterViewInit {
         console.log(response);
         this.campaignOpenDate = response.form_fields.start_time_format;
         this.campaignCloseDate = response.form_fields.end_time_format;
-        this.campaignCenterService.linkPrivacy =
-          response.form_fields.link_privacy;
+
         // this.campaignOpenDate = new Date('14 October 2019 09:00:00');
-        // console.log(this.campaignOpenDate);
-        console.log(this.campaignCloseDate);
+
         this.campaignCenterService.minimumspend =
           response.form_fields.minimum_spend;
-        this.campaignCenterService.opendate = "May 13, 2019 00:00:00"; // response.form_fields.start_time_format;
+
+        this.campaignCenterService.opendate =
+          response.form_fields.start_time_format;
         this.campaignCenterService.closedate =
           response.form_fields.end_time_format;
         // console.log(this.campaignCenterService.minimumspend,this.campaignCenterService.opendate,this.campaignCenterService.closedate);
@@ -426,7 +426,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       // subdomain = 'colfle';
       // subdomain = 'colgun';
       // subdomain = 'col19t';
-
 
       if (subdomain.length) {
         console.log("Setting, subdomain: " + subdomain);

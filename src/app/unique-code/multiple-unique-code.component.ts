@@ -185,12 +185,12 @@ export class MultipleUniqueCodeComponent implements OnInit {
 
     // console.log(this.minispend, this.campaignOpenDate, this.campaignCloseDate, this.minDate, this.maxDate);
 
-    const today = new Date();
-    if (today.getTime() < this.minDate.getTime()) {
-      this.maxDate.setTime(this.minDate.getTime() - 1);
-    } else if (today.getTime() <= this.maxDate.getTime()) {
-      this.maxDate = today;
-    }
+    // const today = new Date();
+    // if (today.getTime() < this.minDate.getTime()) {
+    //   this.maxDate.setTime(this.minDate.getTime() - 1);
+    // } else if (today.getTime() <= this.maxDate.getTime()) {
+    //   this.maxDate = today;
+    // }
 
     /*customize the unique code,spend and store name section*/
     this.showSpentInput = true; //to make unique section  hide when need and show the spend section
