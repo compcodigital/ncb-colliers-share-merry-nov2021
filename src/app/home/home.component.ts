@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   repeatIt: number;
   buttonDisabled: boolean; // used to avoid the duplicate submissions
   acc: string; //check auto complete browser
+  companyId: string;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -55,6 +56,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // Apply scroll top on content confirm details
     const elm = document.getElementsByClassName("fit-device")[0];
     elm.scrollTop = 0;
+
+    setTimeout(() => {
+      this.companyId = this.campaignCenterService.companyId;
+    }, 1200);
   }
   checkAuto() {
     if (navigator.userAgent.indexOf("Chrome") !== -1) {

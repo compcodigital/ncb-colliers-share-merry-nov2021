@@ -22,6 +22,7 @@ export class ThankyouSimpleComponent implements OnInit {
   displayStyle: string;
   clickStyle: string;
   status: boolean;
+  companyId: string;
   @ViewChild("participat", { static: false }) template: TemplateRef<any>;
   constructor(
     private campaignCenterService: CampaignCenterService,
@@ -31,6 +32,7 @@ export class ThankyouSimpleComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.companyId = this.campaignCenterService.companyId;
     this.weeklyEntries = this.campaignCenterService.weeklyEntry;
     // console.log(this.campaignCenterService.weeklyEntry,this.weeklyEntries);
     if (this.weeklyEntries === 1) {
@@ -40,9 +42,9 @@ export class ThankyouSimpleComponent implements OnInit {
     }
     this.weeklyEntries = this.campaignCenterService.weeklyEntry;
     if (window.innerWidth < 1024) {
-      this.src = "./assets/img/cookies/box.jpg";
+      this.src = "./assets/img/cookies/boxloop.jpg";
     } else {
-      this.src = "./assets/img/cookies/box.jpg";
+      this.src = "./assets/img/cookies/boxloop.jpg";
     }
     this.status = false;
     this.displayStyle = "displaynone";
@@ -69,9 +71,9 @@ export class ThankyouSimpleComponent implements OnInit {
     if (this.status === false) {
       console.log("open cookies");
       if (window.innerWidth < 1024) {
-        this.src = "../../../assets/img/cookies/box.gif";
+        this.src = "../../../assets/img/cookies/boxloop.gif";
       } else {
-        this.src = "../../../assets/img/cookies/box.gif";
+        this.src = "../../../assets/img/cookies/boxloop.gif";
       }
       this.status = true;
       setTimeout(() => {

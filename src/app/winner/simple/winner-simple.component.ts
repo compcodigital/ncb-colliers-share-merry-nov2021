@@ -28,6 +28,7 @@ export class WinnerSimpleComponent implements OnInit {
   displayStyle: string;
   clickStyle: string;
   status: boolean;
+  companyId: string;
   @ViewChild("participat", { static: false }) template: TemplateRef<any>;
   constructor(
     private campaignCenterService: CampaignCenterService,
@@ -37,6 +38,7 @@ export class WinnerSimpleComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.companyId = this.campaignCenterService.companyId;
     if (
       this.campaignCenterService.prizeInfo &&
       this.campaignCenterService.prizeInfoName
@@ -49,9 +51,9 @@ export class WinnerSimpleComponent implements OnInit {
       // console.log('On Winner page, prizeInfoRetailer = ' + this.prizeInfoRetailer);
     }
     if (window.innerWidth < 1024) {
-      this.src = "./assets/img/cookies/box.jpg";
+      this.src = "./assets/img/cookies/boxloop.jpg";
     } else {
-      this.src = "./assets/img/cookies/box.jpg";
+      this.src = "./assets/img/cookies/boxloop.jpg";
     }
     this.status = false;
     this.displayStyle = "displaynone";
@@ -77,9 +79,9 @@ export class WinnerSimpleComponent implements OnInit {
     if (this.status === false) {
       console.log("open cookies");
       if (window.innerWidth < 1024) {
-        this.src = "../../../assets/img/cookies/box.gif";
+        this.src = "../../../assets/img/cookies/boxloop.gif";
       } else {
-        this.src = "../../../assets/img/cookies/box.gif";
+        this.src = "../../../assets/img/cookies/boxloop.gif";
       }
       this.status = true;
       setTimeout(() => {
