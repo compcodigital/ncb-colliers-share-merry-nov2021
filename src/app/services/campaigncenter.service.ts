@@ -58,7 +58,7 @@ export class CampaignCenterService {
     this.apiAuthKey =
       "NOV5000386C16ABBA5BBC361C3A2FF07AF1D764C6F98B157D4DF854F082020NN";
     this.apiUrl =
-      "https://www.campaigncentre.com.au/_winme/web/app_dev.php/api/v1.02/ncb/web/";
+      "https://www.campaigncentre.com.au/_winme/web/api/v1.02/ncb/web/";
     this.campaignType = "spentOnly"; // entryOnly || uniqueCode || spentOnly
   }
 

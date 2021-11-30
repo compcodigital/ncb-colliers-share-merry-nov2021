@@ -38,7 +38,7 @@ declare let gtag: Function;
 @Injectable()
 export class AppComponent implements OnInit, AfterViewInit {
   // title is used as a title in all the places
-  title = "Sharethemerry";
+  title = "Share The Merry";
   centers: Center[];
   deviceInfo = null;
   deviceStyle: string;
@@ -414,6 +414,19 @@ export class AppComponent implements OnInit, AfterViewInit {
           subdomain = domainkey[0];
         }
       }
+
+      // subdomain = 'colkel';
+      // subdomain = 'colpon';
+      // subdomain = 'colwin';
+      // subdomain = 'colkat';
+      // subdomain = 'coldee';
+      // subdomain = 'colkin';
+      subdomain = 'colnor';
+      // subdomain = 'colwba';
+      // subdomain = 'colfle';
+      // subdomain = 'colgun';
+      // subdomain = 'col19t';
+
 
       if (subdomain.length) {
         console.log("Setting, subdomain: " + subdomain);
