@@ -17,8 +17,22 @@
     line-height: 1.4rem;
   }
   .footer-logo-1 {
+    max-width: 420px;
+    @include responsive(tablet) {
+      max-width: 100%;
+    }
+    @include responsive(phone) {
+      max-width: 100%;
+    }
   }
   .footer-logo-2 {
+    max-width: 140px;
+    @include responsive(tablet) {
+      max-width: 100%;
+    }
+    @include responsive(phone) {
+      max-width: 100%;
+    }
   }
   a {
     color: $brand-color-3;

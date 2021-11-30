@@ -49,18 +49,18 @@ const routes: Routes = [
     // 1 box one code design good to use it
     path: "entercode",
     component: MultipleUniqueCodeComponent,
-    // canActivate: [SecurityGuard],
+    canActivate: [SecurityGuard],
   },
 
   {
     path: "thankyou",
     component: ThankyouSimpleComponent,
-    // , canActivate: [SecurityGuard]
+    canActivate: [SecurityGuard],
   },
   {
     path: "winner",
     component: WinnerSimpleComponent,
-    // canActivate: [SecurityGuard],
+    canActivate: [SecurityGuard],
   },
   // {
   //   // 1 box one code design good to use it but multiple time unique and multiple receipts
