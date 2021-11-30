@@ -56,7 +56,9 @@ export class WinnerSimpleComponent implements OnInit {
       this.src = "./assets/img/cookies/boxloop.jpg";
     }
     this.status = false;
-    this.displayStyle = "displaynone";
+    // this.displayStyle = "displaynone";
+    this.clickStyle = "d-none";
+    this.displayStyle = "d-block";
   }
   openModal(template: TemplateRef<any>, size = "lg") {
     let modalCss = { class: "modal-dialog-centered modal-" + size };
