@@ -421,7 +421,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       // subdomain = 'colkat';
       // subdomain = 'coldee';
       // subdomain = 'colkin';
-      subdomain = 'colnor';
+      // subdomain = 'colnor';
       // subdomain = 'colwba';
       // subdomain = 'colfle';
       // subdomain = 'colgun';
