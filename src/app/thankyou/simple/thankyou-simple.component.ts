@@ -25,7 +25,7 @@ export class ThankyouSimpleComponent implements OnInit {
   companyId: string;
   @ViewChild("participat", { static: false }) template: TemplateRef<any>;
   constructor(
-    private campaignCenterService: CampaignCenterService,
+    public campaignCenterService: CampaignCenterService,
     private router: Router,
     private route: ActivatedRoute,
     private modalService: BsModalService
