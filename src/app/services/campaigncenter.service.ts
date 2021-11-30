@@ -35,6 +35,7 @@ export class CampaignCenterService {
   prizeInfoTymsg3: string;
   companyId: any; // wm_niw_com
   campaignId: number;
+  centreName: string;
   campaignType: string;
   apiAuthKey: string;
   apiUrl: string;

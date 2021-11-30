@@ -429,6 +429,9 @@ export class AppComponent implements OnInit, AfterViewInit {
               this.campaignCenterService.entryLocation =
                 response.company.k_label;
 
+              this.campaignCenterService.centreName =
+                response.company.centreName;
+
               if (response.company.gaCode) {
                 this.gaCode = response.company.gaCode;
                 this.loadGaCode(response.company.gaCode, this.path);

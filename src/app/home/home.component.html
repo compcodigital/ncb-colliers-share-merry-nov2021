@@ -94,7 +94,7 @@
               </div>
               <div *ngIf="this.campaignCenterService.companyId == 1322">
                 For every $30 spent in Centre, we will donate $1 to
-                Communities@Workon your behalf.*
+                Communities@Work on your behalf.*
               </div>
               <div *ngIf="this.campaignCenterService.companyId == 1468">
                 For every $30 spent in Centre, we will donate $1 to The
@@ -103,7 +103,16 @@
             </div>
           </div>
           <div class="col-12 col-md-12 col-lg-6 mt-4 mt-md-3 mt-lg-0">
-            <img src="../../assets/img/img-upto-web.png" class="img-fluid" />
+            <img
+              *ngIf="this.campaignCenterService.companyId == 1312"
+              src="../../assets/img/upto-northlakes-web.png"
+              class="img-fluid"
+            />
+            <img
+              *ngIf="this.campaignCenterService.companyId != 1312"
+              src="../../assets/img/img-upto-web.png"
+              class="img-fluid"
+            />
           </div>
         </div>
         <div class="row">
