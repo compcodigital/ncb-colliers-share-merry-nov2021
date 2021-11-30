@@ -33,7 +33,7 @@ export class CampaignCenterService {
   prizeInfoTymsg1: string;
   prizeInfoTymsg2: string;
   prizeInfoTymsg3: string;
-  companyId: string; // wm_niw_com
+  companyId: number; // wm_niw_com
   campaignId: number;
   campaignType: string;
   apiAuthKey: string;
@@ -52,7 +52,7 @@ export class CampaignCenterService {
   constructor(private http: HttpClient, private datePipe: DatePipe) {
     this.showFooter = false;
     this.footerSecondary = false;
-    this.companyId = "1321"; // wm_niw_com
+    this.companyId = 1321; // wm_niw_com
     this.campaignId = 5000381;
     this.apiAuthKey =
       "NOV5000386C16ABBA5BBC361C3A2FF07AF1D764C6F98B157D4DF854F082020NN";
