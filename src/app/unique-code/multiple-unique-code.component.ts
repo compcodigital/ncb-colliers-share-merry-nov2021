@@ -758,16 +758,17 @@ export class MultipleUniqueCodeComponent implements OnInit {
     const myDataArray = this.spentForm.get("spentretailer") as FormArray;
     const receipts = [];
     myDataArray.value.map((each) => {
-      console.log(each);
       receipts.push({
         store: each.store,
         amountSpent: each.spend,
-        purchasedate: this.datePipe.transform(purchaseDate, "yyyy-MM-dd"),
+        // purchasedate: this.datePipe.transform(purchaseDate, "yyyy-MM-dd"),
+        purchasedate: this.datePipe.transform(each.purchaseDate, "yyyy-MM-dd"),
       });
     });
     // Pending
     // Todo: Pass the receipts variable as an array and send it to the service
     console.log("receipts = ", receipts);
+
     this.campaignCenterService.enterReceipts(this.entryid, receipts).subscribe(
       (response: any) => {
         console.log(response);

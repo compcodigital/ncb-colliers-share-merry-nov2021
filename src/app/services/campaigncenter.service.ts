@@ -369,6 +369,10 @@ export class CampaignCenterService {
         element.amountSpent
       );
       params = params.append("receipts[" + ind + "][storeName]", element.store);
+      params = params.append(
+        "receipts[" + ind + "][storeDate]",
+        element.purchasedate
+      );
       ind++;
     });
 
