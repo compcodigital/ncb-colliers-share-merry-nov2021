@@ -496,7 +496,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
   }
   loadGaCode(gaCode, path) {
-    console.log("google analytics path: " + path);
+    console.log("google analytics > code: "+ gaCode +", path: " + path);
     gtag("config", gaCode, {
       page_path: path,
     });
